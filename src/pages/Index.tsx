@@ -6,8 +6,15 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="section-padding min-h-[90vh] flex items-center">
-        <div className="max-w-6xl mx-auto">
+      <section className="section-padding min-h-[90vh] flex items-center relative overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7"
+            alt="Consultora trabajando"
+            className="w-full h-full object-cover opacity-10"
+          />
+        </div>
+        <div className="max-w-6xl mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -60,18 +67,27 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="glass-card p-8 rounded-2xl"
+                className="glass-card p-8 rounded-2xl relative overflow-hidden group"
               >
-                <service.icon className="h-12 w-12 text-secondary-DEFAULT mb-6" />
-                <h3 className="heading-md mb-4">{service.title}</h3>
-                <p className="text-gray-600 mb-6">{service.description}</p>
-                <a
-                  href="#"
-                  className="inline-flex items-center text-primary hover:text-secondary-DEFAULT transition-colors"
-                >
-                  Saber más
-                  <ChevronRight className="ml-1 h-4 w-4" />
-                </a>
+                <div className="absolute inset-0 z-0">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover opacity-10 group-hover:opacity-20 transition-opacity"
+                  />
+                </div>
+                <div className="relative z-10">
+                  <service.icon className="h-12 w-12 text-secondary-DEFAULT mb-6" />
+                  <h3 className="heading-md mb-4">{service.title}</h3>
+                  <p className="text-gray-600 mb-6">{service.description}</p>
+                  <a
+                    href="#"
+                    className="inline-flex items-center text-primary hover:text-secondary-DEFAULT transition-colors"
+                  >
+                    Saber más
+                    <ChevronRight className="ml-1 h-4 w-4" />
+                  </a>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -79,8 +95,15 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding">
-        <div className="max-w-6xl mx-auto text-center">
+      <section className="section-padding relative overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81"
+            alt="Equipo trabajando"
+            className="w-full h-full object-cover opacity-10"
+          />
+        </div>
+        <div className="max-w-6xl mx-auto text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -114,18 +137,21 @@ const services = [
     title: "Consultoría Estratégica",
     description:
       "Análisis profundo y recomendaciones para optimizar los procesos de tu producto.",
+    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
   },
   {
     icon: Workflow,
     title: "Optimización de Procesos",
     description:
       "Mejoramos la eficiencia operativa y reducimos costos innecesarios.",
+    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
   },
   {
     icon: Target,
     title: "Desarrollo de Producto",
     description:
       "Estrategias para evolucionar tu producto según las necesidades del mercado.",
+    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
   },
 ];
 
