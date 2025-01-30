@@ -51,7 +51,7 @@ const Index = () => {
             className="text-center"
           >
             <span className="inline-block px-4 py-2 rounded-full bg-accent text-sm font-medium mb-6">
-              Consultoría Estratégica de Productos
+              Praxia | Consultoría Estratégica
             </span>
             <h1 className="heading-xl mb-6 max-w-4xl mx-auto">
               Transformamos procesos en{" "}
