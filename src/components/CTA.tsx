@@ -1,5 +1,6 @@
+
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Linkedin, Mail, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const CTA = () => {
@@ -33,7 +34,50 @@ export const CTA = () => {
             Contactar ahora
             <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
+
+          <div className="mt-8">
+            <p className="body-lg text-gray-600 mb-4 max-w-2xl mx-auto">
+              ¿Prefieres conocer más sobre nuestras soluciones?
+            </p>
+            <Button
+              variant="outline"
+              size="lg"
+              className="rounded-full"
+            >
+              Solicitar una demo
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+          </div>
         </motion.div>
+      </div>
+
+      {/* Social media links */}
+      <div className="absolute bottom-6 right-6 flex items-center gap-4">
+        <a 
+          href="https://linkedin.com/company/praxia" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-gray-600 hover:text-primary transition-colors"
+          aria-label="LinkedIn"
+        >
+          <Linkedin size={24} />
+        </a>
+        <a 
+          href="https://wa.me/1234567890" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-gray-600 hover:text-primary transition-colors"
+          aria-label="WhatsApp"
+        >
+          <MessageCircle size={24} />
+        </a>
+        <a 
+          href="mailto:info@praxia.com" 
+          className="text-gray-600 hover:text-primary transition-colors"
+          aria-label="Correo electrónico"
+        >
+          <Mail size={24} />
+        </a>
       </div>
     </section>
   );
