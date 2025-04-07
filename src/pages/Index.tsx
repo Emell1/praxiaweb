@@ -1,5 +1,7 @@
+
 import { Hero } from "@/components/Hero";
 import { Services } from "@/components/Services";
+import { Developments } from "@/components/Developments";
 import { CTA } from "@/components/CTA";
 
 const Index = () => {
@@ -7,6 +9,7 @@ const Index = () => {
     <div className="min-h-screen">
       <Hero />
       <Services />
+      <Developments />
       <CTA />
     </div>
   );
