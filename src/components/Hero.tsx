@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -8,8 +9,8 @@ export const Hero = () => {
     <section className="section-padding min-h-[90vh] flex items-center relative overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7"
-          alt="Consultora trabajando"
+          src="https://images.unsplash.com/photo-1519389950473-47ba0277781c"
+          alt="Equipo de trabajo en entorno laboral"
           className="w-full h-full object-cover opacity-10"
         />
       </div>
