@@ -1,7 +1,5 @@
 
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { ContactDialog } from "./ContactDialog";
 
 export const Hero = () => {
@@ -32,7 +30,7 @@ export const Hero = () => {
             Detectamos ineficiencias, rediseñamos flujos y potenciamos resultados 
             para escalar tu negocio con precisión.
           </p>
-          <ContactDialog />
+          <ContactDialog buttonText="Solicita una consulta" />
         </motion.div>
       </div>
     </section>

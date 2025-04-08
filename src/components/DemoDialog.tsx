@@ -13,30 +13,27 @@ import { useForm } from "react-hook-form";
 import { useToast } from "@/components/ui/use-toast";
 import { ArrowRight } from "lucide-react";
 
-interface ContactDialogProps {
-  buttonText?: string;
-}
-
-export const ContactDialog = ({ buttonText = "Solicita una consulta" }: ContactDialogProps) => {
+export const DemoDialog = () => {
   const { toast } = useToast();
   const form = useForm({
     defaultValues: {
       nombre: "",
       email: "",
       empresa: "",
-      mensaje: "",
+      mensaje: "Hola! estoy interesado en una demostración de vuestra herrramienta OPTA...",
     },
   });
 
   const onSubmit = (data: any) => {
-    // En un entorno real, aquí se enviaría el correo electrónico a info@praxia.site
-    console.log("Enviando consulta a info@praxia.site:", data);
+    // En un entorno real, aquí se enviaría el correo electrónico a info@praxia.site con el asunto específico
+    console.log("Enviando solicitud de demo a info@praxia.site con asunto 'Consultas por Demo OPTA':", data);
     
     toast({
-      title: "Consulta enviada",
-      description: "Nos pondremos en contacto contigo pronto.",
+      title: "Solicitud de demo enviada",
+      description: "Nos pondremos en contacto contigo para coordinar una demostración de OPTA.",
     });
     form.reset();
+    form.setValue("mensaje", "Hola! estoy interesado en una demostración de vuestra herrramienta OPTA...");
   };
 
   return (
@@ -47,13 +44,13 @@ export const ContactDialog = ({ buttonText = "Solicita una consulta" }: ContactD
           size="lg"
           className="rounded-full"
         >
-          {buttonText}
+          Solicitar una demo
           <ArrowRight className="ml-2 h-4 w-4" />
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>Solicita una consulta</DialogTitle>
+          <DialogTitle>Solicitar una demo de OPTA</DialogTitle>
         </DialogHeader>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
           <div>
@@ -77,15 +74,16 @@ export const ContactDialog = ({ buttonText = "Solicita una consulta" }: ContactD
           </div>
           <div>
             <Textarea
-              placeholder="¿Cómo podemos ayudarte?"
+              placeholder="Mensaje"
               {...form.register("mensaje", { required: true })}
+              rows={4}
             />
           </div>
           <Button
             type="submit"
             className="w-full bg-secondary-DEFAULT text-secondary-foreground hover:bg-secondary-DEFAULT/90"
           >
-            Enviar consulta
+            Solicitar demo
           </Button>
         </form>
       </DialogContent>

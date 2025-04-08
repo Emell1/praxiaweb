@@ -2,6 +2,8 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Linkedin, Mail, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ContactDialog } from "./ContactDialog";
+import { DemoDialog } from "./DemoDialog";
 
 export const CTA = () => {
   return (
@@ -27,26 +29,13 @@ export const CTA = () => {
             Solicita una conversación con nuestro equipo y descubre cómo mejorar, escalar 
             y automatizar tus operaciones con precisión.
           </p>
-          <Button
-            size="lg"
-            className="bg-secondary-DEFAULT hover:bg-secondary-DEFAULT/90 text-white rounded-full"
-          >
-            Contactar ahora
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </Button>
+          <ContactDialog buttonText="Contactar ahora" />
 
           <div className="mt-8">
             <p className="body-lg text-gray-600 mb-4 max-w-2xl mx-auto">
               ¿Quieres conocer OPTA en acción?
             </p>
-            <Button
-              variant="outline"
-              size="lg"
-              className="rounded-full"
-            >
-              Solicitar una demo
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
+            <DemoDialog />
           </div>
         </motion.div>
       </div>
