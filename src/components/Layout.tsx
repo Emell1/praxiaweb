@@ -12,9 +12,9 @@ const Layout = ({ children }: LayoutProps) => {
     <div className="min-h-screen flex flex-col">
       <NavBar />
       {children}
-      <footer className="bg-gray-100 py-12 mt-auto">
+      <footer className="bg-background py-12 mt-auto">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-gray-600">© {new Date().getFullYear()} Praxia. Todos los derechos reservados.</p>
+          <p className="text-foreground">© {new Date().getFullYear()} Praxia. Todos los derechos reservados.</p>
         </div>
       </footer>
     </div>
