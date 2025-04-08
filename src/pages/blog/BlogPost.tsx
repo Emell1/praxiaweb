@@ -5,7 +5,7 @@ import { format } from 'date-fns';
 import { es } from 'date-fns/locale';
 import { ArrowLeft } from 'lucide-react';
 import NavBar from '../../components/NavBar';
-import { getBlogPostBySlug, blogPosts } from '../../services/blogService';
+import { getBlogPostBySlug, getBlogPosts } from '../../services/blogService';
 import { Badge } from '../../components/ui/badge';
 import { Button } from '../../components/ui/button';
 import ReactMarkdown from 'react-markdown';
@@ -27,7 +27,7 @@ const BlogPost = () => {
   }
 
   // Encontrar posts relacionados (de la misma categoría pero no el actual)
-  const relatedPosts = blogPosts
+  const relatedPosts = getBlogPosts()
     .filter(p => p.category === post.category && p.id !== post.id)
     .slice(0, 3);
 

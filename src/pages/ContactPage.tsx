@@ -1,6 +1,6 @@
 
 import NavBar from '../components/NavBar';
-import ContactForm from '../components/ContactForm';
+import { ContactForm } from '../components/ContactForm';
 import { Separator } from '@/components/ui/separator';
 import { Link } from 'react-router-dom';
 import SEO from '@/components/SEO';

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { format } from 'date-fns';
 import { es } from 'date-fns/locale';
 import NavBar from '../../components/NavBar';
-import { blogPosts } from '../../services/blogService';
+import { getBlogPosts } from '../../services/blogService';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../../components/ui/card';
 import { Badge } from '../../components/ui/badge';
 import { Button } from '../../components/ui/button';
@@ -12,7 +12,7 @@ import { ArrowRight } from 'lucide-react';
 import SEO from '@/components/SEO';
 
 const BlogPage = () => {
-  const [posts, setPosts] = useState(blogPosts);
+  const [posts, setPosts] = useState(getBlogPosts());
 
   return (
     <div className="min-h-screen bg-background">
