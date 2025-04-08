@@ -1,25 +1,30 @@
 
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { getFeaturedBlogPosts } from '../services/blogService';
+import { getAllBlogPosts } from '../services/blogService';
 import { BlogPostType } from '../types/blog';
 import { Button } from './ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/card';
 import { ChevronRight } from 'lucide-react';
 
 const BlogHighlight = () => {
-  const [featuredPosts, setFeaturedPosts] = useState<BlogPostType[]>([]);
+  const [latestPost, setLatestPost] = useState<BlogPostType | null>(null);
 
   useEffect(() => {
-    setFeaturedPosts(getFeaturedBlogPosts());
+    // Obtenemos todos los posts y ordenamos por fecha para tener el más reciente
+    const posts = getAllBlogPosts();
+    const sorted = [...posts].sort((a, b) => 
+      new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+    );
+    
+    if (sorted.length > 0) {
+      setLatestPost(sorted[0]);
+    }
   }, []);
 
-  if (featuredPosts.length === 0) {
+  if (!latestPost) {
     return null;
   }
-
-  // Tomar solo el primer post destacado para mostrar
-  const highlightedPost = featuredPosts[0];
 
   return (
     <section className="py-16 bg-gray-50">
@@ -38,8 +43,8 @@ const BlogHighlight = () => {
               <div className="md:w-2/5">
                 <div className="h-full">
                   <img 
-                    src={highlightedPost.coverImage} 
-                    alt={highlightedPost.title}
+                    src={latestPost.coverImage} 
+                    alt={latestPost.title}
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -47,20 +52,20 @@ const BlogHighlight = () => {
               <div className="md:w-3/5">
                 <CardHeader>
                   <CardTitle className="text-2xl">
-                    <Link to={`/blog/${highlightedPost.slug}`} className="hover:text-blue-600 transition-colors">
-                      {highlightedPost.title}
+                    <Link to={`/blog/${latestPost.slug}`} className="hover:text-blue-600 transition-colors">
+                      {latestPost.title}
                     </Link>
                   </CardTitle>
-                  <CardDescription>{highlightedPost.excerpt}</CardDescription>
+                  <CardDescription>{latestPost.excerpt}</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <p className="line-clamp-3">
-                    {highlightedPost.content.replace(/[#*]/g, '').substring(0, 150)}...
+                    {latestPost.content.replace(/[#*]/g, '').substring(0, 150)}...
                   </p>
                 </CardContent>
                 <CardFooter className="flex justify-between">
                   <Button asChild variant="outline">
-                    <Link to={`/blog/${highlightedPost.slug}`}>
+                    <Link to={`/blog/${latestPost.slug}`}>
                       Leer más
                     </Link>
                   </Button>
