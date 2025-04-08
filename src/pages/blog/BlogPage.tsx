@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { format } from 'date-fns';
 import { es } from 'date-fns/locale';
 import NavBar from '../../components/NavBar';
-import { getBlogPosts } from '../../services/blogService';
+import { getAllBlogPosts } from '../../services/blogService';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../../components/ui/card';
 import { Badge } from '../../components/ui/badge';
 import { Button } from '../../components/ui/button';
@@ -12,7 +12,7 @@ import { ArrowRight } from 'lucide-react';
 import SEO from '@/components/SEO';
 
 const BlogPage = () => {
-  const [posts, setPosts] = useState(getBlogPosts());
+  const [posts, setPosts] = useState(getAllBlogPosts());
 
   return (
     <div className="min-h-screen bg-background">
@@ -35,9 +35,9 @@ const BlogPage = () => {
               </div>
               <CardHeader>
                 <div className="flex justify-between items-center mb-2">
-                  <Badge variant="secondary">{post.category}</Badge>
+                  <Badge variant="secondary">{post.tags && post.tags.length > 0 ? post.tags[0] : 'Artículo'}</Badge>
                   <span className="text-xs text-gray-500">
-                    {format(new Date(post.date), 'dd MMM yyyy', { locale: es })}
+                    {format(new Date(post.publishedAt), 'dd MMM yyyy', { locale: es })}
                   </span>
                 </div>
                 <CardTitle className="text-xl">

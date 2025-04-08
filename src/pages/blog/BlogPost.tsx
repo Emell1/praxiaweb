@@ -5,7 +5,7 @@ import { format } from 'date-fns';
 import { es } from 'date-fns/locale';
 import { ArrowLeft } from 'lucide-react';
 import NavBar from '../../components/NavBar';
-import { getBlogPostBySlug, getBlogPosts } from '../../services/blogService';
+import { getBlogPostBySlug, getAllBlogPosts } from '../../services/blogService';
 import { Badge } from '../../components/ui/badge';
 import { Button } from '../../components/ui/button';
 import ReactMarkdown from 'react-markdown';
@@ -26,9 +26,9 @@ const BlogPost = () => {
     return null;
   }
 
-  // Encontrar posts relacionados (de la misma categoría pero no el actual)
-  const relatedPosts = getBlogPosts()
-    .filter(p => p.category === post.category && p.id !== post.id)
+  // Encontrar posts relacionados (con tags similares pero no el actual)
+  const relatedPosts = getAllBlogPosts()
+    .filter(p => p.id !== post.id && p.tags.some(tag => post.tags.includes(tag)))
     .slice(0, 3);
 
   return (
@@ -36,7 +36,7 @@ const BlogPost = () => {
       <SEO 
         title={`${post.title} | Blog Praxia`}
         description={post.excerpt}
-        keywords={`${post.category}, consultoría estratégica, praxia, ${post.tags?.join(', ')}`}
+        keywords={post.tags?.join(', ')}
         ogImage={post.coverImage || '/og-image.png'}
       />
       <NavBar />
@@ -63,18 +63,17 @@ const BlogPost = () => {
           )}
           
           <div className="flex flex-wrap gap-3 mb-4">
-            <Badge variant="secondary">{post.category}</Badge>
             {post.tags?.map(tag => (
-              <Badge key={tag} variant="outline">{tag}</Badge>
+              <Badge key={tag} variant={tag === post.tags[0] ? "secondary" : "outline"}>{tag}</Badge>
             ))}
           </div>
           
           <h1 className="text-3xl md:text-4xl font-bold mb-4">{post.title}</h1>
           
           <div className="flex items-center gap-2 text-gray-500 mb-8">
-            <span>Por {post.author || 'Praxia'}</span>
+            <span>Por Praxia</span>
             <span>•</span>
-            <span>{format(new Date(post.date), 'dd MMMM yyyy', { locale: es })}</span>
+            <span>{format(new Date(post.publishedAt), 'dd MMMM yyyy', { locale: es })}</span>
           </div>
           
           <div className="prose prose-lg max-w-none">
@@ -98,7 +97,7 @@ const BlogPost = () => {
                     </div>
                   )}
                   <div className="p-4">
-                    <Badge variant="secondary" className="mb-2">{relatedPost.category}</Badge>
+                    <Badge variant="secondary" className="mb-2">{relatedPost.tags[0] || 'Artículo'}</Badge>
                     <h3 className="font-semibold mb-2">
                       <Link to={`/blog/${relatedPost.slug}`} className="hover:text-primary transition-colors">
                         {relatedPost.title}
