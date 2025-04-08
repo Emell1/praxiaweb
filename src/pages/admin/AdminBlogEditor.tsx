@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getBlogPostById, createBlogPost, updateBlogPost } from '../../services/blogService';
 import { BlogPostFormData } from '../../types/blog';
@@ -10,10 +10,11 @@ import { Textarea } from '../../components/ui/textarea';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../../components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../../components/ui/tabs';
 import { Switch } from '../../components/ui/switch';
-import { ArrowLeft, Save, Eye } from 'lucide-react';
+import { ArrowLeft, Save, Eye, Image, Video, Link as LinkIcon, Bold, Italic, List, ListOrdered, Quote } from 'lucide-react';
 import { toast } from '../../hooks/use-toast';
 import ReactMarkdown from 'react-markdown';
 import { Link } from 'react-router-dom';
+import { ToggleGroup, ToggleGroupItem } from '../../components/ui/toggle-group';
 
 const AdminBlogEditor = () => {
   const { id } = useParams<{ id: string }>();
@@ -28,6 +29,7 @@ const AdminBlogEditor = () => {
   });
   const [isLoading, setIsLoading] = useState(false);
   const [tagsInput, setTagsInput] = useState('');
+  const contentTextareaRef = useRef<HTMLTextAreaElement>(null);
 
   const isEdit = !!id;
 
@@ -102,6 +104,52 @@ const AdminBlogEditor = () => {
       setIsLoading(false);
     }
   };
+
+  const insertToTextarea = (prefix: string, suffix: string = '') => {
+    const textarea = contentTextareaRef.current;
+    if (!textarea) return;
+
+    const start = textarea.selectionStart;
+    const end = textarea.selectionEnd;
+    const selectedText = textarea.value.substring(start, end);
+    const beforeText = textarea.value.substring(0, start);
+    const afterText = textarea.value.substring(end);
+
+    const newValue = beforeText + prefix + selectedText + suffix + afterText;
+    setFormData((prev) => ({ ...prev, content: newValue }));
+
+    // Ajustar la posición del cursor después de la inserción
+    setTimeout(() => {
+      textarea.focus();
+      const newPosition = start + prefix.length + selectedText.length;
+      textarea.setSelectionRange(newPosition, newPosition);
+    }, 0);
+  };
+
+  // Funciones para insertar formatos básicos de Markdown
+  const insertBold = () => insertToTextarea('**', '**');
+  const insertItalic = () => insertToTextarea('*', '*');
+  const insertLink = () => {
+    const url = prompt('Ingrese la URL:', 'https://');
+    if (url) {
+      insertToTextarea('[', '](' + url + ')');
+    }
+  };
+  const insertImage = () => {
+    const url = prompt('Ingrese la URL de la imagen:', 'https://');
+    if (url) {
+      insertToTextarea('![Descripción](' + url + ')');
+    }
+  };
+  const insertVideo = () => {
+    const url = prompt('Ingrese el código de embed del video (iframe):', '');
+    if (url) {
+      insertToTextarea('\n<div class="video-container">\n' + url + '\n</div>\n');
+    }
+  };
+  const insertList = () => insertToTextarea('\n- Item 1\n- Item 2\n- Item 3\n');
+  const insertOrderedList = () => insertToTextarea('\n1. Item 1\n2. Item 2\n3. Item 3\n');
+  const insertQuote = () => insertToTextarea('\n> ');
 
   return (
     <div className="min-h-screen bg-gray-100">
@@ -182,8 +230,37 @@ const AdminBlogEditor = () => {
                 </TabsList>
                 <TabsContent value="editor">
                   <div className="space-y-2">
+                    <div className="bg-white p-2 rounded-md border border-gray-200 mb-2">
+                      <ToggleGroup type="multiple" className="flex flex-wrap justify-start">
+                        <ToggleGroupItem value="bold" onClick={insertBold} title="Negrita">
+                          <Bold className="h-4 w-4" />
+                        </ToggleGroupItem>
+                        <ToggleGroupItem value="italic" onClick={insertItalic} title="Cursiva">
+                          <Italic className="h-4 w-4" />
+                        </ToggleGroupItem>
+                        <ToggleGroupItem value="link" onClick={insertLink} title="Enlace">
+                          <LinkIcon className="h-4 w-4" />
+                        </ToggleGroupItem>
+                        <ToggleGroupItem value="image" onClick={insertImage} title="Imagen">
+                          <Image className="h-4 w-4" />
+                        </ToggleGroupItem>
+                        <ToggleGroupItem value="video" onClick={insertVideo} title="Video">
+                          <Video className="h-4 w-4" />
+                        </ToggleGroupItem>
+                        <ToggleGroupItem value="list" onClick={insertList} title="Lista">
+                          <List className="h-4 w-4" />
+                        </ToggleGroupItem>
+                        <ToggleGroupItem value="ordered-list" onClick={insertOrderedList} title="Lista numerada">
+                          <ListOrdered className="h-4 w-4" />
+                        </ToggleGroupItem>
+                        <ToggleGroupItem value="quote" onClick={insertQuote} title="Cita">
+                          <Quote className="h-4 w-4" />
+                        </ToggleGroupItem>
+                      </ToggleGroup>
+                    </div>
                     <Label htmlFor="content">Contenido (Markdown)</Label>
                     <Textarea
+                      ref={contentTextareaRef}
                       id="content"
                       name="content"
                       value={formData.content}
@@ -191,6 +268,9 @@ const AdminBlogEditor = () => {
                       className="min-h-[300px] font-mono"
                       required
                     />
+                    <div className="text-sm text-gray-500 mt-2">
+                      <p>Puedes usar Markdown y HTML para dar formato a tu contenido. Haz clic en los botones para insertar elementos.</p>
+                    </div>
                   </div>
                 </TabsContent>
                 <TabsContent value="preview">
