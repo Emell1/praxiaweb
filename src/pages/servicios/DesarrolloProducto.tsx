@@ -55,18 +55,43 @@ const DesarrolloProducto = () => {
             {/* Columna principal - Descripción */}
             <div className="md:col-span-2">
               <div className="prose prose-lg max-w-none">
-                <p>
+                <p className="text-lg leading-relaxed mb-8">
                   Nuestro servicio de desarrollo de producto ayuda a las organizaciones 
                   a crear, mejorar y evolucionar sus productos de manera efectiva, 
                   manteniendo el enfoque en las necesidades reales de los usuarios.
                 </p>
                 
-                <h2>Metodología</h2>
-                <p>
+                <h2 className="text-2xl font-semibold mt-10 mb-6 text-primary">Metodología</h2>
+                <p className="text-lg leading-relaxed mb-6">
                   Utilizamos metodologías ágiles y de diseño centrado en el usuario 
                   para desarrollar productos que realmente satisfagan necesidades del mercado 
                   y generen valor para el negocio.
                 </p>
+                
+                <h3 className="text-xl font-medium mt-10 mb-4 text-secondary-DEFAULT">Proceso de desarrollo</h3>
+                <p className="text-base leading-relaxed mb-8">
+                  Nuestro proceso comienza con una profunda investigación de mercado y análisis de 
+                  la competencia. Trabajamos estrechamente con tu equipo para definir los objetivos 
+                  del producto y crear un mapa de ruta claro. A través de ciclos iterativos de 
+                  diseño, desarrollo y pruebas, refinamos constantemente el producto hasta 
+                  alcanzar la versión óptima para su lanzamiento.
+                </p>
+
+                <h3 className="text-xl font-medium mt-10 mb-4 text-secondary-DEFAULT">Enfoques que utilizamos</h3>
+                <ul className="space-y-4 mb-8 pl-6">
+                  <li className="text-base leading-relaxed">
+                    <span className="font-medium">Design Thinking</span>: Metodología enfocada en entender 
+                    profundamente las necesidades y motivaciones de los usuarios.
+                  </li>
+                  <li className="text-base leading-relaxed">
+                    <span className="font-medium">Lean Startup</span>: Validación temprana de hipótesis y 
+                    ajustes rápidos basados en feedback real del mercado.
+                  </li>
+                  <li className="text-base leading-relaxed">
+                    <span className="font-medium">Desarrollo Ágil</span>: Entregas incrementales que permiten 
+                    adaptación continua y reducción de riesgos.
+                  </li>
+                </ul>
               </div>
             </div>
 
