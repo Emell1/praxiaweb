@@ -1,26 +1,17 @@
 
 import { motion } from "framer-motion";
-import { Target, ArrowLeft, Check, ArrowRight, PieChart } from "lucide-react";
+import { Target, ArrowRight, Check, PieChart } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import NavBar from "@/components/NavBar";
 
 const DesarrolloProducto = () => {
   return (
     <div className="min-h-screen bg-background">
-      {/* Header con navegación */}
-      <header className="border-b">
-        <div className="container mx-auto py-4 px-4">
-          <Link 
-            to="/" 
-            className="inline-flex items-center text-primary hover:text-secondary-DEFAULT"
-          >
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            Volver al inicio
-          </Link>
-        </div>
-      </header>
+      {/* Navbar compartido */}
+      <NavBar />
 
       {/* Contenido principal */}
       <main className="container mx-auto py-12 px-4">
