@@ -6,10 +6,17 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import NavBar from "@/components/NavBar";
+import SEO from "@/components/SEO";
 
 const DesarrolloProducto = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Desarrollo de Producto | Praxia"
+        description="Estrategias para evolucionar tu producto según las necesidades del mercado con enfoque en metodologías ágiles y diseño centrado en el usuario."
+        keywords="desarrollo de producto, diseño centrado en usuario, metodologías ágiles, innovación de producto, estrategia de producto, diseño de experiencia"
+      />
+      
       {/* Navbar compartido */}
       <NavBar />
 

@@ -1,126 +1,128 @@
 
-import { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { getBlogPostBySlug } from '../../services/blogService';
-import { BlogPostType } from '../../types/blog';
-import { Button } from '../../components/ui/button';
-import { Badge } from '../../components/ui/badge';
-import { ChevronLeft, Calendar, Tag, Share2 } from 'lucide-react';
 import { format } from 'date-fns';
+import { es } from 'date-fns/locale';
+import { ArrowLeft } from 'lucide-react';
+import NavBar from '../../components/NavBar';
+import { getBlogPostBySlug, blogPosts } from '../../services/blogService';
+import { Badge } from '../../components/ui/badge';
+import { Button } from '../../components/ui/button';
 import ReactMarkdown from 'react-markdown';
+import SEO from '@/components/SEO';
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
+  const [post, setPost] = useState(getBlogPostBySlug(slug || ''));
   const navigate = useNavigate();
-  const [post, setPost] = useState<BlogPostType | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    if (slug) {
-      const foundPost = getBlogPostBySlug(slug);
-      if (foundPost) {
-        setPost(foundPost);
-      } else {
-        // Redirigir a la página de blog si no se encuentra la entrada
-        navigate('/blog');
-      }
+    if (!post) {
+      navigate('/blog');
     }
-    setIsLoading(false);
-  }, [slug, navigate]);
-
-  const handleShare = () => {
-    if (navigator.share) {
-      navigator.share({
-        title: post?.title || 'Artículo Praxia',
-        text: post?.excerpt || 'Mira este artículo interesante',
-        url: window.location.href
-      })
-      .catch((error) => console.log('Error al compartir', error));
-    } else {
-      // Alternativa para navegadores que no soportan Web Share API
-      navigator.clipboard.writeText(window.location.href);
-      alert('Enlace copiado al portapapeles');
-    }
-  };
-
-  if (isLoading) {
-    return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <p className="text-xl">Cargando...</p>
-      </div>
-    );
-  }
+  }, [post, navigate]);
 
   if (!post) {
-    return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <p className="text-xl">Artículo no encontrado</p>
-      </div>
-    );
+    return null;
   }
 
+  // Encontrar posts relacionados (de la misma categoría pero no el actual)
+  const relatedPosts = blogPosts
+    .filter(p => p.category === post.category && p.id !== post.id)
+    .slice(0, 3);
+
   return (
-    <div className="min-h-screen bg-gray-50">
-      <header className="bg-white shadow-sm">
-        <div className="container mx-auto py-6 px-4">
-          <div className="flex justify-between items-center">
-            <Link to="/blog" className="text-gray-600 hover:text-gray-900 flex items-center">
-              <ChevronLeft className="mr-2 h-4 w-4" />
-              Volver al blog
-            </Link>
-          </div>
-        </div>
-      </header>
-
-      <main className="container mx-auto py-12 px-4">
-        <article className="max-w-4xl mx-auto">
-          <div className="mb-8">
-            {post.featured && (
-              <Badge className="mb-4">Artículo destacado</Badge>
-            )}
-            <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
-            <div className="flex items-center text-gray-500 mb-6">
-              <Calendar className="mr-2 h-4 w-4" />
-              <time dateTime={post.publishedAt}>
-                {format(new Date(post.publishedAt), 'dd MMMM, yyyy')}
-              </time>
+    <div className="min-h-screen bg-background">
+      <SEO 
+        title={`${post.title} | Blog Praxia`}
+        description={post.excerpt}
+        keywords={`${post.category}, consultoría estratégica, praxia, ${post.tags?.join(', ')}`}
+        ogImage={post.coverImage || '/og-image.png'}
+      />
+      <NavBar />
+      
+      <div className="container mx-auto py-12 px-4">
+        <Button 
+          variant="ghost" 
+          className="mb-6 flex items-center gap-2"
+          onClick={() => navigate('/blog')}
+        >
+          <ArrowLeft size={16} />
+          Volver al blog
+        </Button>
+        
+        <div className="max-w-3xl mx-auto">
+          {post.coverImage && (
+            <div className="mb-8 h-64 md:h-96 rounded-lg overflow-hidden">
+              <img 
+                src={post.coverImage} 
+                alt={post.title} 
+                className="w-full h-full object-cover"
+              />
             </div>
+          )}
+          
+          <div className="flex flex-wrap gap-3 mb-4">
+            <Badge variant="secondary">{post.category}</Badge>
+            {post.tags?.map(tag => (
+              <Badge key={tag} variant="outline">{tag}</Badge>
+            ))}
           </div>
-
-          <div className="aspect-video w-full mb-8 rounded-lg overflow-hidden shadow-lg">
-            <img 
-              src={post.coverImage} 
-              alt={post.title}
-              className="w-full h-full object-cover"
-            />
+          
+          <h1 className="text-3xl md:text-4xl font-bold mb-4">{post.title}</h1>
+          
+          <div className="flex items-center gap-2 text-gray-500 mb-8">
+            <span>Por {post.author || 'Praxia'}</span>
+            <span>•</span>
+            <span>{format(new Date(post.date), 'dd MMMM yyyy', { locale: es })}</span>
           </div>
-
-          <div className="prose prose-lg max-w-none mb-8">
+          
+          <div className="prose prose-lg max-w-none">
             <ReactMarkdown>{post.content}</ReactMarkdown>
           </div>
-
-          <div className="border-t border-gray-200 pt-6 mt-12">
-            <div className="flex flex-wrap items-center gap-4 justify-between">
-              <div className="flex flex-wrap gap-2">
-                {post.tags.map((tag) => (
-                  <div key={tag} className="flex items-center text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
-                    <Tag className="mr-1 h-4 w-4" />
-                    {tag}
+        </div>
+        
+        {relatedPosts.length > 0 && (
+          <div className="max-w-3xl mx-auto mt-16">
+            <h2 className="text-2xl font-bold mb-6">Artículos relacionados</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {relatedPosts.map((relatedPost) => (
+                <div key={relatedPost.id} className="border rounded-lg overflow-hidden">
+                  {relatedPost.coverImage && (
+                    <div className="h-40 overflow-hidden">
+                      <img 
+                        src={relatedPost.coverImage} 
+                        alt={relatedPost.title} 
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  )}
+                  <div className="p-4">
+                    <Badge variant="secondary" className="mb-2">{relatedPost.category}</Badge>
+                    <h3 className="font-semibold mb-2">
+                      <Link to={`/blog/${relatedPost.slug}`} className="hover:text-primary transition-colors">
+                        {relatedPost.title}
+                      </Link>
+                    </h3>
+                    <p className="text-sm text-gray-600 line-clamp-2">{relatedPost.excerpt}</p>
                   </div>
-                ))}
-              </div>
-              <Button onClick={handleShare} variant="outline" className="flex items-center gap-2">
-                <Share2 className="h-4 w-4" />
-                Compartir
-              </Button>
+                </div>
+              ))}
             </div>
           </div>
-        </article>
-      </main>
-
-      <footer className="bg-gray-100 py-12 mt-12">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-gray-600">© {new Date().getFullYear()} Praxia. Todos los derechos reservados.</p>
+        )}
+      </div>
+      
+      <footer className="bg-gray-100 mt-16">
+        <div className="container mx-auto py-8 px-4">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-sm text-gray-600">© {new Date().getFullYear()} Praxia. Todos los derechos reservados.</p>
+            <div className="flex gap-4">
+              <Link to="/" className="text-sm text-primary hover:underline">Inicio</Link>
+              <Link to="/blog" className="text-sm text-primary hover:underline">Blog</Link>
+              <Link to="/contacto" className="text-sm text-primary hover:underline">Contacto</Link>
+            </div>
+          </div>
         </div>
       </footer>
     </div>

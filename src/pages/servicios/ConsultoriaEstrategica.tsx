@@ -6,10 +6,17 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import NavBar from "@/components/NavBar";
+import SEO from "@/components/SEO";
 
 const ConsultoriaEstrategica = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Consultoría Estratégica | Praxia"
+        description="Análisis profundo y recomendaciones para optimizar los procesos de tu producto a través de consultoría estratégica especializada."
+        keywords="consultoría estratégica, análisis de negocio, diagnóstico empresarial, optimización organizacional, plan estratégico"
+      />
+      
       {/* Navbar compartido */}
       <NavBar />
 

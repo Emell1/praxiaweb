@@ -6,10 +6,17 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import NavBar from "@/components/NavBar";
+import SEO from "@/components/SEO";
 
 const OptimizacionProcesos = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Optimización de Procesos | Praxia"
+        description="Servicios de optimización de procesos empresariales para mejorar la eficiencia operativa y reducir costes innecesarios."
+        keywords="optimización de procesos, eficiencia operativa, mejora continua, automatización, reducción de costes, flujos de trabajo"
+      />
+      
       {/* Navbar compartido */}
       <NavBar />
 
