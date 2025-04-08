@@ -32,33 +32,35 @@ const ConsultoriaEstrategica = () => {
             
             <div className="prose prose-lg max-w-none">
               <p>
-                Nuestra consultoría estratégica proporciona un análisis exhaustivo de tu 
-                organización, identificando oportunidades de mejora y desarrollando planes 
-                de acción personalizados.
+                En Praxia, abordamos la consultoría estratégica como un ejercicio de precisión y enfoque. 
+                Analizamos en profundidad tu organización para detectar oportunidades de mejora, identificar 
+                barreras al crecimiento y diseñar planes de acción específicos que generen impacto directo 
+                en tus resultados de negocio.
               </p>
               
               <h2>Servicios de Consultoría Estratégica</h2>
               <ul>
-                <li>Análisis de procesos actuales</li>
-                <li>Identificación de cuellos de botella y oportunidades</li>
+                <li>Análisis integral de procesos y estructuras actuales</li>
+                <li>Identificación de cuellos de botella, redundancias y riesgos</li>
                 <li>Benchmarking con mejores prácticas del sector</li>
-                <li>Desarrollo de planes de transformación</li>
-                <li>Acompañamiento en la implementación</li>
+                <li>Desarrollo de hojas de ruta para la transformación</li>
+                <li>Acompañamiento estratégico en la implementación</li>
               </ul>
               
               <h2>Metodología</h2>
               <p>
-                Trabajamos en estrecha colaboración con nuestros clientes, siguiendo una 
-                metodología probada que garantiza resultados tangibles y medibles.
+                Trabajamos en colaboración directa con los equipos clave de tu empresa. 
+                Nuestras intervenciones se basan en datos, con una metodología iterativa que 
+                garantiza ajustes ágiles, aprendizajes continuos y resultados medibles.
               </p>
               
               <h2>Beneficios</h2>
               <ul>
-                <li>Mayor claridad estratégica</li>
+                <li>Claridad estratégica y alineación organizacional</li>
                 <li>Identificación de oportunidades de innovación</li>
-                <li>Optimización de recursos</li>
+                <li>Optimización del uso de recursos y tiempos</li>
                 <li>Ventaja competitiva sostenible</li>
-                <li>Planes de acción concretos y medibles</li>
+                <li>Planes de acción concretos, aplicables y medibles</li>
               </ul>
             </div>
           </div>

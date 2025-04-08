@@ -32,33 +32,33 @@ const OptimizacionProcesos = () => {
             
             <div className="prose prose-lg max-w-none">
               <p>
-                Nuestro servicio de optimización de procesos se enfoca en identificar 
-                y eliminar ineficiencias, automatizar tareas repetitivas y mejorar el 
-                flujo de trabajo en toda la organización.
+                Nuestro servicio de optimización de procesos transforma la manera en que tu empresa opera. 
+                Detectamos ineficiencias, simplificamos flujos de trabajo, automatizamos tareas repetitivas 
+                y mejoramos la experiencia de tus equipos y clientes.
               </p>
               
               <h2>Nuestro Enfoque</h2>
               <ul>
-                <li>Mapeo detallado de procesos existentes</li>
-                <li>Análisis de valor de cada paso del proceso</li>
-                <li>Identificación de redundancias y cuellos de botella</li>
-                <li>Rediseño de procesos basado en datos</li>
-                <li>Implementación de herramientas de automatización</li>
+                <li>Mapeo detallado de procesos actuales</li>
+                <li>Evaluación de valor y criticidad por etapa</li>
+                <li>Identificación de cuellos de botella y redundancias</li>
+                <li>Rediseño de procesos con enfoque en eficiencia</li>
+                <li>Incorporación de automatizaciones y mejoras tecnológicas</li>
               </ul>
               
               <h2>Tecnologías Aplicadas</h2>
               <p>
-                Utilizamos herramientas avanzadas de análisis de datos, automatización 
-                y gestión de flujos de trabajo para optimizar cada aspecto de sus operaciones.
+                Aplicamos herramientas de análisis de datos, automatización y sistemas de gestión 
+                de tareas para lograr resultados ágiles, sostenibles y medibles.
               </p>
               
               <h2>Resultados Esperados</h2>
               <ul>
-                <li>Reducción de tiempos de ciclo</li>
-                <li>Disminución de costos operativos</li>
-                <li>Mayor satisfacción del cliente</li>
-                <li>Mejora en la calidad del producto o servicio</li>
-                <li>Incremento en la productividad del equipo</li>
+                <li>Reducción de tiempos operativos</li>
+                <li>Disminución de costos estructurales</li>
+                <li>Mejora en la calidad de entregables</li>
+                <li>Aumento de productividad y satisfacción interna</li>
+                <li>Mayor capacidad de adaptación organizacional</li>
               </ul>
             </div>
           </div>
