@@ -37,7 +37,7 @@ const BlogPost = () => {
       })
       .catch((error) => console.log('Error al compartir', error));
     } else {
-      // Fallback para navegadores que no soportan Web Share API
+      // Alternativa para navegadores que no soportan Web Share API
       navigator.clipboard.writeText(window.location.href);
       alert('Enlace copiado al portapapeles');
     }

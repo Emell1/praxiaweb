@@ -15,7 +15,7 @@ const AdminLogin = () => {
   const navigate = useNavigate();
   const { login, isAuthenticated } = useAuth();
 
-  // Si ya está autenticado, redirige al dashboard
+  // Si ya está autenticado, redirige al panel de control
   if (isAuthenticated) {
     navigate('/admin/dashboard');
     return null;

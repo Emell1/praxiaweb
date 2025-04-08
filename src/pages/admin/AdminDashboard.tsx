@@ -63,7 +63,7 @@ const AdminDashboard = () => {
           <CardHeader>
             <CardTitle className="text-2xl">Entradas del Blog</CardTitle>
             <CardDescription>
-              Gestiona las entradas de tu blog. Crea nuevas, edita o elimina existentes.
+              Gestiona las entradas de tu blog. Crea nuevas, edita o elimina las existentes.
             </CardDescription>
             <div className="pt-4">
               <Button asChild>

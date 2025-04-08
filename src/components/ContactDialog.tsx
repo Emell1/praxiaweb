@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -38,13 +39,13 @@ export const ContactDialog = () => {
           size="lg"
           className="bg-primary hover:bg-primary/90 text-white rounded-full"
         >
-          Agenda una consulta
+          Solicita una consulta
           <ArrowRight className="ml-2 h-4 w-4" />
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>Agenda una consulta</DialogTitle>
+          <DialogTitle>Solicita una consulta</DialogTitle>
         </DialogHeader>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
           <div>

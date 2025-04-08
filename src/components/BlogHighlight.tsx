@@ -11,7 +11,7 @@ const BlogHighlight = () => {
   const [latestPost, setLatestPost] = useState<BlogPostType | null>(null);
 
   useEffect(() => {
-    // Obtenemos todos los posts y ordenamos por fecha para tener el más reciente
+    // Obtenemos todos los artículos y ordenamos por fecha para tener el más reciente
     const posts = getAllBlogPosts();
     
     if (posts.length > 0) {
@@ -20,9 +20,9 @@ const BlogHighlight = () => {
       );
       
       setLatestPost(sorted[0]);
-      console.log("Latest post:", sorted[0]); // Para debugging
+      console.log("Último artículo:", sorted[0]); // Para depuración
     } else {
-      console.log("No posts found"); // Para debugging
+      console.log("No se encontraron artículos"); // Para depuración
     }
   }, []);
 

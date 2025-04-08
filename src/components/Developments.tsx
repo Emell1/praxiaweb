@@ -38,7 +38,7 @@ export const Developments = () => {
               </p>
             </div>
             <div className="md:w-1/2 bg-gray-200 rounded-lg aspect-video flex items-center justify-center">
-              <p className="text-gray-500">Video de OPTA</p>
+              <p className="text-gray-500">Vídeo de OPTA</p>
             </div>
           </div>
         </motion.div>

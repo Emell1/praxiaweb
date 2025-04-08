@@ -79,8 +79,8 @@ const DesarrolloProducto = () => {
                     {[
                       "Reducción del riesgo de fracaso del producto",
                       "Aceleración del tiempo de comercialización",
-                      "Mayor satisfacción y retención de usuarios",
-                      "Aumento de ingresos y participación de mercado",
+                      "Mayor satisfacción y fidelización de usuarios",
+                      "Aumento de ingresos y cuota de mercado",
                       "Capacidad de adaptación a cambios en el mercado"
                     ].map((benefit, i) => (
                       <li key={i} className="flex items-start">
@@ -141,7 +141,7 @@ const DesarrolloProducto = () => {
           {/* CTA final */}
           <div className="bg-secondary/10 p-8 rounded-lg">
             <h2 className="text-2xl font-bold mb-4">¿Quieres evolucionar tu producto?</h2>
-            <p className="mb-6">Agenda una evaluación inicial para identificar oportunidades de mejora y crecimiento.</p>
+            <p className="mb-6">Solicita una evaluación inicial para identificar oportunidades de mejora y crecimiento.</p>
             <Button className="flex items-center gap-2">
               Solicitar asesoría
               <ArrowRight className="h-4 w-4" />

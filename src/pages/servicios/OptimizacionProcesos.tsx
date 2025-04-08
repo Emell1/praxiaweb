@@ -37,7 +37,7 @@ const OptimizacionProcesos = () => {
             <div>
               <h1 className="text-3xl md:text-4xl font-bold">Optimización de Procesos</h1>
               <p className="text-xl mt-2 text-gray-600">
-                Mejoramos la eficiencia operativa y reducimos costos innecesarios.
+                Mejoramos la eficiencia operativa y reducimos costes innecesarios.
               </p>
             </div>
           </div>
@@ -77,10 +77,10 @@ const OptimizacionProcesos = () => {
                   <ul className="space-y-3">
                     {[
                       "Reducción de tiempos operativos",
-                      "Disminución de costos estructurales",
+                      "Disminución de costes estructurales",
                       "Mejora en la calidad de entregables",
                       "Aumento de productividad y satisfacción interna",
-                      "Mayor capacidad de adaptación organizacional"
+                      "Mayor capacidad de adaptación organizativa"
                     ].map((result, i) => (
                       <li key={i} className="flex items-start">
                         <Check className="h-5 w-5 text-primary mr-2 mt-1 flex-shrink-0" />
@@ -144,7 +144,7 @@ const OptimizacionProcesos = () => {
           {/* CTA final */}
           <div className="bg-secondary/10 p-8 rounded-lg">
             <h2 className="text-2xl font-bold mb-4">¿Buscas optimizar tus operaciones?</h2>
-            <p className="mb-6">Contáctanos para una evaluación inicial de tus procesos actuales y descubre oportunidades de mejora.</p>
+            <p className="mb-6">Contacta con nosotros para una evaluación inicial de tus procesos actuales y descubre oportunidades de mejora.</p>
             <Button className="flex items-center gap-2">
               Solicitar evaluación
               <ArrowRight className="h-4 w-4" />

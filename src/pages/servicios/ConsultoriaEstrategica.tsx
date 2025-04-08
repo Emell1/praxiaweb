@@ -118,7 +118,7 @@ const ConsultoriaEstrategica = () => {
                 },
                 {
                   title: "Acompañamiento estratégico",
-                  description: "Guía experta durante la implementación para asegurar resultados óptimos."
+                  description: "Orientación experta durante la implementación para asegurar resultados óptimos."
                 }
               ].map((service, i) => (
                 <Card key={i}>
@@ -134,7 +134,7 @@ const ConsultoriaEstrategica = () => {
           {/* CTA final */}
           <div className="bg-secondary/10 p-8 rounded-lg">
             <h2 className="text-2xl font-bold mb-4">¿Listo para transformar tus procesos?</h2>
-            <p className="mb-6">Agenda una llamada con nuestro equipo para evaluar tus necesidades y diseñar una solución personalizada.</p>
+            <p className="mb-6">Solicita una llamada con nuestro equipo para evaluar tus necesidades y diseñar una solución personalizada.</p>
             <Button className="flex items-center gap-2">
               Solicitar consultoría
               <ArrowRight className="h-4 w-4" />
