@@ -40,7 +40,7 @@ const NavBar = () => {
           </DropdownMenu>
           
           <Link to="/blog" className="text-foreground hover:text-blue-600">Blog</Link>
-          <Link to="/admin" className="text-foreground hover:text-blue-600">Admin</Link>
+          <Link to="/contacto" className="text-foreground hover:text-blue-600">Contacto</Link>
         </div>
       </div>
     </nav>

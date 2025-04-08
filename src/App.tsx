@@ -12,6 +12,7 @@ import AdminBlogEditor from './pages/admin/AdminBlogEditor';
 import ProtectedRoute from './components/ProtectedRoute';
 import { AuthProvider } from './contexts/AuthContext';
 import { Toaster } from './components/ui/toaster';
+import ContactPage from './pages/ContactPage';
 import "./App.css";
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Route path="/servicios/desarrollo-producto" element={<DesarrolloProducto />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
+          <Route path="/contacto" element={<ContactPage />} />
           <Route path="/admin" element={<AdminLogin />} />
           <Route path="/admin/dashboard" element={
             <ProtectedRoute>
