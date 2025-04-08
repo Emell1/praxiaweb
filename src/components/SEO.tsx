@@ -6,16 +6,21 @@ interface SEOProps {
   description: string;
   keywords?: string;
   ogImage?: string;
+  canonical?: string;
+  language?: string;
 }
 
 const SEO = ({ 
   title, 
   description, 
   keywords = "praxia, consultoría, procesos, optimización", 
-  ogImage = "/og-image.jpg" 
+  ogImage = "/og-image.jpg",
+  canonical,
+  language = "es"
 }: SEOProps) => {
   return (
     <Helmet>
+      <html lang={language} />
       <title>{title}</title>
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
@@ -31,6 +36,9 @@ const SEO = ({
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
+      
+      {/* Canonical URL */}
+      {canonical && <link rel="canonical" href={canonical} />}
     </Helmet>
   );
 };

@@ -12,6 +12,7 @@ const ContactPage = () => {
         title="Contacto | Praxia"
         description="Ponte en contacto con nuestro equipo de expertos en consultoría estratégica, optimización de procesos y desarrollo de productos."
         keywords="contacto praxia, consultoría estratégica, formulario de contacto, solicitud de servicios"
+        canonical="https://praxia.site/contacto"
       />
       <NavBar />
       <div className="container mx-auto py-12 px-4">
