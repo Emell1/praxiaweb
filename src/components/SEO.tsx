@@ -10,7 +10,7 @@ interface SEOProps {
   language?: string;
 }
 
-const SEO = ({ 
+export const SEO = ({ 
   title, 
   description, 
   keywords = "praxia, consultoría, procesos, optimización", 
