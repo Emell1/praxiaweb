@@ -1,6 +1,5 @@
-
 import NavBar from '../components/NavBar';
-import { Hero } from '../components/Hero';
+import { Hero } from '../components/Hero'; // Update this line
 import Services from '../components/Services';
 import Developments from '../components/Developments';
 import CTA from '../components/CTA';
@@ -17,7 +16,7 @@ const Index = () => {
         keywords="praxia, consultoría estratégica, optimización de procesos, desarrollo de productos, transformación digital, innovación empresarial"
       />
       <NavBar />
-      <Hero />
+      <Hero />  {/* This should work now */}
       <Services />
       <Developments />
       <BlogHighlight />
