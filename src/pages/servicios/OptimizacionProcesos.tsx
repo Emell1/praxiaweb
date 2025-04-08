@@ -169,10 +169,12 @@ const OptimizacionProcesos = () => {
           <div className="bg-secondary/10 p-8 rounded-lg">
             <h2 className="text-2xl font-bold mb-4">¿Buscas optimizar tus operaciones?</h2>
             <p className="mb-6">Contacta con nosotros para una evaluación inicial de tus procesos actuales y descubre oportunidades de mejora.</p>
-            <Button className="flex items-center gap-2">
-              Solicitar evaluación
-              <ArrowRight className="h-4 w-4" />
-            </Button>
+            <Link to="/contacto">
+              <Button className="flex items-center gap-2">
+                Solicitar evaluación
+                <ArrowRight className="h-4 w-4" />
+              </Button>
+            </Link>
           </div>
         </motion.div>
       </main>

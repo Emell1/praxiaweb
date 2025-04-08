@@ -167,10 +167,12 @@ const DesarrolloProducto = () => {
           <div className="bg-secondary/10 p-8 rounded-lg">
             <h2 className="text-2xl font-bold mb-4">¿Quieres evolucionar tu producto?</h2>
             <p className="mb-6">Solicita una evaluación inicial para identificar oportunidades de mejora y crecimiento.</p>
-            <Button className="flex items-center gap-2">
-              Solicitar asesoría
-              <ArrowRight className="h-4 w-4" />
-            </Button>
+            <Link to="/contacto">
+              <Button className="flex items-center gap-2">
+                Solicitar asesoría
+                <ArrowRight className="h-4 w-4" />
+              </Button>
+            </Link>
           </div>
         </motion.div>
       </main>
