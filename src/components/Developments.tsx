@@ -1,7 +1,7 @@
 
 import { motion } from "framer-motion";
 
-export const Developments = () => {
+const Developments = () => {
   return (
     <section className="section-padding bg-background">
       <div className="max-w-6xl mx-auto">
@@ -46,3 +46,5 @@ export const Developments = () => {
     </section>
   );
 };
+
+export default Developments;

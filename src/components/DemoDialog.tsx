@@ -13,7 +13,7 @@ import { useForm } from "react-hook-form";
 import { useToast } from "@/components/ui/use-toast";
 import { ArrowRight } from "lucide-react";
 
-export const DemoDialog = () => {
+const DemoDialog = () => {
   const { toast } = useToast();
   const form = useForm({
     defaultValues: {
@@ -90,3 +90,5 @@ export const DemoDialog = () => {
     </Dialog>
   );
 };
+
+export default DemoDialog;

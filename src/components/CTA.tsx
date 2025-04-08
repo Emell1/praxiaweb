@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ContactDialog } from "./ContactDialog";
 import { DemoDialog } from "./DemoDialog";
 
-export const CTA = () => {
+const CTA = () => {
   return (
     <section className="section-padding relative overflow-hidden">
       <div className="absolute inset-0 z-0">
@@ -71,3 +71,5 @@ export const CTA = () => {
     </section>
   );
 };
+
+export default CTA;

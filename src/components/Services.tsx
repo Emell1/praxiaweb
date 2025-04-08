@@ -30,7 +30,7 @@ const services = [
   },
 ];
 
-export const Services = () => {
+const Services = () => {
   return (
     <section className="section-padding bg-accent">
       <div className="max-w-6xl mx-auto">
@@ -83,3 +83,5 @@ export const Services = () => {
     </section>
   );
 };
+
+export default Services;

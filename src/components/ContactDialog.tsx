@@ -7,7 +7,7 @@ interface ContactDialogProps {
   buttonText?: string;
 }
 
-export const ContactDialog = ({ buttonText = "Solicita una consulta" }: ContactDialogProps) => {
+const ContactDialog = ({ buttonText = "Solicita una consulta" }: ContactDialogProps) => {
   return (
     <Link to="/contacto">
       <Button
@@ -21,3 +21,5 @@ export const ContactDialog = ({ buttonText = "Solicita una consulta" }: ContactD
     </Link>
   );
 };
+
+export default ContactDialog;

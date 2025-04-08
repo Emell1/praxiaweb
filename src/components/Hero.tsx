@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { ContactDialog } from "./ContactDialog";
 
-export const Hero = () => {
+const Hero = () => {
   return (
     <section className="section-padding min-h-[90vh] flex items-center relative overflow-hidden">
       <div className="absolute inset-0 z-0">
@@ -36,3 +36,5 @@ export const Hero = () => {
     </section>
   );
 };
+
+export default Hero;

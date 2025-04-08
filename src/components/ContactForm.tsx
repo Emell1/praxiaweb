@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
 
-export const ContactForm = () => {
+const ContactForm = () => {
   const { toast } = useToast();
   const form = useForm({
     defaultValues: {
@@ -77,3 +77,5 @@ export const ContactForm = () => {
     </form>
   );
 };
+
+export default ContactForm;

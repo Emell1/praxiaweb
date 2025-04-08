@@ -1,11 +1,11 @@
 
 import NavBar from '../components/NavBar';
-import { Hero } from '../components/Hero';
-import { Services } from '../components/Services';
-import { Developments } from '../components/Developments';
-import { CTA } from '../components/CTA';
+import Hero from '../components/Hero';
+import Services from '../components/Services';
+import Developments from '../components/Developments';
+import CTA from '../components/CTA';
 import BlogHighlight from '../components/BlogHighlight';
-import { ContactDialog } from '../components/ContactDialog';
+import ContactDialog from '../components/ContactDialog';
 import SEO from '@/components/SEO';
 
 const Index = () => {
