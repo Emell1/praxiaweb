@@ -55,19 +55,43 @@ const ConsultoriaEstrategica = () => {
             {/* Columna principal - Descripción */}
             <div className="md:col-span-2">
               <div className="prose prose-lg max-w-none">
-                <p>
+                <p className="text-lg leading-relaxed mb-8">
                   En Praxia, abordamos la consultoría estratégica como un ejercicio de precisión y enfoque. 
                   Analizamos en profundidad tu organización para detectar oportunidades de mejora, identificar 
                   barreras al crecimiento y diseñar planes de acción específicos que generen impacto directo 
                   en tus resultados de negocio.
                 </p>
                 
-                <h2>Metodología</h2>
-                <p>
+                <h2 className="text-2xl font-semibold mt-10 mb-6 text-primary">Metodología</h2>
+                <p className="text-lg leading-relaxed mb-6">
                   Trabajamos en colaboración directa con los equipos clave de tu empresa. 
                   Nuestras intervenciones se basan en datos, con una metodología iterativa que 
                   garantiza ajustes ágiles, aprendizajes continuos y resultados medibles.
                 </p>
+
+                <h3 className="text-xl font-medium mt-10 mb-4 text-secondary-DEFAULT">Enfoque colaborativo</h3>
+                <p className="text-base leading-relaxed mb-8">
+                  Creemos firmemente que las mejores soluciones surgen cuando combinamos nuestra 
+                  experiencia con el conocimiento interno de tu equipo. No imponemos fórmulas 
+                  genéricas, sino que construimos estrategias personalizadas que responden 
+                  a tus desafíos específicos y aprovechan tus fortalezas distintivas.
+                </p>
+
+                <h3 className="text-xl font-medium mt-10 mb-4 text-secondary-DEFAULT">Proceso de consultoría</h3>
+                <ul className="space-y-4 mb-8 pl-6">
+                  <li className="text-base leading-relaxed">
+                    <span className="font-medium">Diagnóstico inicial</span>: Evaluación exhaustiva 
+                    de la situación actual y definición de objetivos claros.
+                  </li>
+                  <li className="text-base leading-relaxed">
+                    <span className="font-medium">Análisis estratégico</span>: Estudio del mercado, 
+                    competencia y tendencias relevantes para tu sector.
+                  </li>
+                  <li className="text-base leading-relaxed">
+                    <span className="font-medium">Desarrollo de estrategia</span>: Creación de planes 
+                    de acción con metas, responsables y plazos definidos.
+                  </li>
+                </ul>
               </div>
             </div>
 

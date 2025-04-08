@@ -55,17 +55,41 @@ const OptimizacionProcesos = () => {
             {/* Columna principal - Descripción */}
             <div className="md:col-span-2">
               <div className="prose prose-lg max-w-none">
-                <p>
+                <p className="text-lg leading-relaxed mb-8">
                   Nuestro servicio de optimización de procesos transforma la manera en que tu empresa opera. 
                   Detectamos ineficiencias, simplificamos flujos de trabajo, automatizamos tareas repetitivas 
                   y mejoramos la experiencia de tus equipos y clientes.
                 </p>
                 
-                <h2>Tecnologías Aplicadas</h2>
-                <p>
+                <h2 className="text-2xl font-semibold mt-10 mb-6 text-primary">Tecnologías Aplicadas</h2>
+                <p className="text-lg leading-relaxed mb-6">
                   Aplicamos herramientas de análisis de datos, automatización y sistemas de gestión 
                   de tareas para lograr resultados ágiles, sostenibles y medibles.
                 </p>
+
+                <h3 className="text-xl font-medium mt-10 mb-4 text-secondary-DEFAULT">Optimización integral</h3>
+                <p className="text-base leading-relaxed mb-8">
+                  Nuestra visión holística nos permite identificar la interconexión entre diferentes 
+                  procesos dentro de tu organización. No nos limitamos a optimizar elementos aislados, 
+                  sino que consideramos el ecosistema completo para asegurar que los cambios generan 
+                  impactos positivos en cascada a través de toda la empresa.
+                </p>
+
+                <h3 className="text-xl font-medium mt-10 mb-4 text-secondary-DEFAULT">Áreas de impacto</h3>
+                <ul className="space-y-4 mb-8 pl-6">
+                  <li className="text-base leading-relaxed">
+                    <span className="font-medium">Operaciones internas</span>: Mejoramos la eficiencia en 
+                    tareas cotidianas, reduciendo tiempos de ejecución y eliminando redundancias.
+                  </li>
+                  <li className="text-base leading-relaxed">
+                    <span className="font-medium">Experiencia del cliente</span>: Optimizamos los puntos 
+                    de contacto con clientes para crear interacciones más fluidas y satisfactorias.
+                  </li>
+                  <li className="text-base leading-relaxed">
+                    <span className="font-medium">Gestión de recursos</span>: Implementamos sistemas 
+                    para el uso óptimo de recursos humanos, tecnológicos y materiales.
+                  </li>
+                </ul>
               </div>
             </div>
 
