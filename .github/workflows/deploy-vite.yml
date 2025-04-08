@@ -34,7 +34,7 @@ jobs:
         run: npm ci
       
       - name: Update Browserslist database
-        run: npx update-browserslist-db@latest --force
+        run: npm update caniuse-lite && npx update-browserslist-db@latest --force 
       
       - name: Build
         run: npm run build
