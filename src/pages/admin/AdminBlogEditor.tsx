@@ -30,6 +30,7 @@ const AdminBlogEditor = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [tagsInput, setTagsInput] = useState('');
   const contentTextareaRef = useRef<HTMLTextAreaElement>(null);
+  const [activeTab, setActiveTab] = useState('editor');
 
   const isEdit = !!id;
 
@@ -100,6 +101,7 @@ const AdminBlogEditor = () => {
         description: 'Ha ocurrido un error al guardar la entrada del blog.',
         variant: 'destructive'
       });
+      console.error('Error guardando el post:', error);
     } finally {
       setIsLoading(false);
     }
@@ -223,7 +225,12 @@ const AdminBlogEditor = () => {
                 <Label htmlFor="featured">Destacar en la página principal</Label>
               </div>
 
-              <Tabs defaultValue="editor" className="w-full">
+              <Tabs 
+                defaultValue="editor" 
+                value={activeTab}
+                onValueChange={setActiveTab}
+                className="w-full"
+              >
                 <TabsList className="grid w-full grid-cols-2">
                   <TabsTrigger value="editor">Editor</TabsTrigger>
                   <TabsTrigger value="preview">Vista previa</TabsTrigger>
@@ -275,7 +282,7 @@ const AdminBlogEditor = () => {
                 </TabsContent>
                 <TabsContent value="preview">
                   <div className="border rounded-md p-4 min-h-[300px] prose max-w-none">
-                    <ReactMarkdown>{formData.content}</ReactMarkdown>
+                    <ReactMarkdown>{formData.content || '# Vista previa\n\nAquí se mostrará el contenido con formato.'}</ReactMarkdown>
                   </div>
                 </TabsContent>
               </Tabs>
@@ -285,6 +292,14 @@ const AdminBlogEditor = () => {
                 Cancelar
               </Button>
               <div className="space-x-2">
+                <Button 
+                  type="button" 
+                  variant="outline" 
+                  onClick={() => setActiveTab('preview')}
+                >
+                  <Eye className="mr-2 h-4 w-4" />
+                  Vista previa
+                </Button>
                 <Button type="submit" disabled={isLoading}>
                   <Save className="mr-2 h-4 w-4" />
                   {isLoading ? 'Guardando...' : 'Guardar'}

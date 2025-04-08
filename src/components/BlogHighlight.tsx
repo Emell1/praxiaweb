@@ -13,12 +13,16 @@ const BlogHighlight = () => {
   useEffect(() => {
     // Obtenemos todos los posts y ordenamos por fecha para tener el más reciente
     const posts = getAllBlogPosts();
-    const sorted = [...posts].sort((a, b) => 
-      new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
-    );
     
-    if (sorted.length > 0) {
+    if (posts.length > 0) {
+      const sorted = [...posts].sort((a, b) => 
+        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+      );
+      
       setLatestPost(sorted[0]);
+      console.log("Latest post:", sorted[0]); // Para debugging
+    } else {
+      console.log("No posts found"); // Para debugging
     }
   }, []);
 

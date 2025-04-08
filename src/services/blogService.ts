@@ -78,7 +78,7 @@ export const createBlogPost = (postData: BlogPostFormData): BlogPostType => {
   const newPost: BlogPostType = {
     id: nanoid(),
     slug: generateSlug(postData.title),
-    publishedAt: postData.publishedAt || new Date().toISOString(),
+    publishedAt: new Date().toISOString(),
     title: postData.title,
     excerpt: postData.excerpt,
     content: postData.content,
