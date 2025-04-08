@@ -28,7 +28,7 @@ export const Hero = () => {
             Transformamos procesos en{" "}
             <span className="text-secondary-DEFAULT">ventajas competitivas</span>
           </h1>
-          <p className="body-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+          <p className="body-lg text-foreground/70 mb-8 max-w-2xl mx-auto">
             Detectamos ineficiencias, rediseñamos flujos y potenciamos resultados 
             para escalar tu negocio con precisión.
           </p>

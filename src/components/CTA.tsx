@@ -23,7 +23,7 @@ export const CTA = () => {
           <h2 className="heading-lg mb-6">
             ¿Quieres impulsar tu negocio desde sus procesos?
           </h2>
-          <p className="body-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+          <p className="body-lg text-foreground/70 mb-8 max-w-2xl mx-auto">
             Solicita una conversación con nuestro equipo y descubre cómo mejorar, escalar 
             y automatizar tus operaciones con precisión.
           </p>
@@ -36,7 +36,7 @@ export const CTA = () => {
           </Button>
 
           <div className="mt-8">
-            <p className="body-lg text-gray-600 mb-4 max-w-2xl mx-auto">
+            <p className="body-lg text-foreground/70 mb-4 max-w-2xl mx-auto">
               ¿Quieres conocer OPTA en acción?
             </p>
             <Button
@@ -57,7 +57,7 @@ export const CTA = () => {
           href="https://linkedin.com/company/praxia" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="text-gray-600 hover:text-primary transition-colors"
+          className="text-foreground/70 hover:text-primary transition-colors"
           aria-label="LinkedIn"
         >
           <Linkedin size={24} />
@@ -66,14 +66,14 @@ export const CTA = () => {
           href="https://wa.me/1234567890" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="text-gray-600 hover:text-primary transition-colors"
+          className="text-foreground/70 hover:text-primary transition-colors"
           aria-label="WhatsApp"
         >
           <MessageCircle size={24} />
         </a>
         <a 
           href="mailto:info@praxia.com" 
-          className="text-gray-600 hover:text-primary transition-colors"
+          className="text-foreground/70 hover:text-primary transition-colors"
           aria-label="Correo electrónico"
         >
           <Mail size={24} />
