@@ -2,8 +2,8 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Linkedin, Mail, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { ContactDialog } from "./ContactDialog";
-import { DemoDialog } from "./DemoDialog";
+import ContactDialog from "./ContactDialog";
+import DemoDialog from "./DemoDialog";
 
 const CTA = () => {
   return (

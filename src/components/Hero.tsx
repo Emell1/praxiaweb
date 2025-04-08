@@ -1,6 +1,6 @@
 
 import { motion } from "framer-motion";
-import { ContactDialog } from "./ContactDialog";
+import ContactDialog from "./ContactDialog";
 
 const Hero = () => {
   return (
