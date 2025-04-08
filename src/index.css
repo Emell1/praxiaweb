@@ -7,11 +7,11 @@
 
 @layer base {
   :root {
-    --background: 214 89% 91%; /* #D3E8FE */
-    --foreground: 258 82% 3%; /* #03010C */
+    --background: 0 0% 100%; /* White */
+    --foreground: 222.2 47.4% 11.2%; /* Dark gray for text */
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 258 82% 3%; /* #03010C */
+    --ring: 222.2 47.4% 11.2%; /* Match foreground */
   }
 
   * {

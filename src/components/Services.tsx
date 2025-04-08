@@ -42,7 +42,7 @@ export const Services = () => {
           className="text-center mb-16"
         >
           <h2 className="heading-lg mb-4">Nuestros Servicios</h2>
-          <p className="body-base text-foreground/70 max-w-2xl mx-auto">
+          <p className="body-base text-gray-600 max-w-2xl mx-auto">
             Soluciones personalizadas para optimizar cada aspecto de tu producto
           </p>
         </motion.div>
@@ -67,7 +67,7 @@ export const Services = () => {
               <div className="relative z-10">
                 <service.icon className="h-12 w-12 text-secondary-DEFAULT mb-6" />
                 <h3 className="heading-md mb-4">{service.title}</h3>
-                <p className="text-foreground/70 mb-6">{service.description}</p>
+                <p className="text-gray-600 mb-6">{service.description}</p>
                 <Link
                   to={service.path}
                   className="inline-flex items-center text-primary hover:text-secondary-DEFAULT transition-colors"
