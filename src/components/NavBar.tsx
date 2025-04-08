@@ -1,5 +1,12 @@
 
 import { Link } from 'react-router-dom';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { ChevronDown } from "lucide-react";
 
 const NavBar = () => {
   return (
@@ -8,7 +15,30 @@ const NavBar = () => {
         <Link to="/" className="font-bold text-xl">Praxia</Link>
         <div className="space-x-6">
           <Link to="/" className="text-gray-700 hover:text-blue-600">Inicio</Link>
-          <Link to="/servicios/consultoria-estrategica" className="text-gray-700 hover:text-blue-600">Servicios</Link>
+          
+          <DropdownMenu>
+            <DropdownMenuTrigger className="text-gray-700 hover:text-blue-600 inline-flex items-center">
+              Servicios <ChevronDown className="ml-1 h-4 w-4" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="bg-white">
+              <DropdownMenuItem asChild>
+                <Link to="/servicios/consultoria-estrategica" className="w-full">
+                  Consultoría Estratégica
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/servicios/optimizacion-procesos" className="w-full">
+                  Optimización de Procesos
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/servicios/desarrollo-producto" className="w-full">
+                  Desarrollo de Producto
+                </Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+          
           <Link to="/blog" className="text-gray-700 hover:text-blue-600">Blog</Link>
           <Link to="/admin" className="text-gray-700 hover:text-blue-600">Admin</Link>
         </div>
