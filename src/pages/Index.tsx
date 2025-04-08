@@ -1,5 +1,5 @@
 import NavBar from '../components/NavBar';
-import { Hero } from '../components/Hero'; // Update this line
+import  Hero  from '../components/Hero'; // Update this line
 import Services from '../components/Services';
 import Developments from '../components/Developments';
 import CTA from '../components/CTA';
