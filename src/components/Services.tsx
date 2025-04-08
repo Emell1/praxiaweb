@@ -8,7 +8,7 @@ const services = [
     icon: Users,
     title: "Consultoría Estratégica",
     description:
-      "Análisis profundo y recomendaciones para optimizar los procesos de tu producto.",
+      "Diagnóstico profundo y diseño de soluciones a medida para mejorar procesos críticos de negocio.",
     image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
     path: "/servicios/consultoria-estrategica"
   },
@@ -16,15 +16,15 @@ const services = [
     icon: Workflow,
     title: "Optimización de Procesos",
     description:
-      "Mejoramos la eficiencia operativa y reducimos costos innecesarios.",
+      "Identificamos cuellos de botella, automatizamos tareas clave y rediseñamos flujos para maximizar la eficiencia.",
     image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
     path: "/servicios/optimizacion-procesos"
   },
   {
     icon: Target,
-    title: "Desarrollo de Producto",
+    title: "Diseño y Desarrollo de Soluciones Internas",
     description:
-      "Estrategias para evolucionar tu producto según las necesidades del mercado.",
+      "Te ayudamos a desarrollar herramientas internas, dashboards y sistemas a medida que acompañen la mejora continua y la toma de decisiones.",
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
     path: "/servicios/desarrollo-producto"
   },

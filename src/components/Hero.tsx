@@ -22,15 +22,15 @@ export const Hero = () => {
           className="text-center"
         >
           <span className="inline-block px-4 py-2 rounded-full bg-accent text-sm font-medium mb-6">
-            Praxia | Consultoría Estratégica
+            Praxia | Optimización Estratégica de Procesos
           </span>
           <h1 className="heading-xl mb-6 max-w-4xl mx-auto">
             Transformamos procesos en{" "}
-            <span className="text-secondary-DEFAULT">resultados medibles</span>
+            <span className="text-secondary-DEFAULT">ventajas competitivas</span>
           </h1>
           <p className="body-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-            Optimizamos los procesos de tu producto para maximizar su eficiencia
-            y potenciar su crecimiento en el mercado.
+            Detectamos ineficiencias, rediseñamos flujos y potenciamos resultados 
+            para escalar tu negocio con precisión.
           </p>
           <ContactDialog />
         </motion.div>

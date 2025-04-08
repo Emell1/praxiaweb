@@ -21,11 +21,11 @@ export const CTA = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="heading-lg mb-6">
-            ¿Listo para transformar tu producto?
+            ¿Querés impulsar tu negocio desde sus procesos?
           </h2>
           <p className="body-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-            Descubre cómo podemos ayudarte a optimizar tus procesos y alcanzar
-            tus objetivos de negocio.
+            Agenda una conversación con nuestro equipo y descubrí cómo mejorar, escalar 
+            y automatizar tus operaciones con precisión.
           </p>
           <Button
             size="lg"
@@ -37,7 +37,7 @@ export const CTA = () => {
 
           <div className="mt-8">
             <p className="body-lg text-gray-600 mb-4 max-w-2xl mx-auto">
-              ¿Prefieres conocer más sobre nuestras soluciones?
+              ¿Querés conocer OPTA en acción?
             </p>
             <Button
               variant="outline"
