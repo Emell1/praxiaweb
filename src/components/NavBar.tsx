@@ -43,7 +43,7 @@ const NavBar = () => {
         </DropdownMenuContent>
       </DropdownMenu>
       
-      <Link to="/blog" className="text-foreground hover:text-blue-600">Blog</Link>
+      {/* <Link to="/blog" className="text-foreground hover:text-blue-600">Blog</Link> */}
       <Link to="/contacto" className="text-foreground hover:text-blue-600">Contacto</Link>
     </>
   );
