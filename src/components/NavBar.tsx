@@ -80,9 +80,9 @@ const NavBar = () => {
                   </Link>
                 </div>
                 
-                <Link to="/blog" className="text-foreground hover:text-blue-600 text-lg" onClick={() => setIsOpen(false)}>
+                {/* <Link to="/blog" className="text-foreground hover:text-blue-600 text-lg" onClick={() => setIsOpen(false)}>
                   Blog
-                </Link>
+                </Link> */}
                 <Link to="/contacto" className="text-foreground hover:text-blue-600 text-lg" onClick={() => setIsOpen(false)}>
                   Contacto
                 </Link>

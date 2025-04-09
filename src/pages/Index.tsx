@@ -4,7 +4,7 @@ import Hero from '../components/Hero';
 import Services from '../components/Services';
 import Developments from '../components/Developments';
 import CTA from '../components/CTA';
-import BlogHighlight from '../components/BlogHighlight';
+// import BlogHighlight from '../components/BlogHighlight';
 import SEO from '@/components/SEO';
 
 const Index = () => {
@@ -19,7 +19,7 @@ const Index = () => {
       <Hero />
       <Services />
       <Developments />
-      <BlogHighlight />
+      {/* <BlogHighlight /> */}
       <CTA />
     </div>
   );
