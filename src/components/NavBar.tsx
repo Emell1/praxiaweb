@@ -37,7 +37,7 @@ const NavBar = () => {
           </DropdownMenuItem>
           <DropdownMenuItem asChild>
             <Link to="/servicios/desarrollo-producto" className="w-full">
-              Desarrollo de Producto
+              Soluciones
             </Link>
           </DropdownMenuItem>
         </DropdownMenuContent>
@@ -76,7 +76,7 @@ const NavBar = () => {
                     Optimización de Procesos
                   </Link>
                   <Link to="/servicios/desarrollo-producto" className="text-foreground hover:text-blue-600 pl-2" onClick={() => setIsOpen(false)}>
-                    Desarrollo de Producto
+                    Soluciones
                   </Link>
                 </div>
                 

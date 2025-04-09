@@ -12,9 +12,9 @@ const DesarrolloProducto = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO 
-        title="Desarrollo de Producto | Praxia"
-        description="Estrategias para evolucionar tu producto según las necesidades del mercado con enfoque en metodologías ágiles y diseño centrado en el usuario."
-        keywords="desarrollo de producto, diseño centrado en usuario, metodologías ágiles, innovación de producto, estrategia de producto, diseño de experiencia"
+        title="Diseño y Desarrollo de Soluciones Internas | Praxia"
+        description="Herramientas a medida para potenciar la eficiencia, el orden y la toma de decisiones en tu organización."
+        keywords="soluciones internas, herramientas internas, sistemas a medida, automatización, digitalización, eficiencia operativa"
       />
       
       {/* Navbar compartido */}
@@ -33,9 +33,9 @@ const DesarrolloProducto = () => {
               <Target className="h-12 w-12 text-secondary-DEFAULT" />
             </div>
             <div>
-              <h1 className="text-3xl md:text-4xl font-bold">Desarrollo de Producto</h1>
+              <h1 className="text-3xl md:text-4xl font-bold">Diseño y Desarrollo de Soluciones Internas</h1>
               <p className="text-xl mt-2 text-gray-600">
-                Estrategias para evolucionar tu producto según las necesidades del mercado.
+                Herramientas a medida para potenciar la eficiencia, el orden y la toma de decisiones.
               </p>
             </div>
           </div>
@@ -44,7 +44,7 @@ const DesarrolloProducto = () => {
           <div className="w-full h-64 md:h-96 bg-gray-100 mb-12 rounded-lg overflow-hidden">
             <img 
               src="https://images.unsplash.com/photo-1531297484001-80022131f5a1" 
-              alt="Desarrollo de Producto" 
+              alt="Diseño y Desarrollo de Soluciones Internas" 
               className="w-full h-full object-cover"
             />
           </div>
@@ -185,7 +185,7 @@ const DesarrolloProducto = () => {
               <Link to="/" className="text-sm text-primary hover:underline">Inicio</Link>
               <Link to="/servicios/consultoria-estrategica" className="text-sm text-primary hover:underline">Consultoría</Link>
               <Link to="/servicios/optimizacion-procesos" className="text-sm text-primary hover:underline">Procesos</Link>
-              <Link to="/servicios/desarrollo-producto" className="text-sm text-primary hover:underline">Producto</Link>
+              <Link to="/servicios/desarrollo-producto" className="text-sm text-primary hover:underline">Soluciones</Link>
             </div>
           </div>
         </div>
