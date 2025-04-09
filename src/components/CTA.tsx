@@ -1,7 +1,7 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import ContactDialog from "./ContactDialog";
+import { Linkedin, Mail, MessageCircle } from "lucide-react";
 import DemoDialog from "./DemoDialog";
 
 const CTA = () => {
@@ -28,7 +28,6 @@ const CTA = () => {
             Solicita una conversación con nuestro equipo y descubre cómo mejorar, escalar 
             y automatizar tus operaciones con precisión.
           </p>
-          <ContactDialog buttonText="Contactar ahora" />
 
           <div className="mt-8">
             <p className="body-lg text-gray-600 mb-4 max-w-2xl mx-auto">
@@ -37,6 +36,35 @@ const CTA = () => {
             <DemoDialog />
           </div>
         </motion.div>
+      </div>
+
+      {/* Social media links */}
+      <div className="absolute bottom-6 right-6 flex items-center gap-4">
+        <a 
+          href="https://linkedin.com/company/praxia" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-gray-600 hover:text-primary transition-colors"
+          aria-label="LinkedIn"
+        >
+          <Linkedin size={24} />
+        </a>
+        <a 
+          href="https://wa.me/1234567890" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-gray-600 hover:text-primary transition-colors"
+          aria-label="WhatsApp"
+        >
+          <MessageCircle size={24} />
+        </a>
+        <a 
+          href="mailto:info@praxia.com" 
+          className="text-gray-600 hover:text-primary transition-colors"
+          aria-label="Correo electrónico"
+        >
+          <Mail size={24} />
+        </a>
       </div>
     </section>
   );
