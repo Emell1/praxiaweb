@@ -43,7 +43,7 @@ const Services = () => {
         >
           <h2 className="heading-lg mb-4">Nuestros Servicios</h2>
           <p className="body-base text-gray-600 max-w-2xl mx-auto">
-            Soluciones personalizadas para optimizar cada aspecto de tu producto
+            Soluciones personalizadas para optimizar cada aspecto de tu negocio
           </p>
         </motion.div>
 
