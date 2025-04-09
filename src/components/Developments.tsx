@@ -37,8 +37,15 @@ const Developments = () => {
                 facilitan la toma de decisiones.
               </p>
             </div>
-            <div className="md:w-1/2 bg-background/50 rounded-lg aspect-video flex items-center justify-center">
-              <p className="text-foreground/60">Vídeo de OPTA</p>
+            <div className="md:w-1/2 rounded-lg overflow-hidden aspect-video">
+              <iframe 
+                src="https://ejemplo-opta-landing.com" 
+                title="OPTA Landing Page" 
+                className="w-full h-full border-0"
+                sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
           </div>
         </motion.div>
