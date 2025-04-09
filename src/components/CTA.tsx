@@ -1,6 +1,5 @@
 
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
 import { Linkedin, Mail, MessageCircle } from "lucide-react";
 import DemoDialog from "./DemoDialog";
 
