@@ -67,28 +67,49 @@ const ContactForm = () => {
 
     setIsSubmitting(true);
 
+    toast({
+      title: "Enviando mensaje...",
+      description: "Espera un momento mientras procesamos tu solicitud.",
+    });
+
+    // Convertir los datos en formato x-www-form-urlencoded
+    const formBody = new URLSearchParams();
+    formBody.append('name', name);
+    formBody.append('email', email);
+    formBody.append('subject', `Consulta desde Praxia Web: ${subject}`);
+    formBody.append('message', message);
+    formBody.append('user', 'PraxiaWeb');
+    formBody.append('api_key', 'xd0in19nkDcNJ9U2');
+
     // Simulate form submission
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      const response = await fetch('https://services.darideveloper.com/contact-form/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: formBody.toString(),
+    });
+
+    if (response.ok) {
       toast({
-        title: 'Mensaje enviado',
-        description: 'Gracias por contactarnos. Nos pondremos en contacto contigo pronto.',
+        title: "Mensaje enviado",
+        description: "Nos pondremos en contacto contigo pronto. ¡Gracias!",
       });
-      // Reset form
-      setName('');
-      setEmail('');
-      setSubject('');
-      setMessage('');
-      setErrors({});
-    } catch (error) {
+    } else {
       toast({
-        title: 'Error',
-        description: 'Hubo un problema al enviar tu mensaje. Por favor, inténtalo de nuevo.',
-        variant: 'destructive',
+        title: "Error",
+        description: "Hubo un problema al enviar tu mensaje. Intenta de nuevo.",
+        variant: "destructive",
       });
-    } finally {
-      setIsSubmitting(false);
     }
+  } catch (error) {
+    toast({
+      title: "Error de red",
+      description: "No se pudo conectar con el servidor. Intenta más tarde.",
+      variant: "destructive",
+    });
+  }
   };
 
   return (
