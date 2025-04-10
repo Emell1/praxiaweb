@@ -40,7 +40,7 @@ const CTA = () => {
       {/* Social media links */}
       <div className="absolute bottom-6 right-6 flex items-center gap-4">
         <a 
-          href="https://linkedin.com/company/praxia" 
+          href="https://www.linkedin.com/company/praxia-site/" 
           target="_blank" 
           rel="noopener noreferrer"
           className="text-gray-600 hover:text-primary transition-colors"
@@ -49,7 +49,7 @@ const CTA = () => {
           <Linkedin size={24} />
         </a>
         <a 
-          href="https://wa.me/1234567890" 
+          href="https://api.whatsapp.com/send?phone=34685791609" 
           target="_blank" 
           rel="noopener noreferrer"
           className="text-gray-600 hover:text-primary transition-colors"
@@ -58,7 +58,7 @@ const CTA = () => {
           <MessageCircle size={24} />
         </a>
         <a 
-          href="mailto:info@praxia.com" 
+          href="mailto:info@praxia.site" 
           className="text-gray-600 hover:text-primary transition-colors"
           aria-label="Correo electrónico"
         >
