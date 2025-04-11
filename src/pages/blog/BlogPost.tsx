@@ -6,6 +6,7 @@ import { es } from 'date-fns/locale';
 import { ArrowLeft } from 'lucide-react';
 import NavBar from '../../components/NavBar';
 import { getBlogPostBySlug, getAllBlogPosts } from '../../services/blogService';
+import { BlogPostType } from '../../types/blog';
 import { Badge } from '../../components/ui/badge';
 import { Button } from '../../components/ui/button';
 import ReactMarkdown from 'react-markdown';
@@ -13,23 +14,76 @@ import SEO from '@/components/SEO';
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
-  const [post, setPost] = useState(getBlogPostBySlug(slug || ''));
+  const [post, setPost] = useState<BlogPostType | null>(null);
+  const [relatedPosts, setRelatedPosts] = useState<BlogPostType[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!post) {
-      navigate('/blog');
-    }
-  }, [post, navigate]);
+    const fetchPost = async () => {
+      if (!slug) {
+        navigate('/blog');
+        return;
+      }
 
-  if (!post) {
-    return null;
+      try {
+        setLoading(true);
+        const postData = await getBlogPostBySlug(slug);
+        
+        if (!postData) {
+          navigate('/blog');
+          return;
+        }
+        
+        setPost(postData);
+
+        // Cargar posts relacionados
+        const allPosts = await getAllBlogPosts();
+        const related = allPosts
+          .filter(p => p.id !== postData.id && p.tags.some(tag => postData.tags.includes(tag)))
+          .slice(0, 3);
+          
+        setRelatedPosts(related);
+      } catch (err) {
+        console.error("Error al cargar el artículo:", err);
+        setError("No se pudo cargar el artículo");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPost();
+  }, [slug, navigate]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-background">
+        <NavBar />
+        <div className="container mx-auto py-12 px-4 text-center">
+          <p>Cargando artículo...</p>
+        </div>
+      </div>
+    );
   }
 
-  // Encontrar posts relacionados (con tags similares pero no el actual)
-  const relatedPosts = getAllBlogPosts()
-    .filter(p => p.id !== post.id && p.tags.some(tag => post.tags.includes(tag)))
-    .slice(0, 3);
+  if (error || !post) {
+    return (
+      <div className="min-h-screen bg-background">
+        <NavBar />
+        <div className="container mx-auto py-12 px-4 text-center">
+          <p className="text-red-500">{error || "No se encontró el artículo"}</p>
+          <Button 
+            variant="outline" 
+            className="mt-4"
+            onClick={() => navigate('/blog')}
+          >
+            Volver al blog
+          </Button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-background">

@@ -9,22 +9,56 @@ import { ChevronRight } from 'lucide-react';
 
 const BlogHighlight = () => {
   const [latestPost, setLatestPost] = useState<BlogPostType | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    // Obtenemos todos los artículos y ordenamos por fecha para tener el más reciente
-    const posts = getAllBlogPosts();
-    
-    if (posts.length > 0) {
-      const sorted = [...posts].sort((a, b) => 
-        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
-      );
-      
-      setLatestPost(sorted[0]);
-      console.log("Último artículo:", sorted[0]); // Para depuración
-    } else {
-      console.log("No se encontraron artículos"); // Para depuración
-    }
+    const fetchLatestPost = async () => {
+      try {
+        setLoading(true);
+        // Obtenemos todos los artículos y ordenamos por fecha para tener el más reciente
+        const posts = await getAllBlogPosts();
+        
+        if (posts.length > 0) {
+          const sorted = [...posts].sort((a, b) => 
+            new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+          );
+          
+          setLatestPost(sorted[0]);
+          console.log("Último artículo:", sorted[0]); // Para depuración
+        } else {
+          console.log("No se encontraron artículos"); // Para depuración
+        }
+      } catch (err) {
+        console.error("Error al cargar los artículos:", err);
+        setError("No se pudieron cargar los artículos del blog");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchLatestPost();
   }, []);
+
+  if (loading) {
+    return (
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4 text-center">
+          <p>Cargando artículos...</p>
+        </div>
+      </section>
+    );
+  }
+
+  if (error) {
+    return (
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-red-500">{error}</p>
+        </div>
+      </section>
+    );
+  }
 
   if (!latestPost) {
     return null;

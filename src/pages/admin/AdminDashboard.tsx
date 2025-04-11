@@ -14,12 +14,30 @@ import { format } from 'date-fns';
 
 const AdminDashboard = () => {
   const [blogPosts, setBlogPosts] = useState<BlogPostType[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
   const [postToDelete, setPostToDelete] = useState<string | null>(null);
   const { logout } = useAuth();
   const navigate = useNavigate();
 
   useEffect(() => {
-    setBlogPosts(getAllBlogPosts());
+    const fetchPosts = async () => {
+      try {
+        setLoading(true);
+        const posts = await getAllBlogPosts();
+        setBlogPosts(posts);
+      } catch (err) {
+        console.error("Error al cargar los artículos:", err);
+        toast({
+          title: 'Error',
+          description: 'No se pudieron cargar los artículos del blog.',
+          variant: 'destructive'
+        });
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPosts();
   }, []);
 
   const handleLogout = () => {
@@ -27,20 +45,35 @@ const AdminDashboard = () => {
     navigate('/admin');
   };
 
-  const handleDeletePost = (id: string) => {
-    if (deleteBlogPost(id)) {
-      setBlogPosts(getAllBlogPosts());
-      toast({
-        title: 'Entrada eliminada',
-        description: 'La entrada del blog ha sido eliminada con éxito.'
-      });
-    } else {
+  const handleDeletePost = async (id: string) => {
+    try {
+      const success = await deleteBlogPost(id);
+      
+      if (success) {
+        // Actualizar la lista de posts después de eliminar
+        const posts = await getAllBlogPosts();
+        setBlogPosts(posts);
+        
+        toast({
+          title: 'Entrada eliminada',
+          description: 'La entrada del blog ha sido eliminada con éxito.'
+        });
+      } else {
+        toast({
+          title: 'Error',
+          description: 'No se pudo eliminar la entrada del blog.',
+          variant: 'destructive'
+        });
+      }
+    } catch (err) {
+      console.error("Error al eliminar el artículo:", err);
       toast({
         title: 'Error',
-        description: 'No se pudo eliminar la entrada del blog.',
+        description: 'Ha ocurrido un error al eliminar la entrada del blog.',
         variant: 'destructive'
       });
     }
+    
     setPostToDelete(null);
   };
 
@@ -74,66 +107,72 @@ const AdminDashboard = () => {
             </div>
           </CardHeader>
           <CardContent>
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>Título</TableHead>
-                  <TableHead>Fecha</TableHead>
-                  <TableHead>Destacado</TableHead>
-                  <TableHead className="text-right">Acciones</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {blogPosts.length > 0 ? (
-                  blogPosts.map((post) => (
-                    <TableRow key={post.id}>
-                      <TableCell className="font-medium">{post.title}</TableCell>
-                      <TableCell>{format(new Date(post.publishedAt), 'dd/MM/yyyy')}</TableCell>
-                      <TableCell>{post.featured ? 'Sí' : 'No'}</TableCell>
-                      <TableCell className="text-right space-x-2">
-                        <Button variant="outline" size="sm" asChild>
-                          <Link to={`/blog/${post.slug}`} target="_blank">
-                            <Eye className="h-4 w-4" />
-                          </Link>
-                        </Button>
-                        <Button variant="outline" size="sm" asChild>
-                          <Link to={`/admin/blog/edit/${post.id}`}>
-                            <Pencil className="h-4 w-4" />
-                          </Link>
-                        </Button>
-                        <AlertDialog>
-                          <AlertDialogTrigger asChild>
-                            <Button variant="outline" size="sm" onClick={() => setPostToDelete(post.id)}>
-                              <Trash className="h-4 w-4" />
-                            </Button>
-                          </AlertDialogTrigger>
-                          <AlertDialogContent>
-                            <AlertDialogHeader>
-                              <AlertDialogTitle>¿Estás seguro?</AlertDialogTitle>
-                              <AlertDialogDescription>
-                                Esta acción no se puede deshacer. Se eliminará permanentemente la entrada "{post.title}".
-                              </AlertDialogDescription>
-                            </AlertDialogHeader>
-                            <AlertDialogFooter>
-                              <AlertDialogCancel>Cancelar</AlertDialogCancel>
-                              <AlertDialogAction onClick={() => handleDeletePost(post.id)} className="bg-red-600 hover:bg-red-700">
-                                Eliminar
-                              </AlertDialogAction>
-                            </AlertDialogFooter>
-                          </AlertDialogContent>
-                        </AlertDialog>
+            {loading ? (
+              <div className="text-center py-4">
+                <p>Cargando artículos...</p>
+              </div>
+            ) : (
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>Título</TableHead>
+                    <TableHead>Fecha</TableHead>
+                    <TableHead>Destacado</TableHead>
+                    <TableHead className="text-right">Acciones</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {blogPosts.length > 0 ? (
+                    blogPosts.map((post) => (
+                      <TableRow key={post.id}>
+                        <TableCell className="font-medium">{post.title}</TableCell>
+                        <TableCell>{format(new Date(post.publishedAt), 'dd/MM/yyyy')}</TableCell>
+                        <TableCell>{post.featured ? 'Sí' : 'No'}</TableCell>
+                        <TableCell className="text-right space-x-2">
+                          <Button variant="outline" size="sm" asChild>
+                            <Link to={`/blog/${post.slug}`} target="_blank">
+                              <Eye className="h-4 w-4" />
+                            </Link>
+                          </Button>
+                          <Button variant="outline" size="sm" asChild>
+                            <Link to={`/admin/blog/edit/${post.id}`}>
+                              <Pencil className="h-4 w-4" />
+                            </Link>
+                          </Button>
+                          <AlertDialog>
+                            <AlertDialogTrigger asChild>
+                              <Button variant="outline" size="sm" onClick={() => setPostToDelete(post.id)}>
+                                <Trash className="h-4 w-4" />
+                              </Button>
+                            </AlertDialogTrigger>
+                            <AlertDialogContent>
+                              <AlertDialogHeader>
+                                <AlertDialogTitle>¿Estás seguro?</AlertDialogTitle>
+                                <AlertDialogDescription>
+                                  Esta acción no se puede deshacer. Se eliminará permanentemente la entrada "{post.title}".
+                                </AlertDialogDescription>
+                              </AlertDialogHeader>
+                              <AlertDialogFooter>
+                                <AlertDialogCancel>Cancelar</AlertDialogCancel>
+                                <AlertDialogAction onClick={() => handleDeletePost(post.id)} className="bg-red-600 hover:bg-red-700">
+                                  Eliminar
+                                </AlertDialogAction>
+                              </AlertDialogFooter>
+                            </AlertDialogContent>
+                          </AlertDialog>
+                        </TableCell>
+                      </TableRow>
+                    ))
+                  ) : (
+                    <TableRow>
+                      <TableCell colSpan={4} className="text-center py-4">
+                        No hay entradas de blog. ¡Crea una nueva!
                       </TableCell>
                     </TableRow>
-                  ))
-                ) : (
-                  <TableRow>
-                    <TableCell colSpan={4} className="text-center py-4">
-                      No hay entradas de blog. ¡Crea una nueva!
-                    </TableCell>
-                  </TableRow>
-                )}
-              </TableBody>
-            </Table>
+                  )}
+                </TableBody>
+              </Table>
+            )}
           </CardContent>
         </Card>
       </div>
