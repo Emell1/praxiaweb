@@ -35,27 +35,41 @@ const AdminBlogEditor = () => {
   const isEdit = !!id;
 
   useEffect(() => {
-    if (isEdit && id) {
-      const post = getBlogPostById(id);
-      if (post) {
-        setFormData({
-          title: post.title,
-          excerpt: post.excerpt,
-          content: post.content,
-          coverImage: post.coverImage,
-          featured: post.featured,
-          tags: post.tags
-        });
-        setTagsInput(post.tags.join(', '));
-      } else {
-        toast({
-          title: 'Error',
-          description: 'No se encontró la entrada del blog.',
-          variant: 'destructive'
-        });
-        navigate('/admin/dashboard');
+    const fetchPost = async () => {
+      if (isEdit && id) {
+        try {
+          const post = await getBlogPostById(id);
+          if (post) {
+            setFormData({
+              title: post.title,
+              excerpt: post.excerpt,
+              content: post.content,
+              coverImage: post.coverImage,
+              featured: post.featured,
+              tags: post.tags
+            });
+            setTagsInput(post.tags.join(', '));
+          } else {
+            toast({
+              title: 'Error',
+              description: 'No se encontró la entrada del blog.',
+              variant: 'destructive'
+            });
+            navigate('/admin/dashboard');
+          }
+        } catch (error) {
+          console.error('Error al obtener el post:', error);
+          toast({
+            title: 'Error',
+            description: 'No se pudo cargar la entrada del blog.',
+            variant: 'destructive'
+          });
+          navigate('/admin/dashboard');
+        }
       }
-    }
+    };
+
+    fetchPost();
   }, [id, isEdit, navigate]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
