@@ -2,18 +2,28 @@
 import { createClient } from '@supabase/supabase-js';
 import { BlogPostType, BlogPostFormData } from '../types/blog';
 import { nanoid } from 'nanoid';
+import { toast } from 'sonner';
 
 // Inicializa el cliente de Supabase usando las variables de entorno
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
 // Verifica si las variables de entorno están disponibles
-if (!supabaseUrl || !supabaseKey) {
-  console.error('Las variables de entorno de Supabase no están configuradas correctamente');
-}
+let supabase;
+let isSupabaseConfigured = false;
 
-// Crea el cliente de Supabase
-const supabase = createClient(supabaseUrl, supabaseKey);
+try {
+  if (!supabaseUrl || !supabaseKey) {
+    console.warn('Las variables de entorno de Supabase no están configuradas. Usando solo almacenamiento local.');
+  } else {
+    // Crea el cliente de Supabase
+    supabase = createClient(supabaseUrl, supabaseKey);
+    isSupabaseConfigured = true;
+    console.log('Supabase configurado correctamente');
+  }
+} catch (error) {
+  console.error('Error al inicializar Supabase:', error);
+}
 
 // Función para generar un slug a partir de un título
 const generateSlug = (title: string): string => {
@@ -51,36 +61,77 @@ OPTA está diseñado para evolucionar continuamente con tu negocio, adaptándose
   }
 ];
 
+// Función para guardar en localStorage
+const saveToLocalStorage = (posts: BlogPostType[]): void => {
+  localStorage.setItem('blogPosts', JSON.stringify(posts));
+};
+
+// Función para obtener de localStorage
+const getFromLocalStorage = (): BlogPostType[] => {
+  const storedPosts = localStorage.getItem('blogPosts');
+  return storedPosts ? JSON.parse(storedPosts) : initialBlogPosts;
+};
+
 // Inicializa la base de datos con datos de prueba si está vacía
 const initBlogPostsInSupabase = async (): Promise<void> => {
-  const { data: existingPosts, error: fetchError } = await supabase
-    .from('blog_posts')
-    .select('*')
-    .limit(1);
-  
-  if (fetchError) {
-    console.error('Error al verificar posts existentes:', fetchError);
+  if (!isSupabaseConfigured) {
+    console.log('Supabase no está configurado. Inicializando solo en localStorage.');
+    const storedPosts = localStorage.getItem('blogPosts');
+    if (!storedPosts) {
+      saveToLocalStorage(initialBlogPosts);
+    }
     return;
   }
   
-  // Si no hay posts, inserta los iniciales
-  if (!existingPosts || existingPosts.length === 0) {
-    const { error: insertError } = await supabase
+  try {
+    const { data: existingPosts, error: fetchError } = await supabase
       .from('blog_posts')
-      .insert(initialBlogPosts);
-      
-    if (insertError) {
-      console.error('Error al insertar posts iniciales:', insertError);
+      .select('*')
+      .limit(1);
+    
+    if (fetchError) {
+      console.error('Error al verificar posts existentes:', fetchError);
+      return;
+    }
+    
+    // Si no hay posts, inserta los iniciales
+    if (!existingPosts || existingPosts.length === 0) {
+      const { error: insertError } = await supabase
+        .from('blog_posts')
+        .insert(initialBlogPosts);
+        
+      if (insertError) {
+        console.error('Error al insertar posts iniciales:', insertError);
+      }
+    }
+  } catch (error) {
+    console.error('Error en initBlogPostsInSupabase:', error);
+    // Inicializa en localStorage como fallback
+    const storedPosts = localStorage.getItem('blogPosts');
+    if (!storedPosts) {
+      saveToLocalStorage(initialBlogPosts);
     }
   }
 };
 
 // Intentar inicializar la base de datos al cargar el servicio
-initBlogPostsInSupabase().catch(console.error);
+initBlogPostsInSupabase().catch(error => {
+  console.error('Error al inicializar la base de datos:', error);
+  // Asegurarse de que localStorage tenga los datos iniciales
+  const storedPosts = localStorage.getItem('blogPosts');
+  if (!storedPosts) {
+    saveToLocalStorage(initialBlogPosts);
+  }
+});
 
 // Obtener todas las entradas de blog
 export const getAllBlogPosts = async (): Promise<BlogPostType[]> => {
-  // Primero intentamos obtener desde Supabase
+  // Si Supabase no está configurado, usar solo localStorage
+  if (!isSupabaseConfigured) {
+    return getFromLocalStorage();
+  }
+  
+  // Intentar obtener desde Supabase
   try {
     const { data, error } = await supabase
       .from('blog_posts')
@@ -93,13 +144,17 @@ export const getAllBlogPosts = async (): Promise<BlogPostType[]> => {
     console.error('Error al obtener los posts del blog:', error);
     
     // Fallback a localStorage si hay un error con Supabase
-    const storedPosts = localStorage.getItem('blogPosts');
-    return storedPosts ? JSON.parse(storedPosts) as BlogPostType[] : initialBlogPosts;
+    return getFromLocalStorage();
   }
 };
 
 // Obtener entradas destacadas
 export const getFeaturedBlogPosts = async (): Promise<BlogPostType[]> => {
+  // Si Supabase no está configurado, usar solo localStorage
+  if (!isSupabaseConfigured) {
+    return getFromLocalStorage().filter(post => post.featured);
+  }
+  
   try {
     const { data, error } = await supabase
       .from('blog_posts')
@@ -112,15 +167,17 @@ export const getFeaturedBlogPosts = async (): Promise<BlogPostType[]> => {
     console.error('Error al obtener posts destacados:', error);
     
     // Fallback a localStorage
-    const posts = localStorage.getItem('blogPosts');
-    return posts 
-      ? (JSON.parse(posts) as BlogPostType[]).filter(post => post.featured)
-      : initialBlogPosts.filter(post => post.featured);
+    return getFromLocalStorage().filter(post => post.featured);
   }
 };
 
 // Obtener una entrada de blog por slug
 export const getBlogPostBySlug = async (slug: string): Promise<BlogPostType | undefined> => {
+  // Si Supabase no está configurado, usar solo localStorage
+  if (!isSupabaseConfigured) {
+    return getFromLocalStorage().find(post => post.slug === slug);
+  }
+  
   try {
     const { data, error } = await supabase
       .from('blog_posts')
@@ -134,15 +191,17 @@ export const getBlogPostBySlug = async (slug: string): Promise<BlogPostType | un
     console.error(`Error al obtener post con slug ${slug}:`, error);
     
     // Fallback a localStorage
-    const posts = localStorage.getItem('blogPosts');
-    return posts 
-      ? (JSON.parse(posts) as BlogPostType[]).find(post => post.slug === slug)
-      : initialBlogPosts.find(post => post.slug === slug);
+    return getFromLocalStorage().find(post => post.slug === slug);
   }
 };
 
 // Obtener una entrada de blog por ID
 export const getBlogPostById = async (id: string): Promise<BlogPostType | undefined> => {
+  // Si Supabase no está configurado, usar solo localStorage
+  if (!isSupabaseConfigured) {
+    return getFromLocalStorage().find(post => post.id === id);
+  }
+  
   try {
     const { data, error } = await supabase
       .from('blog_posts')
@@ -156,10 +215,7 @@ export const getBlogPostById = async (id: string): Promise<BlogPostType | undefi
     console.error(`Error al obtener post con ID ${id}:`, error);
     
     // Fallback a localStorage
-    const posts = localStorage.getItem('blogPosts');
-    return posts 
-      ? (JSON.parse(posts) as BlogPostType[]).find(post => post.id === id)
-      : initialBlogPosts.find(post => post.id === id);
+    return getFromLocalStorage().find(post => post.id === id);
   }
 };
 
@@ -177,6 +233,16 @@ export const createBlogPost = async (postData: BlogPostFormData): Promise<BlogPo
     tags: postData.tags || []
   };
   
+  // Si Supabase no está configurado, usar solo localStorage
+  if (!isSupabaseConfigured) {
+    const posts = getFromLocalStorage();
+    posts.push(newPost);
+    saveToLocalStorage(posts);
+    
+    toast.success("Post creado localmente (Supabase no está configurado)");
+    return newPost;
+  }
+  
   try {
     const { error } = await supabase
       .from('blog_posts')
@@ -184,15 +250,16 @@ export const createBlogPost = async (postData: BlogPostFormData): Promise<BlogPo
     
     if (error) throw error;
     
+    toast.success("Post creado correctamente en Supabase");
     return newPost;
   } catch (error) {
     console.error('Error al crear post:', error);
+    toast.error("Error al crear post en Supabase, guardado localmente");
     
     // Fallback a localStorage
-    const posts = localStorage.getItem('blogPosts');
-    const existingPosts = posts ? JSON.parse(posts) as BlogPostType[] : initialBlogPosts;
-    existingPosts.push(newPost);
-    localStorage.setItem('blogPosts', JSON.stringify(existingPosts));
+    const posts = getFromLocalStorage();
+    posts.push(newPost);
+    saveToLocalStorage(posts);
     
     return newPost;
   }
@@ -200,6 +267,33 @@ export const createBlogPost = async (postData: BlogPostFormData): Promise<BlogPo
 
 // Actualizar una entrada de blog existente
 export const updateBlogPost = async (id: string, postData: BlogPostFormData): Promise<BlogPostType> => {
+  // Si Supabase no está configurado, usar solo localStorage
+  if (!isSupabaseConfigured) {
+    const posts = getFromLocalStorage();
+    const index = posts.findIndex(post => post.id === id);
+    
+    if (index === -1) {
+      throw new Error('Blog post not found');
+    }
+    
+    const updatedPost: BlogPostType = {
+      ...posts[index],
+      title: postData.title,
+      slug: generateSlug(postData.title),
+      excerpt: postData.excerpt,
+      content: postData.content,
+      coverImage: postData.coverImage,
+      featured: postData.featured,
+      tags: postData.tags || []
+    };
+    
+    posts[index] = updatedPost;
+    saveToLocalStorage(posts);
+    
+    toast.success("Post actualizado localmente (Supabase no está configurado)");
+    return updatedPost;
+  }
+  
   try {
     // Primero obtenemos el post actual para mantener campos que no se actualizan
     const { data: existingPost, error: fetchError } = await supabase
@@ -228,25 +322,22 @@ export const updateBlogPost = async (id: string, postData: BlogPostFormData): Pr
     
     if (updateError) throw updateError;
     
+    toast.success("Post actualizado correctamente en Supabase");
     return updatedPost;
   } catch (error) {
     console.error(`Error al actualizar post con ID ${id}:`, error);
+    toast.error("Error al actualizar post en Supabase, actualizado localmente");
     
     // Fallback a localStorage
-    const posts = localStorage.getItem('blogPosts');
-    if (!posts) {
-      throw new Error('Blog post not found');
-    }
-    
-    const existingPosts = JSON.parse(posts) as BlogPostType[];
-    const index = existingPosts.findIndex(post => post.id === id);
+    const posts = getFromLocalStorage();
+    const index = posts.findIndex(post => post.id === id);
     
     if (index === -1) {
       throw new Error('Blog post not found');
     }
     
     const updatedPost: BlogPostType = {
-      ...existingPosts[index],
+      ...posts[index],
       title: postData.title,
       slug: generateSlug(postData.title),
       excerpt: postData.excerpt,
@@ -256,8 +347,8 @@ export const updateBlogPost = async (id: string, postData: BlogPostFormData): Pr
       tags: postData.tags || []
     };
     
-    existingPosts[index] = updatedPost;
-    localStorage.setItem('blogPosts', JSON.stringify(existingPosts));
+    posts[index] = updatedPost;
+    saveToLocalStorage(posts);
     
     return updatedPost;
   }
@@ -265,6 +356,20 @@ export const updateBlogPost = async (id: string, postData: BlogPostFormData): Pr
 
 // Eliminar una entrada de blog
 export const deleteBlogPost = async (id: string): Promise<boolean> => {
+  // Si Supabase no está configurado, usar solo localStorage
+  if (!isSupabaseConfigured) {
+    const posts = getFromLocalStorage();
+    const filteredPosts = posts.filter(post => post.id !== id);
+    
+    if (filteredPosts.length === posts.length) {
+      return false;
+    }
+    
+    saveToLocalStorage(filteredPosts);
+    toast.success("Post eliminado localmente (Supabase no está configurado)");
+    return true;
+  }
+  
   try {
     const { error } = await supabase
       .from('blog_posts')
@@ -273,24 +378,21 @@ export const deleteBlogPost = async (id: string): Promise<boolean> => {
     
     if (error) throw error;
     
+    toast.success("Post eliminado correctamente de Supabase");
     return true;
   } catch (error) {
     console.error(`Error al eliminar post con ID ${id}:`, error);
+    toast.error("Error al eliminar post en Supabase, eliminado localmente");
     
     // Fallback a localStorage
-    const posts = localStorage.getItem('blogPosts');
-    if (!posts) {
+    const posts = getFromLocalStorage();
+    const filteredPosts = posts.filter(post => post.id !== id);
+    
+    if (filteredPosts.length === posts.length) {
       return false;
     }
     
-    const existingPosts = JSON.parse(posts) as BlogPostType[];
-    const filteredPosts = existingPosts.filter(post => post.id !== id);
-    
-    if (filteredPosts.length === existingPosts.length) {
-      return false;
-    }
-    
-    localStorage.setItem('blogPosts', JSON.stringify(filteredPosts));
+    saveToLocalStorage(filteredPosts);
     return true;
   }
 };
