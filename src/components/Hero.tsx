@@ -20,8 +20,8 @@ const Hero = () => {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <span className="inline-block px-4 py-2 rounded-full bg-accent text-sm font-medium mb-6">
-            <AnimatedLogo /> | Optimización Estratégica de Procesos
+          <span className="inline-flex items-center px-4 py-2 rounded-full bg-accent text-sm font-medium mb-6">
+            <AnimatedLogo /> <span className="mx-1">|</span> Optimización Estratégica de Procesos
           </span>
           <h1 className="heading-xl mb-6 max-w-4xl mx-auto">
             Transformamos procesos en{" "}
