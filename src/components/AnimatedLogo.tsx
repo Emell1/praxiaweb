@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 
 const AnimatedLogo = () => {
@@ -7,7 +6,6 @@ const AnimatedLogo = () => {
   const [imagesLoaded, setImagesLoaded] = useState(0);
   const [isReady, setIsReady] = useState(false);
 
-  // Precargar todas las imágenes
   useEffect(() => {
     const preloadImages = async () => {
       console.log("Comenzando precarga de imágenes");
@@ -39,7 +37,6 @@ const AnimatedLogo = () => {
     preloadImages();
   }, []);
 
-  // Controlar la animación usando un frame actual
   useEffect(() => {
     if (!isReady) return;
     
@@ -51,7 +48,7 @@ const AnimatedLogo = () => {
   }, [isReady, totalFrames]);
 
   return (
-    <div className="relative inline-flex items-center justify-center h-6 w-6 align-middle overflow-hidden">
+    <div className="relative inline-flex items-center justify-center h-12 w-12 align-middle overflow-hidden">
       {!isReady ? (
         <>
           <img 
