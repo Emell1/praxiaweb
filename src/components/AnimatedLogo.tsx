@@ -44,8 +44,8 @@ const AnimatedLogo = () => {
     const animationInterval = setInterval(() => {
       setCurrentFrame((prev) => {
         if (prev === totalFrames - 1) {
-          // Add delay only when transitioning from last to first frame
-          setTimeout(() => setCurrentFrame(0), 2500);
+          // Reduce delay to 1.8 seconds when transitioning from last to first frame
+          setTimeout(() => setCurrentFrame(0), 1800);
           return prev;
         }
         return prev + 1;
