@@ -1,6 +1,7 @@
 
 import { motion } from "framer-motion";
 import ContactDialog from "./ContactDialog";
+import AnimatedLogo from "./AnimatedLogo";
 
 const Hero = () => {
   return (
@@ -20,7 +21,7 @@ const Hero = () => {
           className="text-center"
         >
           <span className="inline-block px-4 py-2 rounded-full bg-accent text-sm font-medium mb-6">
-            Praxia | Optimización Estratégica de Procesos
+            <AnimatedLogo /> | Optimización Estratégica de Procesos
           </span>
           <h1 className="heading-xl mb-6 max-w-4xl mx-auto">
             Transformamos procesos en{" "}
