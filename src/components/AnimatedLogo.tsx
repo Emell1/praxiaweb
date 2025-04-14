@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 
 const AnimatedLogo = () => {
@@ -42,7 +43,7 @@ const AnimatedLogo = () => {
     
     const animationInterval = setInterval(() => {
       setCurrentFrame((prev) => (prev + 1) % totalFrames);
-    }, 100); // Cambia el frame cada 100ms
+    }, 2500); // Changed from 100ms to 2500ms (2.5 seconds)
     
     return () => clearInterval(animationInterval);
   }, [isReady, totalFrames]);
