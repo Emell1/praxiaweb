@@ -1,3 +1,4 @@
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -31,6 +32,28 @@
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
+}
+
+/* Estilos para la animación del logo */
+.logo-animation .frame-1 { animation: frame1 3s infinite; }
+.logo-animation .frame-2 { animation: frame2 3s infinite; }
+.logo-animation .frame-3 { animation: frame3 3s infinite; }
+
+@keyframes frame1 {
+  0%, 100% { opacity: 1; }
+  33.33% { opacity: 0; }
+  66.66% { opacity: 0; }
+}
+
+@keyframes frame2 {
+  0% { opacity: 0; }
+  33.33%, 100% { opacity: 1; }
+  66.66% { opacity: 0; }
+}
+
+@keyframes frame3 {
+  0%, 33.33% { opacity: 0; }
+  66.66%, 100% { opacity: 1; }
 }
 
 .card {
