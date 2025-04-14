@@ -1,4 +1,3 @@
-
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -34,26 +33,27 @@
   }
 }
 
-/* Estilos para la animación del logo */
-.logo-animation .frame-1 { animation: frame1 3s infinite; }
-.logo-animation .frame-2 { animation: frame2 3s infinite; }
-.logo-animation .frame-3 { animation: frame3 3s infinite; }
-
-@keyframes frame1 {
-  0%, 100% { opacity: 1; }
-  33.33% { opacity: 0; }
-  66.66% { opacity: 0; }
+/* Estilos para la animación del logo con 30 frames */
+.logo-animation > img {
+  animation: logoAnimation 3s infinite;
 }
 
-@keyframes frame2 {
-  0% { opacity: 0; }
-  33.33%, 100% { opacity: 1; }
-  66.66% { opacity: 0; }
+@keyframes logoAnimation {
+  0%, 3.33%, 100% { opacity: 1; }
+  0%, 96.66%, 100% { opacity: 0; }
 }
 
-@keyframes frame3 {
-  0%, 33.33% { opacity: 0; }
-  66.66%, 100% { opacity: 1; }
+/* Distribución de opacidad para 30 frames */
+.logo-animation img:nth-child(1n) {
+  animation-delay: 0s;
+}
+
+.logo-animation img:nth-child(2n) {
+  animation-delay: 0.1s;
+}
+
+.logo-animation img:nth-child(3n) {
+  animation-delay: 0.2s;
 }
 
 .card {
