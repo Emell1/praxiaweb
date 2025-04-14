@@ -42,8 +42,15 @@ const AnimatedLogo = () => {
     if (!isReady) return;
     
     const animationInterval = setInterval(() => {
-      setCurrentFrame((prev) => (prev + 1) % totalFrames);
-    }, 2500); // Changed from 100ms to 2500ms (2.5 seconds)
+      setCurrentFrame((prev) => {
+        if (prev === totalFrames - 1) {
+          // Add delay only when transitioning from last to first frame
+          setTimeout(() => setCurrentFrame(0), 2500);
+          return prev;
+        }
+        return prev + 1;
+      });
+    }, 100); // Regular frame rate at 100ms
     
     return () => clearInterval(animationInterval);
   }, [isReady, totalFrames]);
