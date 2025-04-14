@@ -1,41 +1,36 @@
 
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 
 const AnimatedLogo = () => {
-  const [isAnimating, setIsAnimating] = useState(true);
+  const [animationKey, setAnimationKey] = useState(0);
   
-  // Reinicia la animación cada vez que termine el ciclo
+  // Efecto para reiniciar la animación periódicamente
   useEffect(() => {
-    if (!isAnimating) {
-      const timeout = setTimeout(() => setIsAnimating(true), 500);
-      return () => clearTimeout(timeout);
-    }
-  }, [isAnimating]);
+    const timer = setInterval(() => {
+      setAnimationKey(prev => prev + 1);
+    }, 3000); // Reinicia cada 3 segundos
+    
+    return () => clearInterval(timer);
+  }, []);
 
+  // Definimos las líneas que forman la X
   const lines = [
-    { from: { x: -10, y: -10 }, to: { x: 10, y: 10 } },  // Línea diagonal 1 (↘)
-    { from: { x: -10, y: 10 }, to: { x: 10, y: -10 } },  // Línea diagonal 2 (↗)
+    { id: 1, from: { x: -10, y: -10 }, to: { x: 10, y: 10 } }, // Línea diagonal superior izquierda a inferior derecha (↘)
+    { id: 2, from: { x: 10, y: -10 }, to: { x: -10, y: 10 } }  // Línea diagonal superior derecha a inferior izquierda (↙)
   ];
 
   return (
-    <div className="relative inline-flex items-center justify-center h-6 w-6 align-middle mx-1">
+    <div className="relative inline-flex items-center justify-center h-6 w-6 align-middle">
       {lines.map((line, index) => (
         <motion.div
-          key={index}
-          initial={{ pathLength: 0, opacity: 0 }}
-          animate={isAnimating ? { 
-            pathLength: 1, 
-            opacity: 1,
-            transition: { 
-              pathLength: { delay: index * 0.3, duration: 0.5, ease: "easeInOut" },
-              opacity: { delay: index * 0.3, duration: 0.2 }
-            }
-          } : {}}
-          onAnimationComplete={() => {
-            if (index === lines.length - 1) {
-              setTimeout(() => setIsAnimating(false), 1000);
-            }
+          key={`${line.id}-${animationKey}`}
+          initial={{ scaleX: 0, opacity: 0 }}
+          animate={{ scaleX: 1, opacity: 1 }}
+          transition={{
+            duration: 0.4,
+            delay: index * 0.4, // Retraso secuencial para cada línea
+            ease: "easeInOut"
           }}
           style={{
             position: "absolute",
