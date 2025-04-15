@@ -6,7 +6,6 @@ import BlogPost from './pages/blog/BlogPost';
 import ContactPage from './pages/ContactPage';
 import ConsultoriaEstrategica from './pages/servicios/ConsultoriaEstrategica';
 import OptimizacionProcesos from './pages/servicios/OptimizacionProcesos';
-import DesarrolloProducto from './pages/servicios/DesarrolloProducto';
 import SolucionesInternas from './pages/servicios/SolucionesInternas';
 import AdminLogin from './pages/admin/AdminLogin';
 import AdminDashboard from './pages/admin/AdminDashboard';
@@ -25,7 +24,6 @@ function App() {
         <Route path="/contacto" element={<ContactPage />} />
         <Route path="/servicios/consultoria-estrategica" element={<ConsultoriaEstrategica />} />
         <Route path="/servicios/optimizacion-procesos" element={<OptimizacionProcesos />} />
-        <Route path="/servicios/desarrollo-producto" element={<DesarrolloProducto />} />
         <Route path="/servicios/soluciones-internas" element={<SolucionesInternas />} />
         <Route path="/admin" element={<AdminLogin />} />
         <Route path="/admin/dashboard" element={
@@ -50,3 +48,4 @@ function App() {
 }
 
 export default App;
+
