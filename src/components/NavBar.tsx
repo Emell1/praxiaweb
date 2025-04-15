@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import {
@@ -36,22 +35,21 @@ const NavBar = () => {
             </Link>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>
-            <Link to="/servicios/desarrollo-producto" className="w-full">
-              Soluciones
+            <Link to="/servicios/soluciones-internas" className="w-full">
+              Soluciones Internas
             </Link>
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
       
-      {/* <Link to="/blog" className="text-foreground hover:text-blue-600">Blog</Link> */}
       <Link to="/contacto" className="text-foreground hover:text-blue-600">Contacto</Link>
     </>
   );
 
   return (
-    <nav className="bg-background py-4 shadow-sm sticky top-0 z-50">
+    <nav className="bg-background/95 backdrop-blur-sm py-4 shadow-sm sticky top-0 z-50">
       <div className="container mx-auto flex justify-between items-center px-4">
-        <Link to="/" className="font-bold text-xl">Praxia</Link>
+        <Link to="/" className="font-bold text-xl text-blue-600">PRAXIA</Link>
         
         {isMobile ? (
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -75,14 +73,11 @@ const NavBar = () => {
                   <Link to="/servicios/optimizacion-procesos" className="text-foreground hover:text-blue-600 pl-2" onClick={() => setIsOpen(false)}>
                     Optimización de Procesos
                   </Link>
-                  <Link to="/servicios/desarrollo-producto" className="text-foreground hover:text-blue-600 pl-2" onClick={() => setIsOpen(false)}>
-                    Soluciones
+                  <Link to="/servicios/soluciones-internas" className="text-foreground hover:text-blue-600 pl-2" onClick={() => setIsOpen(false)}>
+                    Soluciones Internas
                   </Link>
                 </div>
                 
-                {/* <Link to="/blog" className="text-foreground hover:text-blue-600 text-lg" onClick={() => setIsOpen(false)}>
-                  Blog
-                </Link> */}
                 <Link to="/contacto" className="text-foreground hover:text-blue-600 text-lg" onClick={() => setIsOpen(false)}>
                   Contacto
                 </Link>

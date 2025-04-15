@@ -30,11 +30,11 @@ export default {
           foreground: "#FFFFFF",
         },
         secondary: {
-          DEFAULT: "#D4AF37",
-          foreground: "#222222",
+          DEFAULT: "#1e40af",
+          foreground: "#FFFFFF",
         },
         accent: {
-          DEFAULT: "#F6F6F7",
+          DEFAULT: "#F8FAFC",
           foreground: "#222222",
         },
       },
