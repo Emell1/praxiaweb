@@ -49,7 +49,14 @@ const NavBar = () => {
   return (
     <nav className="bg-background py-4 shadow-sm sticky top-0 z-50">
       <div className="container mx-auto flex justify-between items-center px-4">
-        <Link to="/" className="font-bold text-xl">Praxia</Link>
+        <Link to="/" className="flex items-center">
+  <img
+    src="/logo.png"
+    alt="Praxia Logo"
+    style={{ height: "40px", width: "auto" }}
+    className="mr-2"
+  />
+</Link>
         
         {isMobile ? (
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
