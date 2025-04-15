@@ -61,7 +61,7 @@ const ConsultoriaEstrategica = () => {
                 <p className="text-base leading-relaxed mb-8">
                   Creemos firmemente que las mejores soluciones surgen cuando combinamos nuestra 
                   experiencia con el conocimiento interno de tu equipo. No imponemos fórmulas 
-                  genéricas, sino que construimos estrategias personalizadas que responden 
+                  genéricas, sino que construimos estrategias personalizadas que respondan 
                   a tus desafíos específicos y aprovechan tus fortalezas distintivas.
                 </p>
 
@@ -152,17 +152,9 @@ const ConsultoriaEstrategica = () => {
       </main>
 
       <footer className="bg-gray-100 mt-16">
-        <div className="container mx-auto py-8 px-4">
+        <div className="container mx-auto py-8 px-4 text-center">
           <Separator className="mb-8" />
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-gray-600">© {new Date().getFullYear()} Praxia. Todos los derechos reservados.</p>
-            <div className="flex gap-4">
-              <Link to="/" className="text-sm text-primary hover:underline">Inicio</Link>
-              <Link to="/servicios/consultoria-estrategica" className="text-sm text-primary hover:underline">Consultoría</Link>
-              <Link to="/servicios/optimizacion-procesos" className="text-sm text-primary hover:underline">Procesos</Link>
-              <Link to="/servicios/desarrollo-producto" className="text-sm text-primary hover:underline">Producto</Link>
-            </div>
-          </div>
+          <p className="text-sm text-gray-600">© {new Date().getFullYear()} Praxia. Todos los derechos reservados.</p>
         </div>
       </footer>
     </div>
