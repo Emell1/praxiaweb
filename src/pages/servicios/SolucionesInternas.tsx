@@ -1,12 +1,20 @@
-
 import { motion } from "framer-motion";
-import { Code, ArrowRight, Check, Laptop } from "lucide-react";
-import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
+import { Code, Check, Laptop } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import NavBar from "@/components/NavBar";
 import SEO from "@/components/SEO";
+import ServiceHeader from "./components/ServiceHeader";
+import TechStack from "./components/TechStack";
+import ServiceCTA from "./components/ServiceCTA";
+import { Link } from "react-router-dom";
+
+const techStacks = [
+  { name: "Frontend", tech: ["React", "TypeScript", "TailwindCSS"] },
+  { name: "Backend", tech: ["Node.js", "Python", "PostgreSQL"] },
+  { name: "Cloud", tech: ["AWS", "Google Cloud", "Azure"] },
+  { name: "DevOps", tech: ["Docker", "CI/CD", "Kubernetes"] }
+];
 
 const SolucionesInternas = () => {
   return (
@@ -17,30 +25,20 @@ const SolucionesInternas = () => {
         keywords="soluciones internas, herramientas digitales, software personalizado, sistemas internos, automatización"
       />
       
-      {/* Navbar compartido */}
       <NavBar />
 
-      {/* Contenido principal */}
       <main className="container mx-auto py-12 px-4">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
         >
-          {/* Encabezado del servicio */}
-          <div className="flex flex-col md:flex-row md:items-center gap-4 mb-10">
-            <div className="bg-secondary/20 p-4 rounded-full">
-              <Code className="h-12 w-12 text-secondary-DEFAULT" />
-            </div>
-            <div>
-              <h1 className="text-3xl md:text-4xl font-bold">Diseño y Desarrollo de Soluciones Internas</h1>
-              <p className="text-xl mt-2 text-gray-600">
-                Herramientas digitales personalizadas para potenciar tu operación
-              </p>
-            </div>
-          </div>
+          <ServiceHeader 
+            Icon={Code}
+            title="Diseño y Desarrollo de Soluciones Internas"
+            description="Herramientas digitales personalizadas para potenciar tu operación"
+          />
           
-          {/* Imagen destacada */}
           <div className="w-full h-64 md:h-96 bg-gray-100 mb-12 rounded-lg overflow-hidden">
             <img 
               src="https://images.unsplash.com/photo-1581472723648-909f4851d4ae"
@@ -50,7 +48,6 @@ const SolucionesInternas = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-16">
-            {/* Columna principal - Descripción */}
             <div className="md:col-span-2">
               <div className="prose prose-lg max-w-none">
                 <p className="text-lg leading-relaxed mb-8">
@@ -65,25 +62,7 @@ const SolucionesInternas = () => {
                   mantenibilidad y una experiencia de usuario óptima.
                 </p>
 
-                <div className="grid grid-cols-2 gap-4 mb-8">
-                  {[
-                    { name: "Frontend", tech: ["React", "TypeScript", "TailwindCSS"] },
-                    { name: "Backend", tech: ["Node.js", "Python", "PostgreSQL"] },
-                    { name: "Cloud", tech: ["AWS", "Google Cloud", "Azure"] },
-                    { name: "DevOps", tech: ["Docker", "CI/CD", "Kubernetes"] }
-                  ].map((stack) => (
-                    <Card key={stack.name} className="bg-accent/30">
-                      <CardContent className="pt-6">
-                        <h3 className="font-semibold mb-2">{stack.name}</h3>
-                        <ul className="space-y-1">
-                          {stack.tech.map((tech) => (
-                            <li key={tech} className="text-sm text-gray-600">{tech}</li>
-                          ))}
-                        </ul>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
+                <TechStack stacks={techStacks} />
 
                 <h3 className="text-xl font-medium mt-10 mb-4 text-secondary-DEFAULT">Proceso de desarrollo</h3>
                 <ul className="space-y-4 mb-8 pl-6">
@@ -103,7 +82,6 @@ const SolucionesInternas = () => {
               </div>
             </div>
 
-            {/* Columna secundaria - Tarjeta de características */}
             <div>
               <Card className="bg-primary/5">
                 <CardContent className="pt-6">
@@ -128,7 +106,6 @@ const SolucionesInternas = () => {
             </div>
           </div>
 
-          {/* Tipos de soluciones */}
           <div className="mb-16">
             <div className="flex items-center gap-2 mb-6">
               <Laptop className="h-6 w-6 text-secondary-DEFAULT" />
@@ -172,21 +149,14 @@ const SolucionesInternas = () => {
             </div>
           </div>
 
-          {/* CTA final */}
-          <div className="bg-secondary/10 p-8 rounded-lg">
-            <h2 className="text-2xl font-bold mb-4">¿Necesitas una solución a medida?</h2>
-            <p className="mb-6">Cuéntanos tu proyecto y diseñaremos la herramienta perfecta para tus necesidades.</p>
-            <Link to="/contacto">
-              <Button className="flex items-center gap-2">
-                Solicitar consulta
-                <ArrowRight className="h-4 w-4" />
-              </Button>
-            </Link>
-          </div>
+          <ServiceCTA 
+            title="¿Necesitas una solución a medida?"
+            description="Cuéntanos tu proyecto y diseñaremos la herramienta perfecta para tus necesidades."
+            buttonText="Solicitar consulta"
+          />
         </motion.div>
       </main>
 
-      {/* Footer */}
       <footer className="bg-gray-100 mt-16">
         <div className="container mx-auto py-8 px-4">
           <Separator className="mb-8" />

@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import {
@@ -7,7 +6,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { ChevronDown, Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Button } from './ui/button';
@@ -36,14 +35,13 @@ const NavBar = () => {
             </Link>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>
-            <Link to="/servicios/desarrollo-producto" className="w-full">
-              Soluciones
+            <Link to="/servicios/soluciones-internas" className="w-full">
+              Soluciones Internas
             </Link>
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
       
-      {/* <Link to="/blog" className="text-foreground hover:text-blue-600">Blog</Link> */}
       <Link to="/contacto" className="text-foreground hover:text-blue-600">Contacto</Link>
     </>
   );
@@ -75,14 +73,11 @@ const NavBar = () => {
                   <Link to="/servicios/optimizacion-procesos" className="text-foreground hover:text-blue-600 pl-2" onClick={() => setIsOpen(false)}>
                     Optimización de Procesos
                   </Link>
-                  <Link to="/servicios/desarrollo-producto" className="text-foreground hover:text-blue-600 pl-2" onClick={() => setIsOpen(false)}>
-                    Soluciones
+                  <Link to="/servicios/soluciones-internas" className="text-foreground hover:text-blue-600 pl-2" onClick={() => setIsOpen(false)}>
+                    Soluciones Internas
                   </Link>
                 </div>
                 
-                {/* <Link to="/blog" className="text-foreground hover:text-blue-600 text-lg" onClick={() => setIsOpen(false)}>
-                  Blog
-                </Link> */}
                 <Link to="/contacto" className="text-foreground hover:text-blue-600 text-lg" onClick={() => setIsOpen(false)}>
                   Contacto
                 </Link>
