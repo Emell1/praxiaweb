@@ -1,12 +1,12 @@
-
 import { motion } from "framer-motion";
-import { Workflow, ArrowRight, Check, BarChart } from "lucide-react";
+import { Workflow, Check, BarChart } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import NavBar from "@/components/NavBar";
 import SEO from "@/components/SEO";
+import ServiceHeader from "./components/ServiceHeader";
+import ServiceCTA from "./components/ServiceCTA";
 
 const OptimizacionProcesos = () => {
   return (
@@ -17,30 +17,20 @@ const OptimizacionProcesos = () => {
         keywords="optimización de procesos, eficiencia operativa, mejora continua, automatización, reducción de costes, flujos de trabajo"
       />
       
-      {/* Navbar compartido */}
       <NavBar />
 
-      {/* Contenido principal */}
       <main className="container mx-auto py-12 px-4">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
         >
-          {/* Encabezado del servicio */}
-          <div className="flex flex-col md:flex-row md:items-center gap-4 mb-10">
-            <div className="bg-secondary/20 p-4 rounded-full">
-              <Workflow className="h-12 w-12 text-secondary-DEFAULT" />
-            </div>
-            <div>
-              <h1 className="text-3xl md:text-4xl font-bold">Optimización de Procesos</h1>
-              <p className="text-xl mt-2 text-gray-600">
-                Mejoramos la eficiencia operativa y reducimos costes innecesarios.
-              </p>
-            </div>
-          </div>
+          <ServiceHeader 
+            Icon={Workflow}
+            title="Optimización de Procesos"
+            description="Mejoramos la eficiencia operativa y reducimos costes innecesarios."
+          />
           
-          {/* Imagen destacada */}
           <div className="w-full h-64 md:h-96 bg-gray-100 mb-12 rounded-lg overflow-hidden">
             <img 
               src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6" 
@@ -163,21 +153,14 @@ const OptimizacionProcesos = () => {
             </div>
           </div>
 
-          {/* CTA final */}
-          <div className="bg-secondary/10 p-8 rounded-lg">
-            <h2 className="text-2xl font-bold mb-4">¿Buscas optimizar tus operaciones?</h2>
-            <p className="mb-6">Contacta con nosotros para una evaluación inicial de tus procesos actuales y descubre oportunidades de mejora.</p>
-            <Link to="/contacto">
-              <Button className="flex items-center gap-2">
-                Solicitar evaluación
-                <ArrowRight className="h-4 w-4" />
-              </Button>
-            </Link>
-          </div>
+          <ServiceCTA 
+            title="¿Buscas optimizar tus operaciones?"
+            description="Contacta con nosotros para una evaluación inicial de tus procesos actuales y descubre oportunidades de mejora."
+            buttonText="Solicitar evaluación"
+          />
         </motion.div>
       </main>
 
-      {/* Footer */}
       <footer className="bg-gray-100 mt-16">
         <div className="container mx-auto py-8 px-4">
           <Separator className="mb-8" />

@@ -1,12 +1,12 @@
-
 import { motion } from "framer-motion";
-import { Users, ArrowRight, Check, PieChart } from "lucide-react";
+import { Users, Check } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import NavBar from "@/components/NavBar";
 import SEO from "@/components/SEO";
+import ServiceHeader from "./components/ServiceHeader";
+import ServiceCTA from "./components/ServiceCTA";
 
 const ConsultoriaEstrategica = () => {
   return (
@@ -17,30 +17,20 @@ const ConsultoriaEstrategica = () => {
         keywords="consultoría estratégica, análisis de negocio, diagnóstico empresarial, optimización organizacional, plan estratégico"
       />
       
-      {/* Navbar compartido */}
       <NavBar />
 
-      {/* Contenido principal */}
       <main className="container mx-auto py-12 px-4">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
         >
-          {/* Encabezado del servicio */}
-          <div className="flex flex-col md:flex-row md:items-center gap-4 mb-10">
-            <div className="bg-secondary/20 p-4 rounded-full">
-              <Users className="h-12 w-12 text-secondary-DEFAULT" />
-            </div>
-            <div>
-              <h1 className="text-3xl md:text-4xl font-bold">Consultoría Estratégica</h1>
-              <p className="text-xl mt-2 text-gray-600">
-                Análisis profundo y recomendaciones para optimizar los procesos de tu producto.
-              </p>
-            </div>
-          </div>
+          <ServiceHeader 
+            Icon={Users}
+            title="Consultoría Estratégica"
+            description="Análisis profundo y recomendaciones para optimizar los procesos de tu producto."
+          />
           
-          {/* Imagen destacada */}
           <div className="w-full h-64 md:h-96 bg-gray-100 mb-12 rounded-lg overflow-hidden">
             <img 
               src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
@@ -153,21 +143,14 @@ const ConsultoriaEstrategica = () => {
             </div>
           </div>
 
-          {/* CTA final */}
-          <div className="bg-secondary/10 p-8 rounded-lg">
-            <h2 className="text-2xl font-bold mb-4">¿Listo para transformar tus procesos?</h2>
-            <p className="mb-6">Solicita una llamada con nuestro equipo para evaluar tus necesidades y diseñar una solución personalizada.</p>
-            <Link to="/contacto">
-              <Button className="flex items-center gap-2">
-                Solicitar consultoría
-                <ArrowRight className="h-4 w-4" />
-              </Button>
-            </Link>
-          </div>
+          <ServiceCTA 
+            title="¿Listo para transformar tus procesos?"
+            description="Solicita una llamada con nuestro equipo para evaluar tus necesidades y diseñar una solución personalizada."
+            buttonText="Solicitar consultoría"
+          />
         </motion.div>
       </main>
 
-      {/* Footer */}
       <footer className="bg-gray-100 mt-16">
         <div className="container mx-auto py-8 px-4">
           <Separator className="mb-8" />
