@@ -1,6 +1,6 @@
 
 import { motion } from "framer-motion";
-import { Code, ArrowLeft, Target, Check, BarChart } from "lucide-react";
+import { Code, ArrowRight, Check, Laptop } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -43,7 +43,7 @@ const SolucionesInternas = () => {
           {/* Imagen destacada */}
           <div className="w-full h-64 md:h-96 bg-gray-100 mb-12 rounded-lg overflow-hidden">
             <img 
-              src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
+              src="https://images.unsplash.com/photo-1581472723648-909f4851d4ae"
               alt="Soluciones Internas" 
               className="w-full h-full object-cover"
             />
@@ -131,7 +131,7 @@ const SolucionesInternas = () => {
           {/* Tipos de soluciones */}
           <div className="mb-16">
             <div className="flex items-center gap-2 mb-6">
-              <Target className="h-6 w-6 text-secondary-DEFAULT" />
+              <Laptop className="h-6 w-6 text-secondary-DEFAULT" />
               <h2 className="text-2xl font-bold">Tipos de Soluciones</h2>
             </div>
             
@@ -179,7 +179,7 @@ const SolucionesInternas = () => {
             <Link to="/contacto">
               <Button className="flex items-center gap-2">
                 Solicitar consulta
-                <ArrowLeft className="h-4 w-4" />
+                <ArrowRight className="h-4 w-4" />
               </Button>
             </Link>
           </div>
@@ -196,7 +196,7 @@ const SolucionesInternas = () => {
               <Link to="/" className="text-sm text-primary hover:underline">Inicio</Link>
               <Link to="/servicios/consultoria-estrategica" className="text-sm text-primary hover:underline">Consultoría</Link>
               <Link to="/servicios/optimizacion-procesos" className="text-sm text-primary hover:underline">Procesos</Link>
-              <Link to="/servicios/desarrollo-producto" className="text-sm text-primary hover:underline">Producto</Link>
+              <Link to="/servicios/soluciones-internas" className="text-sm text-primary hover:underline">Soluciones Internas</Link>
             </div>
           </div>
         </div>
@@ -206,4 +206,3 @@ const SolucionesInternas = () => {
 };
 
 export default SolucionesInternas;
-
