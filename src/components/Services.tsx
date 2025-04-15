@@ -26,7 +26,7 @@ const services = [
     description:
       "Te ayudamos a desarrollar herramientas internas, cuadros de mando y sistemas a medida que acompañen la mejora continua y la toma de decisiones.",
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
-    path: "/servicios/desarrollo-producto"
+    path: "/servicios/soluciones-internas"
   },
 ];
 
