@@ -33,7 +33,7 @@ const ConsultoriaEstrategica = () => {
           
           <div className="w-full h-64 md:h-96 bg-gray-100 mb-12 rounded-lg overflow-hidden">
             <img 
-              src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
+              src="/optimizar-procesos.jpg"
               alt="Consultoría Estratégica" 
               className="w-full h-full object-cover"
             />
