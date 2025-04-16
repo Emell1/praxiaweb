@@ -33,7 +33,7 @@ const OptimizacionProcesos = () => {
           
           <div className="w-full h-64 md:h-96 bg-gray-100 mb-12 rounded-lg overflow-hidden">
             <img 
-              src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6" 
+              src="/optimizar-procesos.png" 
               alt="Optimización de Procesos" 
               className="w-full h-full object-cover"
             />
