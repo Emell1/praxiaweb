@@ -9,7 +9,7 @@ const services = [
     title: "Consultoría Estratégica",
     description:
       "Diagnóstico profundo y diseño de soluciones a medida para mejorar procesos críticos de negocio.",
-    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+    image: "/consultoria-estrategica.png",
     path: "/servicios/consultoria-estrategica"
   },
   {
