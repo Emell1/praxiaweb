@@ -61,7 +61,7 @@ const Services = () => {
                 <img
                   src={service.image}
                   alt={service.title}
-                  className="w-full h-full object-cover opacity-10 group-hover:opacity-20 transition-opacity"
+                  className="w-full h-full object-cover opacity-20 group-hover:opacity-30 transition-opacity"
                 />
               </div>
               <div className="relative z-10">
