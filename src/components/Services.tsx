@@ -17,7 +17,7 @@ const services = [
     title: "Optimización de Procesos",
     description:
       "Identificamos cuellos de botella, automatizamos tareas clave y rediseñamos flujos para maximizar la eficiencia.",
-    image: "/optimizar-procesos.jpg",
+    image: "/optimizar-procesos.png",
     path: "/servicios/optimizacion-procesos"
   },
   {
