@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import Btn from "./Btn";
 
 const Developments = () => {
   return (
@@ -20,6 +21,8 @@ const Developments = () => {
             y facilidad de uso para garantizar que el cambio se integre y se
             mantenga.
           </p>
+  
+
         </motion.div>
 
         <motion.div
@@ -41,6 +44,13 @@ const Developments = () => {
                 documentos clave y accede a filtros inteligentes que facilitan
                 la toma de decisiones.
               </p>
+
+              <Btn 
+                buttonText="Conoce Opta"
+                href="https://www.opta.space/"
+                target="_blank"
+              />
+              
             </div>
             <div className='min-h-[500px] lg:min-h-[350px] w-full xl:w-1/2 rounded-lg overflow-hidden aspect-video'>
               <iframe
