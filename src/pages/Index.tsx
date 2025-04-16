@@ -11,7 +11,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO 
-        title="Praxia - Consultoría Estratégica y Desarrollo de Productos"
+        title="Praxia - Optimización estratégica de procesos"
         description="Servicios especializados en consultoría estratégica, optimización de procesos y desarrollo de productos para transformar tu negocio."
         keywords="praxia, consultoría estratégica, optimización de procesos, desarrollo de productos, transformación digital, innovación empresarial"
       />
