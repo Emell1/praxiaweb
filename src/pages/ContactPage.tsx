@@ -41,27 +41,15 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <p className="font-medium">Teléfono:</p>
-                    <a href="tel:+34912345678" className="text-primary hover:underline">
-                      +34 91 234 56 78
+                    <a href="tel:+34685791609" className="text-primary hover:underline">
+                      +34 68 679 16 09
                     </a>
                   </div>
-                  <div>
-                    <p className="font-medium">Dirección:</p>
-                    <address className="not-italic text-gray-600">
-                      Calle Gran Vía, 12<br />
-                      28013 Madrid, España
-                    </address>
-                  </div>
+                  
                 </div>
               </div>
               
-              <div>
-                <h3 className="text-xl font-semibold mb-2">Horario de atención</h3>
-                <p className="text-gray-600">
-                  Lunes a Viernes: 9:00 - 18:00<br />
-                  Sábado y Domingo: Cerrado
-                </p>
-              </div>
+             
             </div>
           </div>
         </div>
