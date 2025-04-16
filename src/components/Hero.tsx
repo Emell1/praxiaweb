@@ -10,7 +10,7 @@ const Hero = () => {
         <img
           src="https://images.unsplash.com/photo-1519389950473-47ba0277781c"
           alt="Equipo de trabajo en entorno laboral"
-          className="w-full h-full object-cover opacity-20 filter brightness-110 contrast-110"
+          className="w-full h-full object-cover opacity-10"
         />
       </div>
       <div className="max-w-6xl mx-auto relative z-10">
