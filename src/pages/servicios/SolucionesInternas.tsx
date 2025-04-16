@@ -41,7 +41,7 @@ const SolucionesInternas = () => {
           
           <div className="w-full h-64 md:h-96 bg-gray-100 mb-12 rounded-lg overflow-hidden">
             <img 
-              src="https://images.unsplash.com/photo-1581472723648-909f4851d4ae"
+              src="/soluciones-internas.png"
               alt="Soluciones Internas" 
               className="w-full h-full object-cover"
             />
