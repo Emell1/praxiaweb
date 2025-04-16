@@ -72,7 +72,7 @@ const AnimatedLogo = () => {
         </>
       ) : (
         <img 
-          src={`/logo-frames/1bfb2347e9924335954c7edecbb50dd7Cwg1pjV2ZbgvfAvX-${currentFrame}.png`}
+          src={`/logo-frames/dae1bde1fc37456c994e5c73918b1df4W0nNezrdbe2PJY7G-${currentFrame}.png`}
           alt={`Logo Frame ${currentFrame}`}
           className="w-full h-full object-contain"
         />
