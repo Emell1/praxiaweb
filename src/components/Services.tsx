@@ -70,7 +70,7 @@ const Services = () => {
                 <p className="text-gray-600 mb-6">{service.description}</p>
                 <Link
                   to={service.path}
-                  className="inline-flex items-center text-primary hover:text-secondary-DEFAULT transition-colors"
+                  className="inline-flex items-center px-3 py-1.5 rounded-md text-white bg-[#4c6cb3] hover:bg-[#4c6cb3]/90 transition-colors"
                 >
                   Saber más
                   <ChevronRight className="ml-1 h-4 w-4" />

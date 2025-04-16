@@ -21,7 +21,7 @@ const Hero = () => {
           className="text-center"
         >
           <span className="inline-flex items-center px-4 py-2 rounded-full bg-accent text-sm font-medium mb-6">
-            <AnimatedLogo /> <span className="mx-1">|</span> Optimización Estratégica de Procesos
+            <AnimatedLogo /> <span className="mx-1 text-white">|</span> <span className="text-white">Optimización Estratégica de Procesos</span>
           </span>
           <h1 className="heading-xl mb-6 max-w-4xl mx-auto">
             Transformamos procesos en{" "}
