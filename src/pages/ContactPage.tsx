@@ -61,7 +61,7 @@ const ContactPage = () => {
             <p className="text-sm text-gray-600">© {new Date().getFullYear()} Praxia. Todos los derechos reservados.</p>
             <div className="flex gap-4">
               <Link to="/" className="text-sm text-primary hover:underline">Inicio</Link>
-                # <Link to="/blog" className="text-sm text-primary hover:underline">Blog</Link>
+    
               <Link to="/servicios/consultoria-estrategica" className="text-sm text-primary hover:underline">Servicios</Link>
             </div>
           </div>
