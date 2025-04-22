@@ -22,6 +22,7 @@ const BlogPage = () => {
       try {
         setLoading(true);
         const blogPosts = await getAllBlogPosts();
+        console.log({blogPosts})
         setPosts(blogPosts);
       } catch (err) {
         console.error("Error al cargar los artículos:", err);
