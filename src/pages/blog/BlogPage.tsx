@@ -22,7 +22,6 @@ const BlogPage = () => {
       try {
         setLoading(true);
         const blogPosts = await getAllBlogPosts();
-        console.log({blogPosts})
         setPosts(blogPosts);
       } catch (err) {
         console.error("Error al cargar los artículos:", err);
@@ -77,9 +76,6 @@ const BlogPage = () => {
                   </CardTitle>
                   <CardDescription>{post.excerpt}</CardDescription>
                 </CardHeader>
-                <CardContent className="flex-grow">
-                  <p className="text-gray-600 line-clamp-3">{post.excerpt}</p>
-                </CardContent>
                 <CardFooter>
                   <Link to={`/blog/${post.slug}`} className="w-full">
                     <Button variant="outline" className="w-full flex justify-between">
