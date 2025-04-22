@@ -12,6 +12,8 @@ import { Button } from '../../components/ui/button';
 import ReactMarkdown from 'react-markdown';
 import SEO from '@/components/SEO';
 
+import './BlogPost.css'
+
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
   const postId: number = +slug.match(/\d+/)?.[0]
@@ -131,8 +133,7 @@ const BlogPost = () => {
             <span>•</span>
             <span>{format(new Date(post.publishedAt), 'dd MMMM yyyy', { locale: es })}</span>
           </div>
-          
-          <div className="prose prose-lg max-w-none">
+          <div className="markdown prose prose-lg max-w-none">
             <ReactMarkdown>{post.content}</ReactMarkdown>
           </div>
         </div>

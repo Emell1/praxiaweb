@@ -236,8 +236,6 @@ export const getBlogPostById = async (
       tags: data.keywords,
     }
 
-    console.log({cleanData})
-
     return cleanData
   } catch (error) {
     console.error('Fetch error:', error)
