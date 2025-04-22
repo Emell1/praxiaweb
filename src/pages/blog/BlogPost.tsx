@@ -5,7 +5,7 @@ import { format } from 'date-fns';
 import { es } from 'date-fns/locale';
 import { ArrowLeft } from 'lucide-react';
 import NavBar from '../../components/NavBar';
-import { getBlogPostBySlug, getAllBlogPosts } from '../../services/blogService';
+import { getBlogPostById, getAllBlogPosts } from '../../services/blogService';
 import { BlogPostType } from '../../types/blog';
 import { Badge } from '../../components/ui/badge';
 import { Button } from '../../components/ui/button';
@@ -14,6 +14,8 @@ import SEO from '@/components/SEO';
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
+  const postId: number = +slug.match(/\d+/)?.[0]
+  console.log(postId)
   const [post, setPost] = useState<BlogPostType | null>(null);
   const [relatedPosts, setRelatedPosts] = useState<BlogPostType[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
@@ -29,8 +31,8 @@ const BlogPost = () => {
 
       try {
         setLoading(true);
-        const postData = await getBlogPostBySlug(slug);
-        
+        const postData = await getBlogPostById(postId);
+
         if (!postData) {
           navigate('/blog');
           return;

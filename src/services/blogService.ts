@@ -150,58 +150,24 @@ export const getAllBlogPosts = async (): Promise<BlogPostType[]> => {
     const data = await response.json()
 
     // Format data
-    const cleanData = data.map(post => {
+    const cleanData = data.map((post) => {
       return {
         id: post.id,
         title: post.title,
         slug: convertToSlug(post.title),
         excerpt: post.description,
-        content: "", // Or fetch content if needed
+        content: '', // Or fetch content if needed
         coverImage: post.banner_image_url,
         publishedAt: post.updated_at,
         featured: true, // Example static value
-        tags: [] // Empty tags array, add logic if needed
-      };
-    });
+        tags: [], // Empty tags array, add logic if needed
+      }
+    })
 
     return cleanData
-
   } catch (error) {
     console.error('Fetch error:', error)
     return null
-  }
-
-  // Siempre tenemos localStorage como fuente confiable
-  let localPosts = getFromLocalStorage()
-
-  // Si Supabase no está configurado, usar solo localStorage
-  if (!isSupabaseConfigured) {
-    toast.info('Usando datos locales (Supabase no está configurado)')
-    return localPosts
-  }
-
-  // Intentar obtener desde Supabase
-  try {
-    const { data, error } = await supabase
-      .from('blog_posts')
-      .select('*')
-      .order('publishedAt', { ascending: false })
-
-    if (error) throw error
-
-    // Actualizar localStorage con datos de Supabase para mantenerlos sincronizados
-    if (data && data.length > 0) {
-      saveToLocalStorage(data as BlogPostType[])
-      return data as BlogPostType[]
-    } else {
-      return localPosts
-    }
-  } catch (error) {
-    console.error('Error al obtener los posts del blog:', error)
-    toast.error('Error al obtener datos de Supabase, usando datos locales')
-
-    // Fallback a localStorage si hay un error con Supabase
-    return localPosts
   }
 }
 
@@ -234,54 +200,48 @@ export const getFeaturedBlogPosts = async (): Promise<BlogPostType[]> => {
 }
 
 // Obtener una entrada de blog por slug
-export const getBlogPostBySlug = async (
-  slug: string
-): Promise<BlogPostType | undefined> => {
-  // Si Supabase no está configurado, usar solo localStorage
-  if (!isSupabaseConfigured) {
-    return getFromLocalStorage().find((post) => post.slug === slug)
-  }
-
-  try {
-    const { data, error } = await supabase
-      .from('blog_posts')
-      .select('*')
-      .eq('slug', slug)
-      .single()
-
-    if (error) throw error
-    return data as BlogPostType
-  } catch (error) {
-    console.error(`Error al obtener post con slug ${slug}:`, error)
-
-    // Fallback a localStorage
-    return getFromLocalStorage().find((post) => post.slug === slug)
-  }
-}
-
-// Obtener una entrada de blog por ID
 export const getBlogPostById = async (
-  id: string
+  id: number
 ): Promise<BlogPostType | undefined> => {
-  // Si Supabase no está configurado, usar solo localStorage
-  if (!isSupabaseConfigured) {
-    return getFromLocalStorage().find((post) => post.id === id)
-  }
+  const token = await getToken()
 
   try {
-    const { data, error } = await supabase
-      .from('blog_posts')
-      .select('*')
-      .eq('id', id)
-      .single()
+    const response = await fetch(
+      `${import.meta.env.VITE_API_HOST}/blog/posts/${id}?details=true`,
+      {
+        method: 'GET',
+        headers: {
+          Authorization: `Token ${token}`,
+        },
+        redirect: 'follow' as RequestRedirect,
+      }
+    )
 
-    if (error) throw error
-    return data as BlogPostType
+    if (!response.ok) {
+      console.error(`Error: ${response.status} - ${response.statusText}`)
+      return null
+    }
+
+    const data = await response.json()
+
+    const cleanData = {
+      id: data.id,
+      title: data.title,
+      slug: convertToSlug(data.title),
+      excerpt: data.description,
+      content: data.content,
+      coverImage: data.banner_image_url,
+      publishedAt: data.updated_at,
+      featured: true, // Example static value
+      tags: data.keywords,
+    }
+
+    console.log({cleanData})
+
+    return cleanData
   } catch (error) {
-    console.error(`Error al obtener post con ID ${id}:`, error)
-
-    // Fallback a localStorage
-    return getFromLocalStorage().find((post) => post.id === id)
+    console.error('Fetch error:', error)
+    return null
   }
 }
 

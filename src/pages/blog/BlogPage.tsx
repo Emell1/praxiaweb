@@ -70,7 +70,7 @@ const BlogPage = () => {
                     </span>
                   </div>
                   <CardTitle className="text-xl">
-                    <Link to={`/blog/${post.slug}`} className="hover:text-primary transition-colors">
+                    <Link to={`/blog/${post.id}-${post.slug}`} className="hover:text-primary transition-colors">
                       {post.title}
                     </Link>
                   </CardTitle>
