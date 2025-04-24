@@ -11,6 +11,7 @@ import { Badge } from '../../components/ui/badge';
 import { Button } from '../../components/ui/button';
 import ReactMarkdown from 'react-markdown';
 import SEO from '@/components/SEO';
+import PDFViewer from '@/components/PDFViewer';
 
 import './../../styles/markdown.css';
 
@@ -133,6 +134,8 @@ const BlogPost = () => {
             <span>•</span>
             <span>{format(new Date(post.publishedAt), 'dd MMMM yyyy', { locale: es })}</span>
           </div>
+
+          {/* Markdown */}
           <div className="markdown prose prose-lg max-w-none">
             <ReactMarkdown>{post.content}</ReactMarkdown>
           </div>
@@ -145,6 +148,14 @@ const BlogPost = () => {
               Tu navegador no soporta la etiqueta de video.
             </video>
           }
+
+          {/* Pdf viwer */}
+          {
+            // post.pdfUrl &&
+            <PDFViewer pdfUrl={"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"} />
+          }
+          {/* <embed src="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" type="application/pdf" width="100%" height="600px" /> */}
+
           
         </div>
 
