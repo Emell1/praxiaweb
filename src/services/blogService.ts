@@ -234,6 +234,8 @@ export const getBlogPostById = async (
       publishedAt: data.updated_at,
       featured: true, // Example static value
       tags: data.keywords,
+      videoUrl: data.video_url,
+      pdfUrl: data.pdf_url,
     }
 
     return cleanData

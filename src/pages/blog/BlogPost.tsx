@@ -136,8 +136,18 @@ const BlogPost = () => {
           <div className="markdown prose prose-lg max-w-none">
             <ReactMarkdown>{post.content}</ReactMarkdown>
           </div>
-        </div>
         
+          {/* Video */}
+          {
+            post.videoUrl &&
+            <video className="w-full h-auto rounded-lg overflow-hidden mt-8" controls>
+              <source src={post.videoUrl} type="video/mp4" />
+              Tu navegador no soporta la etiqueta de video.
+            </video>
+          }
+          
+        </div>
+
         {relatedPosts.length > 0 && (
           <div className="max-w-3xl mx-auto mt-16">
             <h2 className="text-2xl font-bold mb-6">Artículos relacionados</h2>

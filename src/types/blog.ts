@@ -9,6 +9,8 @@ export interface BlogPostType {
   publishedAt: string;
   featured: boolean;
   tags: string[];
+  videoUrl?: string;
+  pdfUrl?: string;
 }
 
 export type BlogPostFormData = Omit<BlogPostType, 'id' | 'slug' | 'publishedAt'> & {
