@@ -12,7 +12,7 @@ import { Button } from '../../components/ui/button';
 import ReactMarkdown from 'react-markdown';
 import SEO from '@/components/SEO';
 
-import './BlogPost.css'
+import './../../styles/markdown.css';
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
