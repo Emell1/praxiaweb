@@ -67,7 +67,11 @@ const BlogPage = () => {
           </div>
         ) : posts.length > 0 ? (
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
-            {posts.map((post) => (
+            {posts.map((post) => {
+
+              const postLink = `/blog/${post.id}-${post.slug}`
+
+              return (
               <Card
                 key={post.id}
                 className='flex flex-col'
@@ -96,7 +100,7 @@ const BlogPage = () => {
                   </div>
                   <CardTitle className='text-xl'>
                     <Link
-                      to={`/blog/${post.id}-${post.slug}`}
+                      to={postLink}
                       className='hover:text-primary transition-colors'
                     >
                       {post.title}
@@ -106,7 +110,7 @@ const BlogPage = () => {
                 </CardHeader>
                 <CardFooter>
                   <Link
-                    to={`/blog/${post.slug}`}
+                    to={postLink}
                     className='w-full'
                   >
                     <Button
@@ -119,7 +123,8 @@ const BlogPage = () => {
                   </Link>
                 </CardFooter>
               </Card>
-            ))}
+              )
+            })}
           </div>
         ) : (
           <div className='text-center py-12'>
