@@ -89,6 +89,10 @@ const NavBar = () => {
                 <Link to="/contacto" className="text-foreground hover:text-blue-600 text-lg" onClick={() => setIsOpen(false)}>
                   Contacto
                 </Link>
+
+                <Link to="/blog" className="text-foreground hover:text-blue-600 text-lg" onClick={() => setIsOpen(false)}>
+                  Blog
+                </Link>
               </div>
             </SheetContent>
           </Sheet>
