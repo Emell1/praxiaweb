@@ -151,7 +151,7 @@ const BlogPost = () => {
 
           {/* Pdf viwer */}
           {
-            // post.pdfUrl &&
+            post.pdfUrl &&
             <PDFViewer pdfUrl={post.pdfUrl} />
           }
 
