@@ -369,3 +369,45 @@ export const deleteBlogPost = async (id: string): Promise<boolean> => {
     return true
   }
 }
+
+
+// Get pdf files data from endpoint
+export const getPdfData = async (
+  url: string
+): Promise<Blob | null> => {
+  const token = await getToken()
+
+  try {
+
+    const raw = JSON.stringify({
+      "url": url
+    });
+    
+
+    const response = await fetch(
+      `${import.meta.env.VITE_API_HOST}/blog/download-file/`,
+      {
+        method: 'POST',
+        headers: {
+          Authorization: `Token ${token}`,
+          'Content-Type': 'application/json',
+        },
+        redirect: 'follow' as RequestRedirect,
+        body: raw,
+      },
+    )
+
+    if (!response.ok) {
+      console.error(`Error: ${response.status} - ${response.statusText}`)
+      return null
+    }
+
+    // Get binary response
+    const blob = await response.blob()
+
+    return blob
+  } catch (error) {
+    console.error('Fetch error:', error)
+    return null
+  }
+}

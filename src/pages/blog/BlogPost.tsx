@@ -152,9 +152,8 @@ const BlogPost = () => {
           {/* Pdf viwer */}
           {
             // post.pdfUrl &&
-            <PDFViewer pdfUrl={"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"} />
+            <PDFViewer pdfUrl={post.pdfUrl} />
           }
-          {/* <embed src="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" type="application/pdf" width="100%" height="600px" /> */}
 
           
         </div>
