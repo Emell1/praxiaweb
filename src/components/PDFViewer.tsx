@@ -13,6 +13,7 @@ import ArrowBtn from './ArrowBtn'
 // Pdf styles
 import 'react-pdf/dist/Page/TextLayer.css'
 import 'react-pdf/dist/Page/AnnotationLayer.css'
+import '../styles/pdf.css'
 
 export default function PDFViewer({ pdfUrl }: { pdfUrl: string }) {
   const [numPages, setNumPages] = useState<number>()
@@ -69,22 +70,32 @@ export default function PDFViewer({ pdfUrl }: { pdfUrl: string }) {
       onTouchEnd={handleTouchEnd}
       className={`
         relative
+        pdf-viewer-container
       `}
     >
       <Document
         file={pdfData}
         onLoadSuccess={onDocumentLoadSuccess}
-        className={`relative border-2 border-red-500 flex flex-col items-center justify-center`}
+        className={`pdf-document`}
       >
         <Page pageNumber={pageNumber} />
-        <ArrowBtn onClick={goToPreviousPage} disable={pageNumber === 1} className="left-2" />
-        <ArrowBtn onClick={goToNextPage} disable={pageNumber === numPages} className="rotate-180 right-2" />
-        <p>
-          Page {pageNumber} of {numPages}
-        </p>
+        <div className={`hidden md:block`}>
+          <ArrowBtn
+            onClick={goToPreviousPage}
+            disable={pageNumber === 1}
+            className='left-2'
+          />
+          <ArrowBtn
+            onClick={goToNextPage}
+            disable={pageNumber === numPages}
+            className='rotate-180 right-2'
+          />
+        </div>
       </Document>
-      <div>
-      </div>
+      <p className={``}>
+        Page {pageNumber} of {numPages}
+      </p>
+      <div></div>
     </div>
   )
 }
