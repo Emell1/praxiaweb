@@ -55,6 +55,15 @@ const BlogPost = () => {
         setError("No se pudo cargar el artículo");
       } finally {
         setLoading(false);
+
+        // Set target blank to all links
+        setTimeout(() => {
+          const links = document.querySelectorAll('.markdown a');
+          console.log(links)
+          links.forEach(link => {
+            link.setAttribute('target', '_blank');
+          });
+        }, 1000);
       }
     };
 
@@ -65,7 +74,7 @@ const BlogPost = () => {
     return (
       <div className="min-h-screen bg-background">
         <NavBar />
-        <div className="container mx-auto py-12 px-4 text-center">
+        <div className="ºcontainer mx-auto py-12 px-4 text-center">
           <p>Cargando artículo...</p>
         </div>
       </div>
