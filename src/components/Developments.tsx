@@ -1,3 +1,4 @@
+
 import { motion } from 'framer-motion'
 import Btn from "./Btn";
 
@@ -21,8 +22,6 @@ const Developments = () => {
             y facilidad de uso para garantizar que el cambio se integre y se
             mantenga.
           </p>
-  
-
         </motion.div>
 
         <motion.div
@@ -50,23 +49,30 @@ const Developments = () => {
                 href="https://www.opta.space/"
                 target="_blank"
               />
-              
             </div>
             <div className='min-h-[500px] lg:min-h-[350px] w-full xl:w-1/2 rounded-lg overflow-hidden aspect-video'>
-              <iframe
-                style={{
-                  transform: 'scale(0.8)',
-                  transformOrigin: 'top left',
-                  width: '125%',
-                  height: '125%',
-                }}
-                src='https://www.opta.space/'
-                title='OPTA Landing Page'
-                className='w-full h-full border-0'
-                sandbox='allow-same-origin allow-scripts allow-popups allow-forms'
-                loading='lazy'
-                referrerPolicy='no-referrer-when-downgrade'
-              ></iframe>
+              <video
+                className='w-full h-full object-cover rounded-lg'
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                aria-label="OPTA platform demonstration video"
+              >
+                <source src="https://www.opta.space/hero.mp4" type="video/mp4" />
+                <p className="text-center text-foreground/60 p-4">
+                  Tu navegador no soporta la reproducción de video. 
+                  <a 
+                    href="https://www.opta.space/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-secondary-DEFAULT hover:underline ml-1"
+                  >
+                    Visita OPTA directamente
+                  </a>
+                </p>
+              </video>
             </div>
           </div>
         </motion.div>
