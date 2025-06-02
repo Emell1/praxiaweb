@@ -42,7 +42,7 @@ const ContactPage = () => {
                   <div>
                     <p className="font-medium">Teléfono:</p>
                     <a href="tel:+34685791609" className="text-primary hover:underline">
-                      +34 68 679 16 09
+                      +34 68 579 16 09
                     </a>
                   </div>
                   
