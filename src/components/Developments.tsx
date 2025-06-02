@@ -52,7 +52,7 @@ const Developments = () => {
             </div>
             <div className='min-h-[500px] lg:min-h-[350px] w-full xl:w-1/2 rounded-lg overflow-hidden aspect-video'>
               <video
-                className='w-full h-full object-cover rounded-lg'
+                className='w-full h-full rounded-lg border-2'
                 autoPlay
                 muted
                 loop
