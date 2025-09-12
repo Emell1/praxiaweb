@@ -9,8 +9,8 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO 
-        title="Contacto | Praxia — Arquitectura operativa"
-        description="Conversemos sobre tu núcleo y los puertos críticos. Agenda un Radar10 (evaluación en 10 días) o una evaluación inicial de procesos."
+        title="Contacto | Praxia"
+        description="Contáctanos para resolver tus dudas o solicitar información sobre nuestros servicios de consultoría estratégica y optimización de procesos."
         keywords="contacto praxia, consultoría estratégica, desarrollo de productos, optimización procesos"
       />
       <NavBar />
@@ -19,7 +19,7 @@ const ContactPage = () => {
         <div className="max-w-4xl mx-auto">
           <h1 className="text-3xl md:text-4xl font-bold mb-4">Contacto</h1>
           <p className="text-lg text-gray-600 mb-12">
-            Estamos listos para escucharte. Cuéntanos tu proceso crítico y los puertos implicados (p. ej., handoff ventas→CS, go‑live→facturación). Te proponemos un Radar10 para mapear y priorizar en 10 días.
+            Estamos listos para escucharte. Completa el formulario y nos pondremos en contacto contigo lo antes posible.
           </p>
           
           <div className="grid md:grid-cols-2 gap-12">
@@ -58,10 +58,7 @@ const ContactPage = () => {
       <footer className="bg-gray-100 mt-16">
         <div className="container mx-auto py-8 px-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div>
-              <p className="text-sm text-gray-600">© {new Date().getFullYear()} Praxia. Todos los derechos reservados.</p>
-              <p className="text-xs text-gray-500 mt-1">Metodología: arquitectura hexagonal como metáfora para diseñar operaciones robustas.</p>
-            </div>
+            <p className="text-sm text-gray-600">© {new Date().getFullYear()} Praxia. Todos los derechos reservados.</p>
             <div className="flex gap-4">
               <Link to="/" className="text-sm text-primary hover:underline">Inicio</Link>
     

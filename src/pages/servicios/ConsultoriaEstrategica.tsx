@@ -12,8 +12,8 @@ const ConsultoriaEstrategica = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO 
-        title="Consultoría Estratégica | Arquitectura operativa por Praxia"
-        description="Definimos el núcleo operativo, mapeamos puertos (interfaces) y priorizamos mejoras con evidencia para alinear estrategia y operación."
+        title="Consultoría Estratégica | Praxia"
+        description="Análisis profundo y recomendaciones para optimizar los procesos de tu producto a través de consultoría estratégica especializada."
         keywords="consultoría estratégica, análisis de negocio, diagnóstico empresarial, optimización organizacional, plan estratégico"
       />
       
@@ -28,7 +28,7 @@ const ConsultoriaEstrategica = () => {
           <ServiceHeader 
             Icon={Users}
             title="Consultoría Estratégica"
-            description="Arquitectura operativa para alinear estrategia y ejecución"
+            description="Análisis profundo y recomendaciones para optimizar los procesos de tu producto."
           />
           
           <div className="w-full h-64 md:h-96 bg-gray-100 mb-12 rounded-lg overflow-hidden">
@@ -44,29 +44,40 @@ const ConsultoriaEstrategica = () => {
             <div className="md:col-span-2">
               <div className="prose prose-lg max-w-none">
                 <p className="text-lg leading-relaxed mb-8">
-                  Abordamos la estrategia desde la operación real. Definimos el núcleo de tu servicio (reglas, criterios de 'listo') y mapeamos los puertos que conectan con clientes, proveedores y sistemas. Priorizamos mejoras con evidencia y entregamos un plan accionable.
+                  En Praxia, abordamos la consultoría estratégica como un ejercicio de precisión y enfoque. 
+                  Analizamos en profundidad tu organización para detectar oportunidades de mejora, identificar 
+                  barreras al crecimiento y diseñar planes de acción específicos que generen impacto directo 
+                  en tus resultados de negocio.
                 </p>
                 
                 <h2 className="text-2xl font-semibold mt-10 mb-6 text-primary">Metodología</h2>
                 <p className="text-lg leading-relaxed mb-6">
-                  Usamos la arquitectura hexagonal como metáfora práctica: núcleo estable, puertos claros, adaptadores evolutivos. Trabajamos con datos, de forma iterativa y colaborativa con tus equipos.
+                  Trabajamos en colaboración directa con los equipos clave de tu empresa. 
+                  Nuestras intervenciones se basan en datos, con una metodología iterativa que 
+                  garantiza ajustes ágiles, aprendizajes continuos y resultados medibles.
                 </p>
 
                 <h3 className="text-xl font-medium mt-10 mb-4 text-secondary-DEFAULT">Enfoque colaborativo</h3>
                 <p className="text-base leading-relaxed mb-8">
-                  Co‑diseñamos puertos y adaptadores con tus equipos para que el cambio se integre en la operación diaria.
+                  Creemos firmemente que las mejores soluciones surgen cuando combinamos nuestra 
+                  experiencia con el conocimiento interno de tu equipo. No imponemos fórmulas 
+                  genéricas, sino que construimos estrategias personalizadas que respondan 
+                  a tus desafíos específicos y aprovechan tus fortalezas distintivas.
                 </p>
 
                 <h3 className="text-xl font-medium mt-10 mb-4 text-secondary-DEFAULT">Proceso de consultoría</h3>
                 <ul className="space-y-4 mb-8 pl-6">
                   <li className="text-base leading-relaxed">
-                    <span className="font-medium">Diagnóstico del núcleo y puertos</span>: Evaluación del núcleo operativo y mapeo de interfaces clave.
+                    <span className="font-medium">Diagnóstico inicial</span>: Evaluación exhaustiva 
+                    de la situación actual y definición de objetivos claros.
                   </li>
                   <li className="text-base leading-relaxed">
-                    <span className="font-medium">Análisis estratégico y de mercado</span>: Estudio de mejores prácticas y estándares de interfaz.
+                    <span className="font-medium">Análisis estratégico</span>: Estudio del mercado, 
+                    competencia y tendencias relevantes para tu sector.
                   </li>
                   <li className="text-base leading-relaxed">
-                    <span className="font-medium">Hoja de ruta de adaptadores</span>: Planes con metas, responsables y plazos específicos.
+                    <span className="font-medium">Desarrollo de estrategia</span>: Creación de planes 
+                    de acción con metas, responsables y plazos definidos.
                   </li>
                 </ul>
               </div>
@@ -83,8 +94,7 @@ const ConsultoriaEstrategica = () => {
                       "Identificación de oportunidades de innovación",
                       "Optimización del uso de recursos y tiempos",
                       "Ventaja competitiva sostenible",
-                      "Planes de acción concretos, aplicables y medibles",
-                      "Interfaces claras entre equipos (menos handoffs fallidos)"
+                      "Planes de acción concretos, aplicables y medibles"
                     ].map((benefit, i) => (
                       <li key={i} className="flex items-start">
                         <Check className="h-5 w-5 text-primary mr-2 mt-1 flex-shrink-0" />
@@ -103,24 +113,24 @@ const ConsultoriaEstrategica = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 {
-                  title: "Análisis integral del núcleo y puertos",
-                  description: "Evaluación profunda del núcleo operativo y mapeo de interfaces críticas."
+                  title: "Análisis integral",
+                  description: "Estudio detallado de procesos y estructuras actuales para identificar áreas de mejora."
                 },
                 {
-                  title: "Identificación de cuellos de botella en puertos críticos",
-                  description: "Detección de fricciones en interfaces clave que afectan el rendimiento."
+                  title: "Identificación de cuellos de botella",
+                  description: "Detección de redundancias, riesgos y puntos de fricción que afectan el rendimiento."
                 },
                 {
-                  title: "Benchmarking de prácticas de interfaz",
-                  description: "Comparativa de criterios de 'listo' y estándares de handoff del sector."
+                  title: "Benchmarking",
+                  description: "Comparativa con mejores prácticas del sector para establecer estándares de calidad."
                 },
                 {
-                  title: "Hojas de ruta de adaptadores y gobernanza",
-                  description: "Planes para evolucionar adaptadores manteniendo la estabilidad del núcleo."
+                  title: "Hojas de ruta",
+                  description: "Desarrollo de planes detallados para la transformación progresiva de procesos."
                 },
                 {
-                  title: "Acompañamiento estratégico durante la adopción",
-                  description: "Orientación experta durante la implementación de la nueva arquitectura operativa."
+                  title: "Acompañamiento estratégico",
+                  description: "Orientación experta durante la implementación para asegurar resultados óptimos."
                 }
               ].map((service, i) => (
                 <Card key={i}>
@@ -134,7 +144,7 @@ const ConsultoriaEstrategica = () => {
           </div>
 
           <ServiceCTA 
-            title="¿Listo para clarificar tu núcleo y estandarizar tus puertos?"
+            title="¿Listo para transformar tus procesos?"
             description="Solicita una llamada con nuestro equipo para evaluar tus necesidades y diseñar una solución personalizada."
             buttonText="Solicitar consultoría"
           />

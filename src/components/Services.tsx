@@ -8,7 +8,7 @@ const services = [
     icon: Users,
     title: "Consultoría Estratégica",
     description:
-      "Definimos tu núcleo operativo y el mapa de puertos clave (entradas, salidas e integraciones) para alinear estrategia con ejecución.",
+      "Diagnóstico profundo y diseño de soluciones a medida para mejorar procesos críticos de negocio.",
     image: "/consultoria-estrategica.png",
     path: "/servicios/consultoria-estrategica"
   },
@@ -16,15 +16,15 @@ const services = [
     icon: Workflow,
     title: "Optimización de Procesos",
     description:
-      "Mejoramos 'adaptadores': roles, checklists, automatizaciones e integraciones en puertos críticos. Menos latencia y retrabajo.",
+      "Identificamos cuellos de botella, automatizamos tareas clave y rediseñamos flujos para maximizar la eficiencia.",
     image: "/optimizar-procesos.png",
     path: "/servicios/optimizacion-procesos"
   },
   {
     icon: Target,
-    title: "Soluciones Internas",
+    title: "Diseño y Desarrollo de Soluciones Internas",
     description:
-      "Construimos herramientas internas que conectan con tus puertos sin comprometer el núcleo. Dashboards, integraciones y apps a medida.",
+      "Te ayudamos a desarrollar herramientas internas, cuadros de mando y sistemas a medida que acompañen la mejora continua y la toma de decisiones.",
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
     path: "/servicios/soluciones-internas"
   },
@@ -43,7 +43,7 @@ const Services = () => {
         >
           <h2 className="heading-lg mb-4">Nuestros Servicios</h2>
           <p className="body-base text-gray-600 max-w-2xl mx-auto">
-            Soluciones personalizadas para fortalecer tu núcleo y estandarizar tus interfaces
+            Soluciones personalizadas para optimizar cada aspecto de tu negocio
           </p>
         </motion.div>
 

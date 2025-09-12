@@ -12,8 +12,8 @@ const OptimizacionProcesos = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO 
-        title="Optimización de Procesos | Puertos y adaptadores operativos"
-        description="Rediseñamos adaptadores en puertos críticos con SOPs breves, automatizaciones e integraciones para reducir latencia y retrabajo."
+        title="Optimización de Procesos | Praxia"
+        description="Servicios de optimización de procesos empresariales para mejorar la eficiencia operativa y reducir costes innecesarios."
         keywords="optimización de procesos, eficiencia operativa, mejora continua, automatización, reducción de costes, flujos de trabajo"
       />
       
@@ -28,7 +28,7 @@ const OptimizacionProcesos = () => {
           <ServiceHeader 
             Icon={Workflow}
             title="Optimización de Procesos"
-            description="Mejoramos adaptadores en puertos críticos, sin tocar la esencia"
+            description="Mejoramos la eficiencia operativa y reducimos costes innecesarios."
           />
           
           <div className="w-full h-64 md:h-96 bg-gray-100 mb-12 rounded-lg overflow-hidden">
@@ -44,7 +44,9 @@ const OptimizacionProcesos = () => {
             <div className="md:col-span-2">
               <div className="prose prose-lg max-w-none">
                 <p className="text-lg leading-relaxed mb-8">
-                  Detectamos ineficiencias en puertos de entrada/salida, simplificamos flujos y automatizamos tareas. Cambiamos adaptadores —no el núcleo— para ganar velocidad y estabilidad.
+                  Nuestro servicio de optimización de procesos transforma la manera en que tu empresa opera. 
+                  Detectamos ineficiencias, simplificamos flujos de trabajo, automatizamos tareas repetitivas 
+                  y mejoramos la experiencia de tus equipos y clientes.
                 </p>
                 
                 <h2 className="text-2xl font-semibold mt-10 mb-6 text-primary">Tecnologías Aplicadas</h2>
@@ -55,7 +57,10 @@ const OptimizacionProcesos = () => {
 
                 <h3 className="text-xl font-medium mt-10 mb-4 text-secondary-DEFAULT">Optimización integral</h3>
                 <p className="text-base leading-relaxed mb-8">
-                  Vemos el ecosistema como un hexágono: cambios locales que no rompen el centro.
+                  Nuestra visión holística nos permite identificar la interconexión entre diferentes 
+                  procesos dentro de tu organización. No nos limitamos a optimizar elementos aislados, 
+                  sino que consideramos el ecosistema completo para asegurar que los cambios generan 
+                  impactos positivos en cascada a través de toda la empresa.
                 </p>
 
                 <h3 className="text-xl font-medium mt-10 mb-4 text-secondary-DEFAULT">Áreas de impacto</h3>
@@ -71,9 +76,6 @@ const OptimizacionProcesos = () => {
                   <li className="text-base leading-relaxed">
                     <span className="font-medium">Gestión de recursos</span>: Implementamos sistemas 
                     para el uso óptimo de recursos humanos, tecnológicos y materiales.
-                  </li>
-                  <li className="text-base leading-relaxed">
-                    <span className="font-medium">Gobernanza de interfaces</span>: Criterios de 'listo', acuerdos de handoff, métricas de voltaje.
                   </li>
                 </ul>
               </div>
@@ -115,27 +117,27 @@ const OptimizacionProcesos = () => {
                 {
                   step: 1,
                   title: "Mapeo",
-                  description: "De puertos y procesos actuales"
+                  description: "Detallado de procesos actuales"
                 },
                 {
                   step: 2,
                   title: "Evaluación",
-                  description: "De valor y criticidad por puerto/etapa"
+                  description: "De valor y criticidad por etapa"
                 },
                 {
                   step: 3,
                   title: "Identificación",
-                  description: "De cuellos de botella y excepciones"
+                  description: "De cuellos de botella y redundancias"
                 },
                 {
                   step: 4,
                   title: "Rediseño",
-                  description: "De adaptadores (SOPs, roles, integraciones)"
+                  description: "De procesos con enfoque en eficiencia"
                 },
                 {
                   step: 5,
                   title: "Implementación",
-                  description: "Y medición del voltaje (KPIs por puerto)"
+                  description: "De automatizaciones y mejoras tecnológicas"
                 }
               ].map((step, i) => (
                 <Card key={i} className="relative">
@@ -152,8 +154,8 @@ const OptimizacionProcesos = () => {
           </div>
 
           <ServiceCTA 
-            title="¿Buscas optimizar tus puertos operativos?"
-            description="Contacta con nosotros para una evaluación inicial y descubre oportunidades de mejora."
+            title="¿Buscas optimizar tus operaciones?"
+            description="Contacta con nosotros para una evaluación inicial de tus procesos actuales y descubre oportunidades de mejora."
             buttonText="Solicitar evaluación"
           />
         </motion.div>
