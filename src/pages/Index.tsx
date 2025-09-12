@@ -11,9 +11,9 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO 
-        title="Praxia - Optimización estratégica de procesos"
-        description="Servicios especializados en consultoría estratégica, optimización de procesos y desarrollo de productos para transformar tu negocio."
-        keywords="praxia, consultoría estratégica, optimización de procesos, desarrollo de productos, transformación digital, innovación empresarial"
+        title="Praxia — Arquitectura operativa y optimización de procesos"
+        description="Consultoría en arquitectura operativa: protegemos el núcleo de tu negocio, estandarizamos sus interfaces y optimizamos procesos para escalar con precisión."
+        keywords="praxia, arquitectura operativa, consultoría estratégica, optimización de procesos, mejora continua, handoff, criterios de listo"
       />
       <NavBar />
       <Hero />

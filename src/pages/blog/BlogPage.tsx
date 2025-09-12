@@ -44,8 +44,8 @@ const BlogPage = () => {
   return (
     <div className='min-h-screen bg-background'>
       <SEO
-        title='Blog | Praxia'
-        description='Artículos y recursos sobre consultoría estratégica, optimización de procesos y desarrollo de productos para empresas.'
+        title='Blog | Praxia — Arquitectura operativa y procesos'
+        description='Insights sobre arquitectura operativa: cómo proteger el núcleo y mejorar puertos con evidencia.'
         keywords='blog consultoría, artículos optimización, recursos desarrollo producto, tendencias empresariales, innovación'
       />
       <NavBar />
@@ -53,8 +53,7 @@ const BlogPage = () => {
       <div className='container mx-auto py-12 px-4'>
         <h1 className='text-3xl md:text-4xl font-bold mb-3'>Blog</h1>
         <p className='text-lg text-gray-600 mb-8'>
-          Insights, tendencias y conocimiento en consultoría estratégica y
-          desarrollo de producto.
+          Insights sobre arquitectura operativa: cómo proteger el núcleo y mejorar puertos con evidencia.
         </p>
 
         {loading ? (

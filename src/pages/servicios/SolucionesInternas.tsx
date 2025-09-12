@@ -20,8 +20,8 @@ const SolucionesInternas = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO 
-        title="Soluciones Internas | Praxia"
-        description="Diseño y desarrollo de herramientas digitales internas personalizadas para optimizar la gestión y operación de tu empresa."
+        title="Soluciones Internas | Adaptadores digitales a medida"
+        description="Herramientas internas y APIs como adaptadores que conectan tus sistemas con puertos operativos, manteniendo estable el núcleo."
         keywords="soluciones internas, herramientas digitales, software personalizado, sistemas internos, automatización"
       />
       
@@ -36,7 +36,7 @@ const SolucionesInternas = () => {
           <ServiceHeader 
             Icon={Code}
             title="Diseño y Desarrollo de Soluciones Internas"
-            description="Herramientas digitales personalizadas para potenciar tu operación"
+            description="Adaptadores digitales que conectan sin comprometer el núcleo"
           />
           
           <div className="w-full h-64 md:h-96 bg-gray-100 mb-12 rounded-lg overflow-hidden">
@@ -51,9 +51,7 @@ const SolucionesInternas = () => {
             <div className="md:col-span-2">
               <div className="prose prose-lg max-w-none">
                 <p className="text-lg leading-relaxed mb-8">
-                  Desarrollamos herramientas digitales internas que permiten organizar la información, 
-                  facilitar la ejecución de tareas clave y asegurar que el conocimiento se quede en la empresa. 
-                  Nuestras soluciones se adaptan a tus necesidades específicas y evolucionan con tu negocio.
+                  Construimos herramientas que actúan como adaptadores: organizan información, estandarizan tareas y conectan sistemas con tus puertos operativos. Evolucionan con el negocio sin tocar reglas esenciales.
                 </p>
                 
                 <h2 className="text-2xl font-semibold mt-10 mb-6 text-primary">Stack Tecnológico</h2>
@@ -67,16 +65,13 @@ const SolucionesInternas = () => {
                 <h3 className="text-xl font-medium mt-10 mb-4 text-secondary-DEFAULT">Proceso de desarrollo</h3>
                 <ul className="space-y-4 mb-8 pl-6">
                   <li className="text-base leading-relaxed">
-                    <span className="font-medium">Análisis y diseño</span>: Entendemos tus necesidades 
-                    y diseñamos la solución ideal.
+                    <span className="font-medium">Análisis y diseño del puerto/adaptador</span>: Entendemos las interfaces necesarias y diseñamos el adaptador ideal.
                   </li>
                   <li className="text-base leading-relaxed">
-                    <span className="font-medium">Desarrollo iterativo</span>: Construimos la solución 
-                    por fases, permitiendo ajustes y mejoras continuas.
+                    <span className="font-medium">Desarrollo iterativo</span>: Construimos la solución por fases, permitiendo ajustes sin tocar el núcleo.
                   </li>
                   <li className="text-base leading-relaxed">
-                    <span className="font-medium">Implementación y soporte</span>: Aseguramos una 
-                    transición suave y brindamos soporte continuo.
+                    <span className="font-medium">Implementación y soporte</span>: Integramos el adaptador y brindamos soporte continuo.
                   </li>
                 </ul>
               </div>
@@ -91,9 +86,10 @@ const SolucionesInternas = () => {
                       "Interfaz intuitiva y personalizable",
                       "Integración con sistemas existentes",
                       "Arquitectura escalable y modular",
-                      "Seguridad y control de accesos",
+                     "Seguridad y control de accesos",
                       "Documentación completa",
-                      "Soporte técnico especializado"
+                      "Soporte técnico especializado",
+                      "Criterios de 'listo' y validaciones embebidas"
                     ].map((feature, i) => (
                       <li key={i} className="flex items-start">
                         <Check className="h-5 w-5 text-primary mr-2 mt-1 flex-shrink-0" />
@@ -132,7 +128,7 @@ const SolucionesInternas = () => {
                 },
                 {
                   title: "APIs y Microservicios",
-                  description: "Integración entre sistemas y servicios empresariales."
+                  description: "Adaptadores entre sistemas y servicios empresariales."
                 },
                 {
                   title: "Apps Móviles Internas",
@@ -150,7 +146,7 @@ const SolucionesInternas = () => {
           </div>
 
           <ServiceCTA 
-            title="¿Necesitas una solución a medida?"
+            title="¿Necesitas un adaptador digital para tu operación?"
             description="Cuéntanos tu proyecto y diseñaremos la herramienta perfecta para tus necesidades."
             buttonText="Solicitar consulta"
           />

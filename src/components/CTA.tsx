@@ -21,11 +21,10 @@ const CTA = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="heading-lg mb-6">
-            ¿Quieres impulsar tu negocio desde sus procesos?
+            ¿Quieres impulsar tu negocio desde su núcleo?
           </h2>
           <p className="body-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-            Solicita una conversación con nuestro equipo y descubre cómo mejorar, escalar 
-            y automatizar tus operaciones con precisión.
+            Conversemos para mapear tus puertos críticos, medir su 'voltaje' y priorizar mejoras en 10 días.
           </p>
 
           <div className="mt-8">

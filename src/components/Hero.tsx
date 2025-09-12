@@ -21,15 +21,13 @@ const Hero = () => {
           className="text-center"
         >
           <span className="inline-flex items-center px-4 py-2 rounded-full bg-white text-sm font-medium mb-6">
-            <AnimatedLogo /> <span className="mx-1 text-black">|</span> <span className="text-black">Optimización Estratégica de Procesos</span>
+            <AnimatedLogo /> <span className="mx-1 text-black">|</span> <span className="text-black">Arquitectura operativa aplicada</span>
           </span>
           <h1 className="heading-xl mb-6 max-w-4xl mx-auto">
-            Transformamos procesos en{" "}
-            <span className="text-secondary-DEFAULT">ventajas competitivas</span>
+            Transformamos procesos en ventajas competitivas, <span className="text-secondary-DEFAULT">protegiendo tu núcleo</span>
           </h1>
           <p className="body-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-            Detectamos ineficiencias, rediseñamos flujos y potenciamos resultados 
-            para escalar tu negocio con precisión.
+            Usamos la arquitectura hexagonal como metáfora: aislamos el núcleo de tu negocio y diseñamos 'puertos' (interfaces) claros con métricas simples. Detectamos ineficiencias, rediseñamos adaptadores y aceleramos resultados.
           </p>
           <ContactDialog buttonText="Solicita una consulta" />
         </motion.div>

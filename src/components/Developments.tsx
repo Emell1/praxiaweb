@@ -14,13 +14,10 @@ const Developments = () => {
           className='text-center mb-16'
         >
           <h2 className='heading-lg mb-4'>
-            Tecnología aplicada a la mejora continua
+            Tecnología al servicio de tu arquitectura operativa
           </h2>
           <p className='body-base text-foreground/70 max-w-2xl mx-auto'>
-            En Praxia, cada mejora estratégica se traduce en soluciones
-            prácticas. Nuestros desarrollos combinan eficiencia, personalización
-            y facilidad de uso para garantizar que el cambio se integre y se
-            mantenga.
+            Cada mejora se ancla en interfaces claras. Nuestras soluciones se integran como adaptadores que pueden evolucionar sin tocar la esencia del negocio.
           </p>
         </motion.div>
 
@@ -34,14 +31,10 @@ const Developments = () => {
           <div className='flex flex-col xl:flex-row gap-8 items-center'>
             <div className='xl:w-1/2'>
               <h3 className='heading-md mb-4'>
-                OPTA – Optimizador de Procesos, Tareas y Aprendizaje
+                OPTA — Optimizador de Procesos, Tareas y Aprendizaje
               </h3>
               <p className='text-foreground/80 mb-6'>
-                OPTA es nuestra herramienta propia que permite mapear, organizar
-                y evolucionar tus procesos desde una interfaz conversacional
-                simple e intuitiva. Crea flujos personalizados, integra
-                documentos clave y accede a filtros inteligentes que facilitan
-                la toma de decisiones.
+                OPTA mapea puertos y flujos desde una interfaz conversacional. Documenta criterios de 'listo', organiza SOPs de 1–2 páginas y facilita decisiones con datos simples.
               </p>
 
               <Btn 
