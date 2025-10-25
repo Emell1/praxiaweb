@@ -38,7 +38,7 @@ const AdminBlogEditor = () => {
     const fetchPost = async () => {
       if (isEdit && id) {
         try {
-          const post = await getBlogPostById(id);
+          const post = await getBlogPostById(parseInt(id));
           if (post) {
             setFormData({
               title: post.title,
