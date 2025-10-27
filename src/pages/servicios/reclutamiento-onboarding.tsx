@@ -1,55 +1,80 @@
 import { motion } from "framer-motion";
+import { Users, Check } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 import NavBar from "@/components/NavBar";
 import SEO from "@/components/SEO";
 import ServiceHeader from "./components/ServiceHeader";
 import ServiceCTA from "./components/ServiceCTA";
-import { Separator } from "@/components/ui/separator";
-import { Users } from "lucide-react";
 
-export default function ReclutamientoOnboarding() {
+const ReclutamientoOnboarding = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO 
         title="Reclutamiento y Onboarding | Praxia"
         description="Hiring estructurado y onboarding medible para reducir time-to-fill y tiempo a competencia en roles clave."
-        keywords="reclutamiento estructurado, scorecards, entrevistas, ATS, onboarding 30/60/90, tiempo a competencia, time-to-fill"
+        keywords="reclutamiento, onboarding 30/60/90, scorecards, entrevistas, ATS, tiempo a competencia"
       />
       <NavBar />
+
       <main className="container mx-auto py-12 px-4">
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4 }}>
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6 }}>
           <ServiceHeader 
             Icon={Users}
             title="Reclutamiento y Onboarding"
-            description="Contratá mejor y logrÁ que las personas rindan antes. Estándares claros y onboarding conectado a desempeño."
+            description="Contratá mejor y lográ que las personas rindan antes."
           />
+          
+          <div className="w-full h-64 md:h-96 bg-gray-100 mb-12 rounded-lg overflow-hidden">
+            <img 
+              src="/servicio-reclutamiento-onboarding-hero.jpg"
+              alt="Reclutamiento y Onboarding" 
+              className="w-full h-full object-cover"
+            />
+          </div>
 
-          <section className="prose max-w-none mt-8">
-            <p>
-              Estructuramos el proceso de selección con scorecards, rúbricas y entrevistas consistentes, y conectamos
-              el onboarding con resultados medibles del puesto. Menos time-to-fill, mayor tasa de aceptación y menor TTCP.
-            </p>
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            <div className="md:col-span-2">
+              <div className="prose prose-lg max-w-none">
+                <p className="text-lg leading-relaxed mb-8">
+                  Estructuramos selección con scorecards y entrevistas consistentes, y conectamos el onboarding con resultados medibles del puesto.
+                </p>
 
-            <h2>Qué ofrecemos</h2>
-            <p>
-              Scorecards por rol, guías de entrevista; flujo en ATS con SLAs y plantillas; onboarding 30/60/90 por rol con outcomes semanales;
-              coordinación real con hiring managers.
-            </p>
+                <h2 className="text-2xl font-semibold mt-10 mb-6 text-primary">Qué ofrecemos</h2>
+                <p className="text-lg leading-relaxed mb-6">
+                  Scorecards por rol, bancos de preguntas, flujo en ATS con SLAs, plantillas de comunicación y onboarding 30/60/90 con outcomes semanales.
+                </p>
 
-            <h2>Cómo trabajamos</h2>
-            <p>
-              Diagnóstico (2–3 semanas) para detectar cuellos de botella. Piloto de seis semanas con dos roles críticos:
-              estandarizamos scorecards y entrevistas, ordenamos ATS y lanzamos onboarding con rúbricas. Seguimiento y ajustes rápidos.
-            </p>
+                <h3 className="text-xl font-medium mt-10 mb-4 text-secondary-DEFAULT">Cómo trabajamos</h3>
+                <ul className="space-y-4 mb-8 pl-6">
+                  <li><span className="font-medium">Diagnóstico (2–3 semanas)</span>: detectamos cuellos de botella donde se pierde tiempo o calidad.</li>
+                  <li><span className="font-medium">Piloto (6 semanas, 2 roles)</span>: estandarizamos scorecards/entrevistas, ordenamos ATS y lanzamos onboarding con rúbricas.</li>
+                  <li><span className="font-medium">Escalado</span>: biblioteca por rol, training y QA de adopción.</li>
+                </ul>
+              </div>
+            </div>
 
-            <h2>Qué entregamos</h2>
-            <p>
-              Scorecards y rúbricas por rol, flujo ATS con tableros, onboarding 30/60/90 con rúbricas; dashboard con time-to-fill,
-              pass-through, tasa de aceptación, TTCP y NPS candidato/manager; informe del piloto y plan de estandarización.
-            </p>
-
-            <h2>Paquetes</h2>
-            <p>Diagnóstico (2–3 semanas) → Piloto (6 semanas, 2 roles) → Escalado trimestral (biblioteca por rol, training, QA).</p>
-          </section>
+            <div>
+              <Card className="bg-primary/5">
+                <CardContent className="pt-6">
+                  <h3 className="text-xl font-semibold mb-4">Resultados esperados</h3>
+                  <ul className="space-y-3">
+                    {[
+                      "↓ Time-to-fill",
+                      "↑ Tasa de aceptación",
+                      "↓ Tiempo a competencia (TTCP)",
+                      "Mejor experiencia del candidato y del manager",
+                    ].map((r, i) => (
+                      <li key={i} className="flex items-start">
+                        <Check className="h-5 w-5 text-primary mr-2 mt-1 flex-shrink-0" />
+                        <span>{r}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
 
           <ServiceCTA 
             title="¿Te ayudo con 2 roles críticos?"
@@ -58,6 +83,7 @@ export default function ReclutamientoOnboarding() {
           />
         </motion.div>
       </main>
+
       <footer className="bg-gray-100 mt-16">
         <div className="container mx-auto py-8 px-4 text-center">
           <Separator className="mb-8" />
@@ -66,4 +92,6 @@ export default function ReclutamientoOnboarding() {
       </footer>
     </div>
   );
-}
+};
+
+export default ReclutamientoOnboarding;

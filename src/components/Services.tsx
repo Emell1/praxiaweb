@@ -6,27 +6,35 @@ import { Link } from "react-router-dom";
 const services = [
   {
     icon: Users,
-    title: "Consultoría Estratégica",
+    title: "Optimización Comercial",
     description:
-      "Diagnóstico profundo y diseño de soluciones a medida para mejorar procesos críticos de negocio.",
-    image: "/consultoria-estrategica.png",
-    path: "/servicios/consultoria-estrategica"
+      "Ordenamos el funnel, estandarizamos cómo se vende y eliminamos fricción en prospecting, discovery, propuesta y cierre.",
+    image: "/servicio-comercial.jpg",
+    path: "/servicios/comercial"
   },
   {
     icon: Workflow,
-    title: "Optimización de Procesos",
+    title: "Atención y Soporte",
     description:
-      "Identificamos cuellos de botella, automatizamos tareas clave y rediseñamos flujos para maximizar la eficiencia.",
-    image: "/optimizar-procesos.png",
-    path: "/servicios/optimizacion-procesos"
+      "Rutas y prioridades claras, guías de resolución y autoservicio transaccional. Subimos FCR, bajamos AHT y reducimos abandonos.",
+    image: "/servicio-soporte.jpg",
+    path: "/servicios/soporte"
+  },
+  {
+    icon: Users,
+    title: "Reclutamiento y Onboarding",
+    description:
+      "Hiring estructurado con scorecards y entrevistas consistentes. Onboarding 30/60/90 conectado con desempeño temprano del rol.",
+    image: "/servicio-reclutamiento-onboarding.jpg",
+    path: "/servicios/reclutamiento-onboarding"
   },
   {
     icon: Target,
-    title: "Diseño y Desarrollo de Soluciones Internas",
+    title: "Formación para la Ejecución",
     description:
-      "Te ayudamos a desarrollar herramientas internas, cuadros de mando y sistemas a medida que acompañen la mejora continua y la toma de decisiones.",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
-    path: "/servicios/soluciones-internas"
+      "Formación aplicada por rol para mover KPIs. Rutas breves, práctica real, rúbricas claras y coaching a líderes.",
+    image: "/servicio-formacion-ejecucion.jpg",
+    path: "/servicios/formacion-ejecucion"
   },
 ];
 
@@ -47,7 +55,7 @@ const Services = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
             <motion.div
               key={service.title}

@@ -25,19 +25,16 @@ const NavBar = () => {
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="bg-background">
           <DropdownMenuItem asChild>
-            <Link to="/servicios/consultoria-estrategica" className="w-full">
-              Consultoría Estratégica
-            </Link>
+            <Link to="/servicios/comercial" className="w-full">Optimización Comercial</Link>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>
-            <Link to="/servicios/optimizacion-procesos" className="w-full">
-              Optimización de Procesos
-            </Link>
+            <Link to="/servicios/soporte" className="w-full">Atención y Soporte</Link>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>
-            <Link to="/servicios/soluciones-internas" className="w-full">
-              Soluciones Internas
-            </Link>
+            <Link to="/servicios/reclutamiento-onboarding" className="w-full">Reclutamiento y Onboarding</Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem asChild>
+            <Link to="/servicios/formacion-ejecucion" className="w-full">Formación para la Ejecución</Link>
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
@@ -75,14 +72,17 @@ const NavBar = () => {
                 
                 <div className="flex flex-col space-y-2">
                   <div className="text-foreground text-lg mb-2">Servicios</div>
-                  <Link to="/servicios/consultoria-estrategica" className="text-foreground hover:text-blue-600 pl-2" onClick={() => setIsOpen(false)}>
-                    Consultoría Estratégica
+                  <Link to="/servicios/comercial" className="text-foreground hover:text-blue-600 pl-2" onClick={() => setIsOpen(false)}>
+                    Optimización Comercial
                   </Link>
-                  <Link to="/servicios/optimizacion-procesos" className="text-foreground hover:text-blue-600 pl-2" onClick={() => setIsOpen(false)}>
-                    Optimización de Procesos
+                  <Link to="/servicios/soporte" className="text-foreground hover:text-blue-600 pl-2" onClick={() => setIsOpen(false)}>
+                    Atención y Soporte
                   </Link>
-                  <Link to="/servicios/soluciones-internas" className="text-foreground hover:text-blue-600 pl-2" onClick={() => setIsOpen(false)}>
-                    Soluciones Internas
+                  <Link to="/servicios/reclutamiento-onboarding" className="text-foreground hover:text-blue-600 pl-2" onClick={() => setIsOpen(false)}>
+                    Reclutamiento y Onboarding
+                  </Link>
+                  <Link to="/servicios/formacion-ejecucion" className="text-foreground hover:text-blue-600 pl-2" onClick={() => setIsOpen(false)}>
+                    Formación para la Ejecución
                   </Link>
                 </div>
                 
