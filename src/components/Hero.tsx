@@ -28,8 +28,7 @@ const Hero = () => {
             <span className="text-secondary-DEFAULT">ventajas competitivas</span>
           </h1>
           <p className="body-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-            Detectamos ineficiencias, rediseñamos flujos y potenciamos resultados 
-            para escalar tu negocio con precisión.
+            Te ayudamos a ordenar cómo se vende, cómo se atiende y cómo se trabaja internamente para que tu equipo rinda mejor sin sumar burocracia inútil.
           </p>
           <ContactDialog buttonText="Solicita una consulta" />
         </motion.div>

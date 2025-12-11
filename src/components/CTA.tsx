@@ -21,16 +21,15 @@ const CTA = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="heading-lg mb-6">
-            ¿Quieres impulsar tu negocio desde sus procesos?
+            ¿Quieres revisar cómo están funcionando hoy tus procesos?
           </h2>
           <p className="body-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-            Solicita una conversación con nuestro equipo y descubre cómo mejorar, escalar 
-            y automatizar tus operaciones con precisión.
+            Agendamos una conversación sencilla, miramos juntos tu situación actual y te proponemos por dónde empezar. Sin prometer milagros ni soluciones mágicas: sólo cambios concretos que se puedan llevar a la práctica.
           </p>
 
           <div className="mt-8">
             <p className="body-lg text-gray-600 mb-4 max-w-2xl mx-auto">
-              ¿Quieres conocer OPTA en acción?
+              ¿Quieres ver OPTA aplicado a casos reales?
             </p>
             <DemoDialog />
           </div>
