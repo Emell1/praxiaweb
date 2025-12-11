@@ -12,8 +12,8 @@ const ReclutamientoOnboarding = () => {
     <div className="min-h-screen bg-background">
       <SEO 
         title="Reclutamiento y Onboarding | Praxia"
-        description="Hiring estructurado y onboarding medible para reducir time-to-fill y tiempo a competencia en roles clave."
-        keywords="reclutamiento, onboarding 30/60/90, scorecards, entrevistas, ATS, tiempo a competencia"
+        description="Ponemos orden en cómo definís, seleccionás e incorporás personas para que lleguen antes al nivel de desempeño que necesitás."
+        keywords="reclutamiento, onboarding, entrevistas, selección, ATS"
       />
       <NavBar />
 
@@ -22,7 +22,7 @@ const ReclutamientoOnboarding = () => {
           <ServiceHeader 
             Icon={Users}
             title="Reclutamiento y Onboarding"
-            description="Contratá mejor y lográ que las personas rindan antes."
+            description="Contratá mejor y ayudá a que las personas nuevas se pongan a tono más rápido."
           />
           
           <div className="w-full h-64 md:h-96 bg-gray-100 mb-12 rounded-lg overflow-hidden">
@@ -37,19 +37,28 @@ const ReclutamientoOnboarding = () => {
             <div className="md:col-span-2">
               <div className="prose prose-lg max-w-none">
                 <p className="text-lg leading-relaxed mb-8">
-                  Estructuramos selección con scorecards y entrevistas consistentes, y conectamos el onboarding con resultados medibles del puesto.
+                  Cuando la empresa crece, el proceso de selección suele armarse a las corridas: cada persona entrevista a su manera, se envían mensajes distintos a los candidatos y el onboarding se reduce a "acomodate como puedas". Te ayudamos a bajar a tierra qué necesitás de cada rol y a convertir eso en una forma consistente de seleccionar e incorporar, sin hacer el proceso interminable.
                 </p>
 
                 <h2 className="text-2xl font-semibold mt-10 mb-6 text-primary">Qué ofrecemos</h2>
                 <p className="text-lg leading-relaxed mb-6">
-                  Scorecards por rol, bancos de preguntas, flujo en ATS con SLAs, plantillas de comunicación y onboarding 30/60/90 con outcomes semanales.
+                  Empezamos por traducir el rol a algo entendible: qué tiene que poder hacer bien la persona, qué experiencia suma y qué es deseable pero no excluyente. Con eso armamos guías simples para entrevistar, mensajes más claros para candidatos y un recorrido de los primeros meses que conecte con el trabajo real, no sólo con presentaciones generales.
                 </p>
 
                 <h3 className="text-xl font-medium mt-10 mb-4 text-secondary-DEFAULT">Cómo trabajamos</h3>
                 <ul className="space-y-4 mb-8 pl-6">
-                  <li><span className="font-medium">Diagnóstico (2–3 semanas)</span>: detectamos cuellos de botella donde se pierde tiempo o calidad.</li>
-                  <li><span className="font-medium">Piloto (6 semanas, 2 roles)</span>: estandarizamos scorecards/entrevistas, ordenamos ATS y lanzamos onboarding con rúbricas.</li>
-                  <li><span className="font-medium">Escalado</span>: biblioteca por rol, training y QA de adopción.</li>
+                  <li className="text-base leading-relaxed">
+                    Revisamos cómo estás contratando hoy: de dónde llegan los candidatos, cómo los evaluás y en qué puntos se pierden tiempo o buenas personas.
+                  </li>
+                  <li className="text-base leading-relaxed">
+                    Definimos criterios claros por rol y los convertimos en preguntas, ejercicios o casos que vos y tu equipo puedan usar en entrevistas reales.
+                  </li>
+                  <li className="text-base leading-relaxed">
+                    Diseñamos un onboarding de 30, 60 y 90 días con hitos concretos, para que la persona nueva y su líder sepan qué debería estar pasando en cada tramo.
+                  </li>
+                  <li className="text-base leading-relaxed">
+                    Probamos este enfoque con uno o dos roles clave, ajustamos y, si funciona bien, lo extendemos al resto de la organización.
+                  </li>
                 </ul>
               </div>
             </div>
@@ -60,10 +69,10 @@ const ReclutamientoOnboarding = () => {
                   <h3 className="text-xl font-semibold mb-4">Resultados esperados</h3>
                   <ul className="space-y-3">
                     {[
-                      "↓ Time-to-fill",
-                      "↑ Tasa de aceptación",
-                      "↓ Tiempo a competencia (TTCP)",
-                      "Mejor experiencia del candidato y del manager",
+                      "Menos tiempos muertos entre etapas del proceso de selección.",
+                      "Menos sorpresas después de la contratación, porque se evaluó mejor desde el principio.",
+                      "Personas nuevas que entienden antes cómo aportar valor en su rol.",
+                      "Líderes con más herramientas para acompañar la incorporación, no sólo para reaccionar cuando algo sale mal.",
                     ].map((r, i) => (
                       <li key={i} className="flex items-start">
                         <Check className="h-5 w-5 text-primary mr-2 mt-1 flex-shrink-0" />
@@ -77,8 +86,8 @@ const ReclutamientoOnboarding = () => {
           </div>
 
           <ServiceCTA 
-            title="¿Te ayudo con 2 roles críticos?"
-            description="Definimos estándares, ordenamos el flujo y aceleramos la rampa con un onboarding medible."
+            title="¿Te ayudamos con 2 roles críticos?"
+            description="Podemos empezar por los puestos que más te preocupan hoy, ordenar cómo los definís, cómo los entrevistás y cómo los incorporás. Eso ya genera un cambio visible para tu equipo y para quienes se suman."
             buttonText="Agenda diagnóstico"
           />
         </motion.div>

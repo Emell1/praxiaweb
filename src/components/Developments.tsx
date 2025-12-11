@@ -17,10 +17,7 @@ const Developments = () => {
             Tecnología aplicada a la mejora continua
           </h2>
           <p className='body-base text-foreground/70 max-w-2xl mx-auto'>
-            En Praxia, cada mejora estratégica se traduce en soluciones
-            prácticas. Nuestros desarrollos combinan eficiencia, personalización
-            y facilidad de uso para garantizar que el cambio se integre y se
-            mantenga.
+            OPTA nace de ver siempre el mismo problema: procesos que sólo existen en la cabeza de algunas personas o perdidos en documentos. Lo usamos para ordenar cómo se trabaja, hacerlo visible para todos y permitir que mejore con el tiempo sin depender de presentaciones eternas.
           </p>
         </motion.div>
 
@@ -36,12 +33,11 @@ const Developments = () => {
               <h3 className='heading-md mb-4'>
                 OPTA – Optimizador de Procesos, Tareas y Aprendizaje
               </h3>
+              <p className='text-foreground/80 mb-3'>
+                OPTA es nuestra herramienta propia para mapear, organizar y hacer evolucionar tus procesos desde una interfaz conversacional simple. Te permite ver en un solo lugar cómo se trabaja, qué tareas dependen de quién y qué información hace falta para que las cosas avancen.
+              </p>
               <p className='text-foreground/80 mb-6'>
-                OPTA es nuestra herramienta propia que permite mapear, organizar
-                y evolucionar tus procesos desde una interfaz conversacional
-                simple e intuitiva. Crea flujos personalizados, integra
-                documentos clave y accede a filtros inteligentes que facilitan
-                la toma de decisiones.
+                No busca reemplazar lo que ya usás, sino ordenar el "cómo se trabaja acá" para que no dependa de la memoria de unos pocos ni de documentos que nadie abre. Lo usamos tanto en proyectos de consultoría como en equipos que ya tienen procesos definidos pero necesitan gestionarlos mejor.
               </p>
 
               <Btn 

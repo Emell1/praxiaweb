@@ -10,8 +10,8 @@ const ContactPage = () => {
     <div className="min-h-screen bg-background">
       <SEO 
         title="Contacto | Praxia"
-        description="Contáctanos para resolver tus dudas o solicitar información sobre nuestros servicios de consultoría estratégica y optimización de procesos."
-        keywords="contacto praxia, consultoría estratégica, desarrollo de productos, optimización procesos"
+        description="Escríbenos si querés conversar sobre cómo está funcionando hoy tu operación y ver si tiene sentido trabajar juntos."
+        keywords="contacto praxia, consultoría, optimización procesos, operación"
       />
       <NavBar />
       
@@ -19,7 +19,7 @@ const ContactPage = () => {
         <div className="max-w-4xl mx-auto">
           <h1 className="text-3xl md:text-4xl font-bold mb-4">Contacto</h1>
           <p className="text-lg text-gray-600 mb-12">
-            Estamos listos para escucharte. Completa el formulario y nos pondremos en contacto contigo lo antes posible.
+            Si sentís que tu operación podría funcionar mejor y querés hablarlo con alguien que mire el tema con vos, dejá tus datos y te escribiremos para coordinar una conversación.
           </p>
           
           <div className="grid md:grid-cols-2 gap-12">
@@ -30,7 +30,7 @@ const ContactPage = () => {
               <div>
                 <h3 className="text-xl font-semibold mb-2">Información de contacto</h3>
                 <p className="text-gray-600 mb-4">
-                  Puedes contactarnos directamente a través de los siguientes canales:
+                  Si preferís escribirnos directo, estos son nuestros datos:
                 </p>
                 <div className="space-y-4">
                   <div>

@@ -12,8 +12,8 @@ const FormacionEjecucion = () => {
     <div className="min-h-screen bg-background">
       <SEO 
         title="Formación para la Ejecución | Praxia"
-        description="Formación aplicada por rol para mover KPIs. Rutas breves, práctica real, rúbricas claras y coaching a líderes."
-        keywords="enablement, formación aplicada, rutas por rol, rúbricas, coaching, adopción de playbooks"
+        description="Programas breves y prácticos para que ventas, soporte y líderes mejoren cómo trabajan en el día a día, con cambios visibles en la operación."
+        keywords="formación aplicada, entrenamiento, rutas por rol, coaching, adopción de procesos"
       />
       <NavBar />
 
@@ -22,7 +22,7 @@ const FormacionEjecucion = () => {
           <ServiceHeader 
             Icon={GraduationCap}
             title="Formación para la Ejecución"
-            description="Menos cursos, más ejecución con calidad. Lo importante es el comportamiento y el KPI."
+            description="Menos cursos que se olvidan, más cambios que se notan en cómo trabaja tu equipo."
           />
           
           <div className="w-full h-64 md:h-96 bg-gray-100 mb-12 rounded-lg overflow-hidden">
@@ -37,19 +37,25 @@ const FormacionEjecucion = () => {
             <div className="md:col-span-2">
               <div className="prose prose-lg max-w-none">
                 <p className="text-lg leading-relaxed mb-8">
-                  Programas breves y prácticos por rol (ventas, soporte, team leads, recruiters) enfocados en mover KPIs concretos.
+                  Muchas empresas invierten en capacitaciones que quedan en diapositivas o en frases lindas. Acá la formación es una herramienta para mejorar la ejecución, no un fin en sí mismo. Diseñamos programas cortos para roles específicos, atados a cambios concretos que querés ver en el trabajo real.
                 </p>
 
                 <h2 className="text-2xl font-semibold mt-10 mb-6 text-primary">Qué ofrecemos</h2>
                 <p className="text-lg leading-relaxed mb-6">
-                  Rutas por rol conectadas con los playbooks del proceso, prácticas con casos reales, role-plays, rúbricas de competencia y coaching a líderes.
+                  Trabajamos con grupos chicos y con situaciones que ya viven en su día a día: llamadas reales, casos de clientes, conversaciones difíciles, seguimiento de métricas. No traemos modelos de libro desconectados de tu operación, sino ejercicios que se puedan aplicar al día siguiente.
                 </p>
 
                 <h3 className="text-xl font-medium mt-10 mb-4 text-secondary-DEFAULT">Cómo trabajamos</h3>
                 <ul className="space-y-4 mb-8 pl-6">
-                  <li><span className="font-medium">Definición de KPI y nivel esperado</span>: alineación con el proceso y con líderes.</li>
-                  <li><span className="font-medium">Cohorte de 6 semanas</span>: sesiones breves, práctica aplicada y feedback rápido.</li>
-                  <li><span className="font-medium">Sostenimiento</span>: rituales, QA de adopción y ajustes al playbook.</li>
+                  <li className="text-base leading-relaxed">
+                    Acordamos qué querés que cambie en la práctica: qué deberían hacer distinto las personas después del programa, y cómo se va a notar eso en el área.
+                  </li>
+                  <li className="text-base leading-relaxed">
+                    Diseñamos una cohorte corta (por ejemplo, 6 semanas) con encuentros breves, práctica guiada y espacio para bajar dudas concretas de su trabajo.
+                  </li>
+                  <li className="text-base leading-relaxed">
+                    Acompañamos a los líderes para que sigan reforzando lo aprendido en sus reuniones, tableros y conversaciones de seguimiento, para que no se diluya a los pocos días.
+                  </li>
                 </ul>
               </div>
             </div>
@@ -60,10 +66,10 @@ const FormacionEjecucion = () => {
                   <h3 className="text-xl font-semibold mb-4">Resultados esperados</h3>
                   <ul className="space-y-3">
                     {[
-                      "↑ Adopción de playbooks",
-                      "↑ Calidad de ejecución por rol",
-                      "↑ Coaching efectivo de líderes",
-                      "Impacto directo en el KPI del área",
+                      "Equipos que no sólo \"saben\" qué hacer, sino que empiezan a hacerlo de manera más consistente.",
+                      "Líderes con más recursos para acompañar, sin depender de pedir \"otro curso más\".",
+                      "Procesos y playbooks que se usan en serio y no quedan en un documento compartido que nadie abre.",
+                      "Cambios visibles en la forma de trabajar y en los indicadores del área.",
                     ].map((r, i) => (
                       <li key={i} className="flex items-start">
                         <Check className="h-5 w-5 text-primary mr-2 mt-1 flex-shrink-0" />
@@ -78,7 +84,7 @@ const FormacionEjecucion = () => {
 
           <ServiceCTA 
             title="¿Convertimos formación en resultados?"
-            description="Propuesta de cohorte piloto de 6 semanas atada a un KPI concreto del área."
+            description="Te proponemos un piloto corto para un equipo concreto, con un objetivo claro. Medimos qué cambia en su forma de trabajar y, con eso en la mano, decidís si vale la pena escalarlo."
             buttonText="Agenda diagnóstico"
           />
         </motion.div>

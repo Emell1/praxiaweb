@@ -11,8 +11,8 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <SEO 
         title="Praxia — Procesos que mueven el negocio"
-        description="Mejoramos 4 procesos clave en 60–90 días con playbooks claros, métricas y adopción real: Comercial, Soporte, Reclutamiento/Onboarding y Formación para la Ejecución."
-        keywords="optimización comercial, soporte omnicanal, reclutamiento estructurado, onboarding 30/60/90, formación aplicada, enablement, playbooks, KPIs"
+        description="Mejoramos 4 procesos clave en 60–90 días con cambios concretos en cómo se vende, cómo se atiende, cómo se incorpora gente y cómo se entrena a los equipos."
+        keywords="optimización comercial, soporte, reclutamiento estructurado, onboarding, formación aplicada, playbooks, KPIs"
       />
       <NavBar />
       <Hero />
@@ -21,26 +21,26 @@ const Index = () => {
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-6">
           <ProcessCard
             title="Optimización Comercial"
-            subtitle="Más conversión, menos ciclo"
-            description="Ordenamos el funnel, estandarizamos cómo se vende y eliminamos fricción en prospecting, discovery, propuesta y cierre. Playbooks y cadencias que el equipo usa de verdad."
+            subtitle="Que tu proceso de ventas acompañe tu crecimiento"
+            description="Revisamos cómo entran los leads, qué hace tu equipo con ellos y qué pasa hasta el cierre. Simplificamos etapas, ordenamos el uso del CRM y dejamos claro qué se espera en cada paso. Menos improvisación, más oportunidades bien trabajadas."
             to="/servicios/comercial"
           />
           <ProcessCard
             title="Atención y Soporte"
-            subtitle="Resoluciones más rápidas"
-            description="Rutas y prioridades claras, guías de resolución y autoservicio transaccional donde aporta. Subimos FCR, bajamos AHT y reducimos abandonos."
+            subtitle="Que los problemas se resuelvan de verdad"
+            description="Acomodamos los flujos de atención para que cada consulta llegue al lugar correcto, con prioridades claras y buena información para resolver. Documentamos lo más frecuente y definimos qué vale la pena automatizar. Menos rebotes, menos espera y un equipo que sabe qué hacer."
             to="/servicios/soporte"
           />
           <ProcessCard
             title="Reclutamiento y Onboarding"
-            subtitle="Contrata mejor y acelera la rampa"
-            description="Hiring estructurado con scorecards y entrevistas consistentes. Onboarding 30/60/90 conectado con desempeño temprano del rol."
+            subtitle="Entradas más claras, rampas más cortas"
+            description="Ponemos orden en cómo definís los perfiles, cómo entrevistás y cómo acompañás a las personas nuevas en sus primeros meses. Más claridad para el candidato, menos tiempo perdido para el equipo y un aterrizaje más rápido al nivel de desempeño que necesitás."
             to="/servicios/reclutamiento-onboarding"
           />
           <ProcessCard
             title="Formación para la Ejecución"
-            subtitle="Personas que ejecutan mejor"
-            description="Formación aplicada por rol para mover KPIs. Rutas breves, práctica real, rúbricas claras y coaching a líderes."
+            subtitle="Que lo aprendido se vea en el trabajo"
+            description="Diseñamos programas cortos y concretos para ventas, soporte y líderes, centrados en mejorar cómo se hace el trabajo del día a día. Menos teoría suelta, más práctica con casos reales, feedback claro y acompañamiento a quienes conducen los equipos."
             to="/servicios/formacion-ejecucion"
           />
         </div>
@@ -48,19 +48,19 @@ const Index = () => {
 
       <Steps
         steps={[
-          { title: "Objetivo", description: "Elegimos 1–2 KPIs que importan y establecemos la línea base." },
-          { title: "Hipótesis", description: "Definimos qué cambiaremos y por qué debería mover la métrica." },
-          { title: "Experimento", description: "Piloto de 6 semanas con responsables y entregables operativos." },
-          { title: "Medición", description: "Decidimos escalar, iterar o descartar con evidencia." },
+          { title: "Objetivo", description: "Antes de tocar nada, acordamos qué tiene que mejorar para que valga la pena el proyecto. Puede ser vender mejor, responder más rápido o incorporar gente con menos caos, pero lo dejamos por escrito para no perdernos en el camino." },
+          { title: "Hipótesis", description: "Definimos qué cambios vamos a probar y por qué creemos que eso va a mejorar la situación. No son grandes discursos, son apuestas concretas sobre el trabajo del día a día." },
+          { title: "Testeo", description: "Probamos los cambios en un espacio acotado (un equipo, un segmento o unos pocos flujos) durante unas semanas. Miramos qué pasa en la realidad y ajustamos sobre eso, no sobre supuestos." },
+          { title: "Medición", description: "Con lo aprendido, decidimos juntos si vale la pena escalar, si hay que ajustar o si conviene descartar la idea. La idea es que el proceso nuevo se pueda sostener cuando nosotros no estemos." },
         ]}
       />
 
       <Stats
         stats={[
-          { label: "Comercial: conversión por etapa", value: "+10–20%" },
-          { label: "Comercial: tiempo de ciclo", value: "−20–40%" },
-          { label: "Soporte: FCR (flujos piloto)", value: "+10–15 pts" },
-          { label: "Soporte: AHT", value: "−10–20%" },
+          { label: "Más oportunidades bien trabajadas en cada etapa comercial.", value: "+10–20%" },
+          { label: "Menos tiempo muerto entre un paso y otro del proceso de venta.", value: "−20–40%" },
+          { label: "Mejores niveles de resolución en los flujos de soporte donde intervenimos.", value: "+10–15 pts" },
+          { label: "Reducción del tiempo promedio que tarda tu equipo en atender y cerrar un caso.", value: "−10–20%" },
         ]}
       />
 
