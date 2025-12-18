@@ -27,8 +27,8 @@ const ReclutamientoOnboarding = () => {
           
           <div className="w-full h-64 md:h-96 bg-gray-100 mb-12 rounded-lg overflow-hidden">
             <img 
-              src="/servicio-reclutamiento-onboarding-hero.jpg"
-              alt="Reclutamiento y Onboarding" 
+              src="/images/servicios/hero-reclutamiento.jpg"
+              alt="Reclutamiento y Onboarding"
               className="w-full h-full object-cover"
             />
           </div>
