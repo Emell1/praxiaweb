@@ -9,7 +9,7 @@ const services = [
     title: "Optimización Comercial",
     description:
       "Ordenamos el funnel, estandarizamos cómo se vende y eliminamos fricción en prospecting, discovery, propuesta y cierre.",
-    image: "/servicio-comercial.jpg",
+    image: "/images/servicios/card-comercial.jpg",
     path: "/servicios/comercial"
   },
   {
@@ -17,7 +17,7 @@ const services = [
     title: "Atención y Soporte",
     description:
       "Rutas y prioridades claras, guías de resolución y autoservicio transaccional. Subimos FCR, bajamos AHT y reducimos abandonos.",
-    image: "/servicio-soporte.jpg",
+    image: "/images/servicios/card-soporte.jpg",
     path: "/servicios/soporte"
   },
   {
@@ -25,7 +25,7 @@ const services = [
     title: "Reclutamiento y Onboarding",
     description:
       "Hiring estructurado con scorecards y entrevistas consistentes. Onboarding 30/60/90 conectado con desempeño temprano del rol.",
-    image: "/servicio-reclutamiento-onboarding.jpg",
+    image: "/images/servicios/card-reclutamiento.jpg",
     path: "/servicios/reclutamiento-onboarding"
   },
   {
@@ -33,15 +33,24 @@ const services = [
     title: "Formación para la Ejecución",
     description:
       "Formación aplicada por rol para mover KPIs. Rutas breves, práctica real, rúbricas claras y coaching a líderes.",
-    image: "/servicio-formacion-ejecucion.jpg",
+    image: "/images/servicios/card-formacion.jpg",
     path: "/servicios/formacion-ejecucion"
   },
 ];
 
 const Services = () => {
   return (
-    <section className="section-padding bg-accent">
-      <div className="max-w-6xl mx-auto">
+    <section className="section-padding bg-accent relative overflow-hidden">
+      {/* Background image for entire section */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/images/home/servicios-bg.jpg"
+          alt=""
+          className="w-full h-full object-cover opacity-10"
+        />
+      </div>
+      
+      <div className="max-w-6xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
