@@ -27,8 +27,8 @@ const FormacionEjecucion = () => {
           
           <div className="w-full h-64 md:h-96 bg-gray-100 mb-12 rounded-lg overflow-hidden">
             <img 
-              src="/servicio-formacion-ejecucion-hero.jpg"
-              alt="Formación para la Ejecución" 
+              src="/images/servicios/hero-formacion.jpg"
+              alt="Formación para la Ejecución"
               className="w-full h-full object-cover"
             />
           </div>
