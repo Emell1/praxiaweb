@@ -27,7 +27,7 @@ const Soporte = () => {
           
           <div className="w-full h-64 md:h-96 bg-gray-100 mb-12 rounded-lg overflow-hidden">
             <img 
-              src="/images/servicios/hero-soporte.jpg"
+              src="/images/servicios/hero-soporte.png"
               alt="Atención y Soporte"
               className="w-full h-full object-cover"
             />
