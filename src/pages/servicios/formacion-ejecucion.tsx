@@ -30,6 +30,9 @@ const FormacionEjecucion = () => {
             baseName="hero-formacion" 
             alt="Formación para la Ejecución"
             objectPosition="center 60%"
+             scale={0.84}
+             offsetX={0}
+             offsetY={0}
           />
 
           <div className="grid md:grid-cols-3 gap-8 mb-16">
