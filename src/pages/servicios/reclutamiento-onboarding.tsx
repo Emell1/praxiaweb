@@ -30,6 +30,9 @@ const ReclutamientoOnboarding = () => {
             baseName="hero-reclutamiento" 
             alt="Reclutamiento y Onboarding"
             objectPosition="center 45%"
+             scale={0.82}
+             offsetX={0}
+             offsetY={0}
           />
 
           <div className="grid md:grid-cols-3 gap-8 mb-16">
