@@ -6,6 +6,7 @@ import NavBar from "@/components/NavBar";
 import SEO from "@/components/SEO";
 import ServiceHeader from "./components/ServiceHeader";
 import ServiceCTA from "./components/ServiceCTA";
+import ServiceHeroImage from "./components/ServiceHeroImage";
 
 const Comercial = () => {
   return (
@@ -25,13 +26,11 @@ const Comercial = () => {
             description="Te ayudamos a que tu equipo venda mejor, con un proceso claro y realista que acompañe cómo es tu negocio hoy."
           />
           
-          <div className="w-full h-64 md:h-96 bg-gray-100 mb-12 rounded-lg overflow-hidden">
-            <img 
-              src="/images/servicios/hero-comercial.png"
-              alt="Optimización Comercial"
-              className="w-full h-full object-cover"
-            />
-          </div>
+          <ServiceHeroImage 
+            baseName="hero-comercial" 
+            alt="Optimización Comercial"
+            objectPosition="center 55%"
+          />
 
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             <div className="md:col-span-2">

@@ -6,6 +6,7 @@ import NavBar from "@/components/NavBar";
 import SEO from "@/components/SEO";
 import ServiceHeader from "./components/ServiceHeader";
 import ServiceCTA from "./components/ServiceCTA";
+import ServiceHeroImage from "./components/ServiceHeroImage";
 
 const FormacionEjecucion = () => {
   return (
@@ -25,13 +26,11 @@ const FormacionEjecucion = () => {
             description="Menos cursos que se olvidan, más cambios que se notan en cómo trabaja tu equipo."
           />
           
-          <div className="w-full h-64 md:h-96 bg-gray-100 mb-12 rounded-lg overflow-hidden">
-            <img 
-              src="/images/servicios/hero-formacion.png"
-              alt="Formación para la Ejecución"
-              className="w-full h-full object-cover"
-            />
-          </div>
+          <ServiceHeroImage 
+            baseName="hero-formacion" 
+            alt="Formación para la Ejecución"
+            objectPosition="center 60%"
+          />
 
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             <div className="md:col-span-2">

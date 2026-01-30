@@ -6,6 +6,7 @@ import NavBar from "@/components/NavBar";
 import SEO from "@/components/SEO";
 import ServiceHeader from "./components/ServiceHeader";
 import ServiceCTA from "./components/ServiceCTA";
+import ServiceHeroImage from "./components/ServiceHeroImage";
 
 const Soporte = () => {
   return (
@@ -25,13 +26,11 @@ const Soporte = () => {
             description="Resolver más y mejor, con menos desgaste. Estándares claros y autoservicio sólo donde tiene sentido."
           />
           
-          <div className="w-full h-64 md:h-96 bg-gray-100 mb-12 rounded-lg overflow-hidden">
-            <img 
-              src="/images/servicios/hero-soporte.png"
-              alt="Atención y Soporte"
-              className="w-full h-full object-cover"
-            />
-          </div>
+          <ServiceHeroImage 
+            baseName="hero-soporte" 
+            alt="Atención y Soporte"
+            objectPosition="center 50%"
+          />
 
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             <div className="md:col-span-2">
