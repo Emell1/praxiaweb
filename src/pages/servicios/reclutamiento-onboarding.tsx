@@ -6,6 +6,7 @@ import NavBar from "@/components/NavBar";
 import SEO from "@/components/SEO";
 import ServiceHeader from "./components/ServiceHeader";
 import ServiceCTA from "./components/ServiceCTA";
+import ServiceHeroImage from "./components/ServiceHeroImage";
 
 const ReclutamientoOnboarding = () => {
   return (
@@ -25,13 +26,11 @@ const ReclutamientoOnboarding = () => {
             description="Contratá mejor y ayudá a que las personas nuevas se pongan a tono más rápido."
           />
           
-          <div className="w-full h-64 md:h-96 bg-gray-100 mb-12 rounded-lg overflow-hidden">
-            <img 
-              src="/images/servicios/hero-reclutamiento.png"
-              alt="Reclutamiento y Onboarding"
-              className="w-full h-full object-cover"
-            />
-          </div>
+          <ServiceHeroImage 
+            baseName="hero-reclutamiento" 
+            alt="Reclutamiento y Onboarding"
+            objectPosition="center 45%"
+          />
 
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             <div className="md:col-span-2">
