@@ -29,10 +29,10 @@ const Comercial = () => {
           <ServiceHeroImage 
             baseName="hero-comercial" 
             alt="Optimización Comercial"
-             objectPosition="center 55%"
-             scale={0.82}
-             offsetX={0}
-             offsetY={0}
+            objectPosition="center 85%"
+            scale={1.1}
+            offsetX={0}
+            offsetY={-8}
           />
 
           <div className="grid md:grid-cols-3 gap-8 mb-16">
