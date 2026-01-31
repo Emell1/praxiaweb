@@ -29,10 +29,10 @@ const ReclutamientoOnboarding = () => {
           <ServiceHeroImage 
             baseName="hero-reclutamiento" 
             alt="Reclutamiento y Onboarding"
-            objectPosition="center 45%"
-             scale={0.82}
-             offsetX={0}
-             offsetY={0}
+            objectPosition="70% center"
+            scale={1.0}
+            offsetX={0}
+            offsetY={0}
           />
 
           <div className="grid md:grid-cols-3 gap-8 mb-16">
