@@ -29,10 +29,6 @@ const FormacionEjecucion = () => {
           <ServiceHeroImage 
             baseName="hero-formacion" 
             alt="Formación para la Ejecución"
-            objectPosition="65% 75%"
-            scale={1.0}
-            offsetX={0}
-            offsetY={0}
           />
 
           <div className="grid md:grid-cols-3 gap-8 mb-16">
