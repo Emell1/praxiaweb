@@ -42,16 +42,14 @@ const ServiceHeroImage = ({
   }, [offsetX, offsetY, scale]);
 
   return (
-    <div className="w-full h-64 md:h-96 bg-muted mb-12 rounded-lg overflow-hidden">
+    <div className="w-full h-64 md:h-96 bg-muted mb-12 rounded-lg overflow-hidden flex items-center justify-center">
       <img
         src={imageSrc}
         alt={alt}
         onError={handleError}
-        className="w-full h-full object-cover"
+        className="max-w-full max-h-full object-contain"
         style={{
-          objectPosition,
           transform,
-          transformOrigin: objectPosition,
           willChange: "transform",
         }}
       />

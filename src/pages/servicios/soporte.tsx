@@ -29,10 +29,6 @@ const Soporte = () => {
           <ServiceHeroImage 
             baseName="hero-soporte" 
             alt="Atención y Soporte"
-            objectPosition="center 70%"
-            scale={1.0}
-            offsetX={0}
-            offsetY={0}
           />
 
           <div className="grid md:grid-cols-3 gap-8 mb-16">
