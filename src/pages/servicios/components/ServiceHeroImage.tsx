@@ -18,7 +18,8 @@ const ServiceHeroImage = ({
   baseName,
   alt,
   objectPosition = "center 60%",
-  scale = 0.9,
+  // Default: keep full figure visible and fairly large
+  scale = 1,
   offsetX = 0,
   offsetY = 0,
 }: ServiceHeroImageProps) => {
@@ -42,17 +43,33 @@ const ServiceHeroImage = ({
   }, [offsetX, offsetY, scale]);
 
   return (
-    <div className="w-full h-64 md:h-96 bg-muted mb-12 rounded-lg overflow-hidden flex items-center justify-center">
+    <div className="relative w-full h-72 md:h-[28rem] bg-muted mb-12 rounded-lg overflow-hidden">
+      {/* Background fill (makes the hero feel full-size) */}
       <img
         src={imageSrc}
-        alt={alt}
+        alt=""
+        aria-hidden
         onError={handleError}
-        className="max-w-full max-h-full object-contain"
-        style={{
-          transform,
-          willChange: "transform",
-        }}
+        className="absolute inset-0 h-full w-full object-cover scale-110 blur-2xl opacity-30"
+        loading="lazy"
       />
+
+      {/* Foreground (full object visible + centered) */}
+      <div className="relative z-10 flex h-full w-full items-center justify-center">
+        <img
+          src={imageSrc}
+          alt={alt}
+          onError={handleError}
+          className="h-full w-full object-contain p-4 md:p-6"
+          style={{
+            objectPosition,
+            transform,
+            transformOrigin: "center",
+            willChange: "transform",
+          }}
+          loading="lazy"
+        />
+      </div>
     </div>
   );
 };
