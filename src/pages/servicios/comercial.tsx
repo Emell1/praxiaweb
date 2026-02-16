@@ -7,6 +7,7 @@ import SEO from "@/components/SEO";
 import ServiceHeader from "./components/ServiceHeader";
 import ServiceCTA from "./components/ServiceCTA";
 import ServiceHeroImage from "./components/ServiceHeroImage";
+import { heroConfig } from "./heroConfig";
 
 const Comercial = () => {
   return (
@@ -29,6 +30,8 @@ const Comercial = () => {
           <ServiceHeroImage 
             baseName="hero-comercial" 
             alt="Optimización Comercial"
+            scale={heroConfig["hero-comercial"].scale}
+            objectPosition={heroConfig["hero-comercial"].objectPosition}
           />
 
           <div className="grid md:grid-cols-3 gap-8 mb-16">

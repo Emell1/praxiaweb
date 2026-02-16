@@ -7,6 +7,7 @@ import SEO from "@/components/SEO";
 import ServiceHeader from "./components/ServiceHeader";
 import ServiceCTA from "./components/ServiceCTA";
 import ServiceHeroImage from "./components/ServiceHeroImage";
+import { heroConfig } from "./heroConfig";
 
 const FormacionEjecucion = () => {
   return (
@@ -29,6 +30,8 @@ const FormacionEjecucion = () => {
           <ServiceHeroImage 
             baseName="hero-formacion" 
             alt="Formación para la Ejecución"
+            scale={heroConfig["hero-formacion"].scale}
+            objectPosition={heroConfig["hero-formacion"].objectPosition}
           />
 
           <div className="grid md:grid-cols-3 gap-8 mb-16">
