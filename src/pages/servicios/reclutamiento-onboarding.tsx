@@ -7,6 +7,7 @@ import SEO from "@/components/SEO";
 import ServiceHeader from "./components/ServiceHeader";
 import ServiceCTA from "./components/ServiceCTA";
 import ServiceHeroImage from "./components/ServiceHeroImage";
+import { heroConfig } from "./heroConfig";
 
 const ReclutamientoOnboarding = () => {
   return (
@@ -29,6 +30,8 @@ const ReclutamientoOnboarding = () => {
           <ServiceHeroImage 
             baseName="hero-reclutamiento" 
             alt="Reclutamiento y Onboarding"
+            scale={heroConfig["hero-reclutamiento"].scale}
+            objectPosition={heroConfig["hero-reclutamiento"].objectPosition}
           />
 
           <div className="grid md:grid-cols-3 gap-8 mb-16">
