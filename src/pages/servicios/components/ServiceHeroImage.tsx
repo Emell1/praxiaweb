@@ -7,6 +7,8 @@ interface ServiceHeroImageProps {
   scale?: number;
   offsetX?: number;
   offsetY?: number;
+  containMode?: boolean;
+  backgroundPosition?: string;
 }
 
 const ServiceHeroImage = ({
@@ -16,6 +18,8 @@ const ServiceHeroImage = ({
   scale = 1,
   offsetX = 0,
   offsetY = 0,
+  containMode = false,
+  backgroundPosition = "center center",
 }: ServiceHeroImageProps) => {
   const [imageSrc, setImageSrc] = useState(`/images/servicios/${baseName}.png`);
   const [hasError, setHasError] = useState(false);
@@ -33,6 +37,31 @@ const ServiceHeroImage = ({
     const s = Number.isFinite(scale) ? scale : 1;
     return `scale(${s}) translate(${x}%, ${y}%)`;
   }, [offsetX, offsetY, scale]);
+
+  if (containMode) {
+    return (
+      <div
+        className="hero-image-wrapper hero-image-contain mb-12 rounded-lg"
+        role="img"
+        aria-label={alt}
+        style={{
+          backgroundImage: `url('${imageSrc}')`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "contain",
+          backgroundPosition,
+          backgroundColor: "#ffffff",
+        }}
+      >
+        {/* hidden img for fallback to jpg */}
+        <img
+          src={imageSrc}
+          alt=""
+          onError={handleError}
+          style={{ display: "none" }}
+        />
+      </div>
+    );
+  }
 
   return (
     <div className="hero-image-wrapper mb-12 rounded-lg">
