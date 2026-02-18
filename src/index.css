@@ -68,4 +68,14 @@
     transition: transform 350ms ease, object-position 350ms ease;
     will-change: transform, object-position;
   }
+
+  .hero-image-contain {
+    background-color: #ffffff;
+  }
+
+  @media (max-width: 767px) {
+    .hero-image-contain {
+      background-size: 90% !important;
+    }
+  }
 }

@@ -32,6 +32,8 @@ const FormacionEjecucion = () => {
             alt="Formación para la Ejecución"
             scale={heroConfig["hero-formacion"].scale}
             objectPosition={heroConfig["hero-formacion"].objectPosition}
+            containMode={heroConfig["hero-formacion"].containMode}
+            backgroundPosition={heroConfig["hero-formacion"].backgroundPosition}
           />
 
           <div className="grid md:grid-cols-3 gap-8 mb-16">
