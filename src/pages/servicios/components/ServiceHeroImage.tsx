@@ -41,23 +41,20 @@ const ServiceHeroImage = ({
   if (containMode) {
     return (
       <div
-        className="hero-image-wrapper hero-image-contain mb-12 rounded-lg"
-        role="img"
-        aria-label={alt}
-        style={{
-          backgroundImage: `url('${imageSrc}')`,
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "contain",
-          backgroundPosition,
-          backgroundColor: "#ffffff",
-        }}
+        className="hero-image-wrapper mb-12 rounded-lg"
+        style={{ height: "350px", backgroundColor: "#ffffff" }}
       >
-        {/* hidden img for fallback to jpg */}
         <img
           src={imageSrc}
-          alt=""
+          alt={alt}
           onError={handleError}
-          style={{ display: "none" }}
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "contain",
+            objectPosition: objectPosition,
+          }}
+          loading="lazy"
         />
       </div>
     );
