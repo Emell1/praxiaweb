@@ -41,8 +41,14 @@ const ServiceHeroImage = ({
   if (containMode) {
     return (
       <div
-        className="hero-image-wrapper mb-12 rounded-lg"
-        style={{ height: "350px", backgroundColor: "#ffffff" }}
+        className="mb-12 rounded-lg"
+        style={{
+          height: "300px",
+          width: "100%",
+          overflow: "hidden",
+          position: "relative",
+          backgroundColor: "#ffffff",
+        }}
       >
         <img
           src={imageSrc}
@@ -50,9 +56,8 @@ const ServiceHeroImage = ({
           onError={handleError}
           style={{
             width: "100%",
-            height: "100%",
-            objectFit: "contain",
-            objectPosition: objectPosition,
+            height: "auto",
+            transform: "translateY(-60%)",
           }}
           loading="lazy"
         />
