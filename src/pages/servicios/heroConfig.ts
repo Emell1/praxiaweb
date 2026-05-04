@@ -1,4 +1,9 @@
 export const heroConfig: Record<string, { scale: number; objectPosition: string; containMode?: boolean; backgroundPosition?: string }> = {
+  "hero-comercial-new": { scale: 1, objectPosition: "50% 50%" },
+  "hero-soporte-new": { scale: 1, objectPosition: "50% 50%" },
+  "hero-desarrollo-equipos": { scale: 1, objectPosition: "50% 55%" },
+  "hero-transformacion-digital": { scale: 1, objectPosition: "50% 50%" },
+  // legacy
   "hero-comercial": { scale: 1.12, objectPosition: "50% 78%" },
   "hero-formacion": { scale: 1, objectPosition: "50% 85%" },
   "hero-soporte": { scale: 1.04, objectPosition: "50% 60%" },

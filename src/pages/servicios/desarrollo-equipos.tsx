@@ -28,10 +28,10 @@ const DesarrolloEquipos = () => {
           />
 
           <ServiceHeroImage
-            baseName="hero-reclutamiento"
+            baseName="hero-desarrollo-equipos"
             alt="Desarrollo de Equipos"
-            scale={heroConfig["hero-reclutamiento"].scale}
-            objectPosition={heroConfig["hero-reclutamiento"].objectPosition}
+            scale={heroConfig["hero-desarrollo-equipos"].scale}
+            objectPosition={heroConfig["hero-desarrollo-equipos"].objectPosition}
           />
 
           <div className="grid md:grid-cols-3 gap-8 mb-16">

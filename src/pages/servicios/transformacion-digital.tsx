@@ -6,6 +6,8 @@ import NavBar from "@/components/NavBar";
 import SEO from "@/components/SEO";
 import ServiceHeader from "./components/ServiceHeader";
 import ServiceCTA from "./components/ServiceCTA";
+import ServiceHeroImage from "./components/ServiceHeroImage";
+import { heroConfig } from "./heroConfig";
 
 const TransformacionDigital = () => {
   return (
@@ -25,7 +27,14 @@ const TransformacionDigital = () => {
             description="Tecnología que mejora cómo se trabaja, no que se suma encima de un proceso que ya no funciona."
           />
 
-          <div className="grid md:grid-cols-3 gap-8 mb-16 mt-10">
+          <ServiceHeroImage
+            baseName="hero-transformacion-digital"
+            alt="Transformación Digital"
+            scale={heroConfig["hero-transformacion-digital"].scale}
+            objectPosition={heroConfig["hero-transformacion-digital"].objectPosition}
+          />
+
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
             <div className="md:col-span-2">
               <div className="prose prose-lg max-w-none">
                 <p className="text-lg leading-relaxed mb-8">

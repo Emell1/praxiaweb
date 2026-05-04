@@ -28,10 +28,10 @@ const Soporte = () => {
           />
 
           <ServiceHeroImage
-            baseName="hero-soporte"
+            baseName="hero-soporte-new"
             alt="Atención al Estudiante"
-            scale={heroConfig["hero-soporte"].scale}
-            objectPosition={heroConfig["hero-soporte"].objectPosition}
+            scale={heroConfig["hero-soporte-new"].scale}
+            objectPosition={heroConfig["hero-soporte-new"].objectPosition}
           />
 
           <div className="grid md:grid-cols-3 gap-8 mb-16">

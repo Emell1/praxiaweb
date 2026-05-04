@@ -28,10 +28,10 @@ const Comercial = () => {
           />
 
           <ServiceHeroImage
-            baseName="hero-comercial"
+            baseName="hero-comercial-new"
             alt="Operaciones Comerciales"
-            scale={heroConfig["hero-comercial"].scale}
-            objectPosition={heroConfig["hero-comercial"].objectPosition}
+            scale={heroConfig["hero-comercial-new"].scale}
+            objectPosition={heroConfig["hero-comercial-new"].objectPosition}
           />
 
           <div className="grid md:grid-cols-3 gap-8 mb-16">

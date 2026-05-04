@@ -21,14 +21,24 @@ const QuienesSomos = () => {
           transition={{ duration: 0.6 }}
         >
           {/* Encabezado */}
-          <div className="mb-16">
+          <div className="mb-10">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Quiénes somos</h1>
             <p className="text-xl text-muted-foreground max-w-2xl leading-relaxed">
               Praxia es una consultora especializada en organizaciones de educación superior y ed tech. Trabajamos en la brecha entre la estrategia y la ejecución: el lugar donde más se pierde.
             </p>
           </div>
 
-          <Separator className="mb-16" />
+          {/* Hero image */}
+          <div className="mb-14 rounded-xl overflow-hidden">
+            <img
+              src="/images/quienes-somos-hero.png"
+              alt="Quiénes somos — Praxia"
+              className="w-full object-cover"
+              style={{ maxHeight: "400px", objectPosition: "50% 40%" }}
+            />
+          </div>
+
+          <Separator className="mb-14" />
 
           {/* Qué es Praxia */}
           <div className="grid md:grid-cols-2 gap-16 mb-20">
@@ -63,7 +73,7 @@ const QuienesSomos = () => {
             </div>
           </div>
 
-          <Separator className="mb-16" />
+          <Separator className="mb-14" />
 
           {/* Perfil */}
           <div className="mb-20">
@@ -72,7 +82,7 @@ const QuienesSomos = () => {
             <div className="flex flex-col md:flex-row gap-10 items-start">
               {/* Foto placeholder */}
               <div className="flex-shrink-0">
-                <div className="w-48 h-48 rounded-2xl overflow-hidden bg-slate-100 border">
+                <div className="w-48 h-48 rounded-2xl overflow-hidden bg-slate-100 border flex items-center justify-center">
                   <img
                     src="/fotoabout.jpg"
                     alt="Enzo Mellone"
@@ -80,10 +90,9 @@ const QuienesSomos = () => {
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       target.style.display = "none";
-                      target.parentElement!.style.display = "flex";
-                      target.parentElement!.style.alignItems = "center";
-                      target.parentElement!.style.justifyContent = "center";
-                      target.parentElement!.innerHTML = `<span class="text-slate-400 text-sm text-center px-4">Foto próximamente</span>`;
+                      if (target.parentElement) {
+                        target.parentElement.innerHTML = `<span style="color:#94a3b8;font-size:14px;text-align:center;padding:16px">Foto próximamente</span>`;
+                      }
                     }}
                   />
                 </div>
@@ -98,10 +107,10 @@ const QuienesSomos = () => {
                     Especialista en operaciones y mejora continua con foco en educación. Más de una década trabajando en organizaciones educativas, desde la gestión de equipos hasta el diseño de procesos a escala regional.
                   </p>
                   <p>
-                    Lideró la expansión operativa de Utel Universidad a más de 8 países en América Latina — desde el research de mercado hasta el setup de equipos comerciales y de atención en cada uno de ellos. Actualmente trabaja como arquitecto operativo en Griky, ed tech especializada en desarrollo de portafolio académico para universidades.
+                    Lideró la expansión operativa de Utel Universidad a más de 8 países en América Latina — desde el research de mercado hasta el setup de equipos comerciales, de atención y la vinculación institucional en cada uno de ellos.
                   </p>
                   <p>
-                    Su enfoque combina estrategia, liderazgo de equipos y capacidad de ejecución: sabe tanto diseñar el proceso como acompañar al equipo para que funcione en la práctica.
+                    Ha trabajado como consultor operativo en proyectos vinculados a ed techs y universidades, acompañando transformaciones digitales, rediseño de procesos y desarrollo de equipos en distintos contextos educativos.
                   </p>
                 </div>
                 <a
