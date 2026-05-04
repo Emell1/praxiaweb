@@ -21,9 +21,9 @@ const QuienesSomos = () => {
           transition={{ duration: 0.6 }}
         >
           {/* Encabezado */}
-          <div className="mb-10">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Quiénes somos</h1>
-            <p className="text-xl text-muted-foreground max-w-2xl leading-relaxed">
+          <div className="mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">Quiénes somos</h1>
+            <p className="text-xl text-muted-foreground leading-relaxed">
               Praxia es una consultora especializada en organizaciones de educación superior y ed tech. Trabajamos en la brecha entre la estrategia y la ejecución: el lugar donde más se pierde.
             </p>
           </div>
@@ -34,7 +34,7 @@ const QuienesSomos = () => {
               src="/images/quienes-somos-hero.png"
               alt="Quiénes somos — Praxia"
               className="w-full object-cover"
-              style={{ maxHeight: "400px", objectPosition: "50% 40%" }}
+              style={{ maxHeight: "420px", objectPosition: "50% 40%" }}
             />
           </div>
 

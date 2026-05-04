@@ -59,6 +59,7 @@
     overflow: hidden;
     position: relative;
     background-color: hsl(var(--muted));
+    border-radius: 12px;
   }
 
   .hero-image {
