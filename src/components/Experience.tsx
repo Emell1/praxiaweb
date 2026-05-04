@@ -3,18 +3,18 @@ import { motion } from "framer-motion";
 const experiences = [
   {
     org: "Utel Universidad",
-    role: "Gerente Sr. de Mejora Continua",
+    role: "Gerencia Sr. de Mejora Continua",
     period: "3 años",
     description:
-      "Universidad 100% online con presencia en más de 8 países. Lideré procesos de mejora en calidad, formación de equipos y operaciones digitales a escala regional.",
+      "Universidad 100% online con presencia en más de 8 países de América Latina. Lideramos procesos de mejora en calidad académica, formación de equipos y operaciones digitales a escala regional.",
     type: "Universidad online",
   },
   {
     org: "Griky",
-    role: "Arquitecto Operativo",
+    role: "Arquitectura Operativa",
     period: "Actual",
     description:
-      "Ed tech especializada en desarrollo de portafolio académico para universidades. Trabajo en eficientar la fábrica de contenido: desde la detección de demanda hasta la entrega del curso en el LMS.",
+      "Ed tech especializada en desarrollo de portafolio académico para universidades. Trabajamos en eficientar la fábrica de contenido: desde la detección de demanda hasta la entrega del curso en el LMS.",
     type: "Ed tech",
   },
 ];
@@ -31,7 +31,7 @@ export default function Experience() {
         >
           <h2 className="heading-lg mb-2">Experiencia en el sector</h2>
           <p className="text-muted-foreground mb-10 max-w-xl">
-            He trabajado desde adentro de organizaciones de educación. No como observador externo, sino gestionando equipos, rediseñando procesos y midiendo resultados.
+            Hemos trabajado desde adentro de organizaciones de educación. No como observadores externos, sino gestionando equipos, rediseñando procesos y midiendo resultados.
           </p>
 
           <div className="grid md:grid-cols-2 gap-6">

@@ -21,13 +21,13 @@ const Index = () => {
         <div className="max-w-6xl mx-auto">
           <h2 className="heading-lg mb-2">En qué trabajo</h2>
           <p className="text-muted-foreground mb-10 max-w-xl">
-            Cuatro áreas donde suelo encontrar los mayores cuellos de botella en organizaciones educativas.
+            Cuatro áreas donde solemos encontrar los mayores cuellos de botella en organizaciones educativas.
           </p>
           <div className="grid md:grid-cols-2 gap-6">
             <ProcessCard
               title="Operaciones comerciales"
               subtitle="Que el proceso de venta no frene el crecimiento"
-              description="En educación, el ciclo de inscripción tiene particularidades propias. Revisamos cómo entran los prospectos, qué hace el equipo con ellos y qué pasa hasta la matrícula. Menos improvisación, más consistencia."
+              description="En educación, el ciclo de inscripción tiene particularidades propias. Revisamos cómo entran los prospectos, qué hace el equipo con ellos y qué pasa hasta la matrícula. Menos improvisación, más consistencia en cada etapa."
               to="/servicios/comercial"
             />
             <ProcessCard
@@ -59,22 +59,22 @@ const Index = () => {
           {
             title: "Entender primero",
             description:
-              "Antes de proponer nada, me tomo el tiempo de entender qué está pasando de verdad: dónde se pierden los esfuerzos, qué frustra al equipo y qué espera la organización.",
+              "Antes de proponer nada, nos tomamos el tiempo de entender qué está pasando de verdad: dónde se pierden los esfuerzos, qué frustra al equipo y qué espera la organización.",
           },
           {
             title: "Hipótesis concreta",
             description:
-              "Defino qué cambios probar y por qué creo que van a mover la aguja. No un plan de 80 páginas: una apuesta clara sobre el trabajo del día a día.",
+              "Definimos qué cambios probar y por qué creemos que van a mover la aguja. No un plan de 80 páginas: una apuesta clara sobre el trabajo del día a día.",
           },
           {
             title: "Probar en pequeño",
             description:
-              "Testeo los cambios en un espacio acotado antes de escalar. Lo que funciona en la realidad del equipo vale más que lo que se ve bien en un documento.",
+              "Testeamos los cambios en un espacio acotado antes de escalar. Lo que funciona en la realidad del equipo vale más que lo que se ve bien en un documento.",
           },
           {
             title: "Que quede funcionando",
             description:
-              "El objetivo no es que dependan de mí. Lo que construimos juntos tiene que sostenerse cuando yo no esté.",
+              "El objetivo no es que dependan de nosotros. Lo que construimos juntos tiene que sostenerse cuando nos vayamos.",
           },
         ]}
       />

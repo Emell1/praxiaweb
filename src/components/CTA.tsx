@@ -13,22 +13,22 @@ const CTA = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="heading-lg mb-4 text-white">
-            ¿Tiene sentido hablar?
+            Hablemos
           </h2>
           <p className="body-lg text-white/60 mb-8 max-w-xl mx-auto">
-            Si estás pensando en mejorar cómo opera tu equipo o tu organización educativa, podemos ver juntos si hay algo concreto por donde empezar.
+            Si estás pensando en mejorar cómo opera tu equipo o tu organización educativa, podemos ver juntos si hay algo concreto por dónde empezar.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <ContactDialog buttonText="Escribime" />
             <a
-              href="https://www.linkedin.com/in/enzomellone"
+              href="https://www.linkedin.com/company/praxia-site"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-md border border-white/30 text-white/80 hover:bg-white/10 transition text-sm font-medium"
             >
               <Linkedin size={16} />
-              LinkedIn
+              Seguinos en LinkedIn
             </a>
           </div>
         </motion.div>
@@ -36,7 +36,7 @@ const CTA = () => {
 
       <div className="absolute bottom-6 right-6 flex items-center gap-4">
         <a
-          href="https://www.linkedin.com/in/enzomellone"
+          href="https://www.linkedin.com/company/praxia-site"
           target="_blank"
           rel="noopener noreferrer"
           className="text-white/40 hover:text-white transition-colors"
