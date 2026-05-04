@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Globe } from "lucide-react";
 
 const experiences = [
   {
@@ -34,7 +35,7 @@ export default function Experience() {
             Hemos trabajado desde adentro de organizaciones de educación. No como observadores externos, sino gestionando equipos, rediseñando procesos y midiendo resultados.
           </p>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-6 mb-8">
             {experiences.map((exp, i) => (
               <motion.div
                 key={i}
@@ -57,6 +58,29 @@ export default function Experience() {
               </motion.div>
             ))}
           </div>
+
+          {/* Bloque expansión regional */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.2 }}
+            className="rounded-xl border bg-slate-900 text-white p-8 shadow-sm"
+          >
+            <div className="flex items-start gap-4">
+              <div className="bg-white/10 p-3 rounded-lg flex-shrink-0">
+                <Globe className="h-6 w-6 text-white" />
+              </div>
+              <div>
+                <span className="text-xs font-medium text-white/60 uppercase tracking-wider">Capacidad regional</span>
+                <h3 className="text-xl font-semibold mt-2 mb-3">Expansión a nuevos mercados</h3>
+                <p className="text-white/70 leading-relaxed">
+                  Hemos liderado la apertura de operaciones educativas en más de 8 países de América Latina. El trabajo va desde el research de cada mercado hasta el setup completo: equipos comerciales, atención al estudiante y vinculación institucional. Sabemos lo que implica llevar una propuesta educativa a un contexto nuevo y hacerla funcionar desde el primer día.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
         </motion.div>
       </div>
     </section>

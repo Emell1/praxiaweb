@@ -12,24 +12,24 @@ import { heroConfig } from "./heroConfig";
 const Soporte = () => {
   return (
     <div className="min-h-screen bg-background">
-      <SEO 
-        title="Atención y Soporte | Praxia"
-        description="Ordenamos tus flujos de atención para que los clientes reciban respuestas más claras y rápidas, sin quemar a tu equipo ni agrandar la estructura."
-        keywords="soporte, atención al cliente, base de conocimiento, autoservicio, enrutamiento, SLA"
+      <SEO
+        title="Atención al Estudiante | Praxia"
+        description="Ordenamos los flujos de atención para que los estudiantes reciban respuestas claras y rápidas, y los equipos de soporte trabajen con menos desgaste."
+        keywords="atención al estudiante, soporte educativo, flujos de atención, resolución consultas, educación online"
       />
       <NavBar />
 
       <main className="container mx-auto py-12 px-4">
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6 }}>
-          <ServiceHeader 
+          <ServiceHeader
             Icon={Headset}
-            title="Atención y Soporte"
-            description="Resolver más y mejor, con menos desgaste. Estándares claros y autoservicio sólo donde tiene sentido."
+            title="Atención al Estudiante"
+            description="Que los problemas se resuelvan antes de que escalen y afecten la experiencia."
           />
-          
-          <ServiceHeroImage 
-            baseName="hero-soporte" 
-            alt="Atención y Soporte"
+
+          <ServiceHeroImage
+            baseName="hero-soporte"
+            alt="Atención al Estudiante"
             scale={heroConfig["hero-soporte"].scale}
             objectPosition={heroConfig["hero-soporte"].objectPosition}
           />
@@ -38,28 +38,20 @@ const Soporte = () => {
             <div className="md:col-span-2">
               <div className="prose prose-lg max-w-none">
                 <p className="text-lg leading-relaxed mb-8">
-                  En muchas empresas, soporte es el lugar donde cae todo: dudas, reclamos, errores de otros equipos y temas que nadie sabe bien quién debería atender. Eso genera saturación, respuestas desparejas y clientes que sienten que dan mil vueltas. Trabajamos con vos para ordenar qué entra, por dónde entra y cómo se resuelve, de forma que sea más sano tanto para el equipo como para tus clientes.
+                  En organizaciones educativas el soporte carga con mucho: dudas sobre el programa, problemas técnicos con el LMS, consultas administrativas, reclamos. Cuando eso no está ordenado, el equipo se satura, los estudiantes se frustran y la experiencia se deteriora. Trabajamos para que cada consulta llegue al lugar correcto, con la información necesaria para resolverla bien y rápido.
                 </p>
 
-                <h2 className="text-2xl font-semibold mt-10 mb-6 text-primary">Qué ofrecemos</h2>
+                <h2 className="text-2xl font-semibold mt-10 mb-6 text-primary">Qué hacemos</h2>
                 <p className="text-lg leading-relaxed mb-6">
-                  Diseñamos una operación de soporte fácil de entender: qué tipo de consultas entran por cada canal, cómo se priorizan, quién las toma y con qué información cuenta para resolver. Documentamos las respuestas a los temas más frecuentes en un formato que se use de verdad, y definimos dónde conviene sumar autoservicio sin deshumanizar la experiencia.
+                  Mapeamos qué tipos de consultas llegan, con qué frecuencia y cómo se están resolviendo hoy. Definimos rutas claras por tipo de caso, documentamos las respuestas a lo más frecuente y establecemos criterios de prioridad. Cuando tiene sentido, identificamos qué vale la pena automatizar sin perder el contacto humano donde más importa.
                 </p>
 
                 <h3 className="text-xl font-medium mt-10 mb-4 text-secondary-DEFAULT">Cómo trabajamos</h3>
                 <ul className="space-y-4 mb-8 pl-6">
-                  <li className="text-base leading-relaxed">
-                    Empezamos por entender qué tipo de casos llegan hoy, cuántas veces se repiten y en qué momentos se desborda todo.
-                  </li>
-                  <li className="text-base leading-relaxed">
-                    A partir de eso, definimos rutas simples: qué entra por cada canal, qué se resuelve rápido y qué necesita otra capa de atención.
-                  </li>
-                  <li className="text-base leading-relaxed">
-                    Armamos guías de resolución claras y, cuando tiene sentido, habilitamos autoservicio para los temas más repetitivos.
-                  </li>
-                  <li className="text-base leading-relaxed">
-                    Probamos todo esto en algunos flujos críticos, lo ajustamos y luego lo extendemos al resto, acompañando a los líderes en el seguimiento diario.
-                  </li>
+                  <li className="text-base leading-relaxed">Entendemos qué entra hoy: tipos de casos, volumen, tiempos de respuesta y dónde se generan más fricciones.</li>
+                  <li className="text-base leading-relaxed">Diseñamos rutas de atención simples: qué entra por cada canal, cómo se prioriza y quién resuelve qué.</li>
+                  <li className="text-base leading-relaxed">Construimos una base de respuestas para los temas más frecuentes, en un formato que el equipo use de verdad.</li>
+                  <li className="text-base leading-relaxed">Probamos los cambios en los flujos más críticos, ajustamos y extendemos al resto de la operación.</li>
                 </ul>
               </div>
             </div>
@@ -67,13 +59,13 @@ const Soporte = () => {
             <div>
               <Card className="bg-primary/5">
                 <CardContent className="pt-6">
-                  <h3 className="text-xl font-semibold mb-4">Resultados esperados</h3>
+                  <h3 className="text-xl font-semibold mb-4">Qué cambia</h3>
                   <ul className="space-y-3">
                     {[
                       "Menos rebotes internos para resolver un mismo caso.",
-                      "Menos tiempo perdido buscando información o preguntando siempre lo mismo.",
-                      "Clientes que entienden mejor qué esperar y por dónde pedir ayuda.",
-                      "Equipos menos saturados y con más foco en los problemas importantes.",
+                      "Estudiantes que entienden mejor qué esperar y por dónde pedir ayuda.",
+                      "Equipos con menos desgaste y más foco en los casos que realmente lo necesitan.",
+                      "Resolución más rápida de los temas frecuentes sin escalar innecesariamente.",
                     ].map((r, i) => (
                       <li key={i} className="flex items-start">
                         <Check className="h-5 w-5 text-primary mr-2 mt-1 flex-shrink-0" />
@@ -86,10 +78,10 @@ const Soporte = () => {
             </div>
           </div>
 
-          <ServiceCTA 
-            title="¿Revisamos tus flujos críticos?"
-            description="Podemos tomar uno o dos tipos de casos muy frecuentes, ver cómo se están manejando hoy y diseñar un piloto simple de mejora. Eso ya alcanza para empezar a notar la diferencia."
-            buttonText="Agenda diagnóstico"
+          <ServiceCTA
+            title="¿Revisamos los flujos que más fricción generan hoy?"
+            description="Podemos tomar uno o dos tipos de casos muy frecuentes, ver cómo se están manejando y diseñar un piloto simple de mejora. Eso ya alcanza para empezar a notar la diferencia."
+            buttonText="Hablemos"
           />
         </motion.div>
       </main>

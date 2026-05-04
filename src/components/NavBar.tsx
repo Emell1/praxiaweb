@@ -18,27 +18,28 @@ const NavBar = () => {
   const NavItems = () => (
     <>
       <Link to="/" className="text-foreground hover:text-blue-600">Inicio</Link>
-      
+
       <DropdownMenu>
         <DropdownMenuTrigger className="text-foreground hover:text-blue-600 inline-flex items-center">
           Servicios <ChevronDown className="ml-1 h-4 w-4" />
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="bg-background">
           <DropdownMenuItem asChild>
-            <Link to="/servicios/comercial" className="w-full">Optimización Comercial</Link>
+            <Link to="/servicios/comercial" className="w-full">Operaciones Comerciales</Link>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>
-            <Link to="/servicios/soporte" className="w-full">Atención y Soporte</Link>
+            <Link to="/servicios/soporte" className="w-full">Atención al Estudiante</Link>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>
-            <Link to="/servicios/reclutamiento-onboarding" className="w-full">Reclutamiento y Onboarding</Link>
+            <Link to="/servicios/desarrollo-equipos" className="w-full">Desarrollo de Equipos</Link>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>
-            <Link to="/servicios/formacion-ejecucion" className="w-full">Formación para la Ejecución</Link>
+            <Link to="/servicios/transformacion-digital" className="w-full">Transformación Digital</Link>
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
-      
+
+      <Link to="/quienes-somos" className="text-foreground hover:text-blue-600">Quiénes somos</Link>
       <Link to="/contacto" className="text-foreground hover:text-blue-600">Contacto</Link>
     </>
   );
@@ -47,14 +48,14 @@ const NavBar = () => {
     <nav className="bg-background py-4 shadow-sm sticky top-0 z-50">
       <div className="container mx-auto flex justify-between items-center px-4">
         <Link to="/" className="flex items-center">
-  <img
-    src="/logo.png"
-    alt="Praxia Logo"
-    style={{ height: "40px", width: "auto" }}
-    className="mr-2"
-  />
-</Link>
-        
+          <img
+            src="/logo.png"
+            alt="Praxia Logo"
+            style={{ height: "40px", width: "auto" }}
+            className="mr-2"
+          />
+        </Link>
+
         {isMobile ? (
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
@@ -68,28 +69,29 @@ const NavBar = () => {
                 <Link to="/" className="text-foreground hover:text-blue-600 text-lg" onClick={() => setIsOpen(false)}>
                   Inicio
                 </Link>
-                
+
                 <div className="flex flex-col space-y-2">
                   <div className="text-foreground text-lg mb-2">Servicios</div>
                   <Link to="/servicios/comercial" className="text-foreground hover:text-blue-600 pl-2" onClick={() => setIsOpen(false)}>
-                    Optimización Comercial
+                    Operaciones Comerciales
                   </Link>
                   <Link to="/servicios/soporte" className="text-foreground hover:text-blue-600 pl-2" onClick={() => setIsOpen(false)}>
-                    Atención y Soporte
+                    Atención al Estudiante
                   </Link>
-                  <Link to="/servicios/reclutamiento-onboarding" className="text-foreground hover:text-blue-600 pl-2" onClick={() => setIsOpen(false)}>
-                    Reclutamiento y Onboarding
+                  <Link to="/servicios/desarrollo-equipos" className="text-foreground hover:text-blue-600 pl-2" onClick={() => setIsOpen(false)}>
+                    Desarrollo de Equipos
                   </Link>
-                  <Link to="/servicios/formacion-ejecucion" className="text-foreground hover:text-blue-600 pl-2" onClick={() => setIsOpen(false)}>
-                    Formación para la Ejecución
+                  <Link to="/servicios/transformacion-digital" className="text-foreground hover:text-blue-600 pl-2" onClick={() => setIsOpen(false)}>
+                    Transformación Digital
                   </Link>
                 </div>
-                
+
+                <Link to="/quienes-somos" className="text-foreground hover:text-blue-600 text-lg" onClick={() => setIsOpen(false)}>
+                  Quiénes somos
+                </Link>
                 <Link to="/contacto" className="text-foreground hover:text-blue-600 text-lg" onClick={() => setIsOpen(false)}>
                   Contacto
                 </Link>
-
-
               </div>
             </SheetContent>
           </Sheet>

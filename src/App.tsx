@@ -3,13 +3,11 @@ import Index from './pages/Index';
 import BlogPage from './pages/blog/BlogPage';
 import BlogPost from './pages/blog/BlogPost';
 import ContactPage from './pages/ContactPage';
-import ConsultoriaEstrategica from './pages/servicios/ConsultoriaEstrategica';
-import OptimizacionProcesos from './pages/servicios/OptimizacionProcesos';
-import SolucionesInternas from './pages/servicios/SolucionesInternas';
+import QuienesSomos from './pages/QuienesSomos';
 import Comercial from './pages/servicios/comercial';
 import Soporte from './pages/servicios/soporte';
-import ReclutamientoOnboarding from './pages/servicios/reclutamiento-onboarding';
-import FormacionEjecucion from './pages/servicios/formacion-ejecucion';
+import DesarrolloEquipos from './pages/servicios/desarrollo-equipos';
+import TransformacionDigital from './pages/servicios/transformacion-digital';
 import AdminLogin from './pages/admin/AdminLogin';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import AdminBlogEditor from './pages/admin/AdminBlogEditor';
@@ -22,16 +20,14 @@ function App() {
     <AuthProvider>
       <Routes>
         <Route path="/" element={<Index />} />
+        <Route path="/quienes-somos" element={<QuienesSomos />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path="/contacto" element={<ContactPage />} />
-        <Route path="/servicios/consultoria-estrategica" element={<ConsultoriaEstrategica />} />
-        <Route path="/servicios/optimizacion-procesos" element={<OptimizacionProcesos />} />
-        <Route path="/servicios/soluciones-internas" element={<SolucionesInternas />} />
         <Route path="/servicios/comercial" element={<Comercial />} />
         <Route path="/servicios/soporte" element={<Soporte />} />
-        <Route path="/servicios/reclutamiento-onboarding" element={<ReclutamientoOnboarding />} />
-        <Route path="/servicios/formacion-ejecucion" element={<FormacionEjecucion />} />
+        <Route path="/servicios/desarrollo-equipos" element={<DesarrolloEquipos />} />
+        <Route path="/servicios/transformacion-digital" element={<TransformacionDigital />} />
         <Route path="/admin" element={<AdminLogin />} />
         <Route path="/admin/dashboard" element={
           <ProtectedRoute>
