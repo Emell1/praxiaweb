@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
+import ScrollToTop from './components/ScrollToTop';
 import Index from './pages/Index';
 import BlogPage from './pages/blog/BlogPage';
 import BlogPost from './pages/blog/BlogPost';
@@ -18,6 +19,7 @@ import { Toaster } from './components/ui/toaster';
 function App() {
   return (
     <AuthProvider>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/quienes-somos" element={<QuienesSomos />} />
