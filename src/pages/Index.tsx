@@ -17,64 +17,63 @@ const Index = () => {
       <NavBar />
       <Hero />
 
+      {/* Servicios */}
       <section className="section-padding bg-white">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <h2 className="heading-lg mb-2">En qué trabajamos</h2>
           <p className="text-muted-foreground mb-10 max-w-xl">
             Cuatro áreas donde solemos encontrar los mayores cuellos de botella en organizaciones educativas.
           </p>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-5">
             <ProcessCard
               title="Operaciones comerciales"
               subtitle="Que el proceso de captación acompañe el crecimiento"
-              description="El ciclo de inscripción en educación tiene lógica propia. Ordenamos cómo entran los prospectos, qué hace el equipo con ellos y qué pasa hasta la matrícula. Menos improvisación, más consistencia en cada etapa."
+              description="Ordenamos cómo entran los prospectos y qué pasa hasta la matrícula. Menos improvisación, más consistencia."
               to="/servicios/comercial"
             />
             <ProcessCard
               title="Atención al estudiante"
               subtitle="Que los problemas se resuelvan antes de que escalen"
-              description="Ordenamos cómo llegan las consultas, quién resuelve qué y con qué información. Documentamos lo frecuente y definimos qué tiene sentido automatizar. Menos rebotes, equipos con más foco en lo que importa."
+              description="Ordenamos flujos de atención, documentamos lo frecuente y definimos qué automatizar."
               to="/servicios/soporte"
             />
             <ProcessCard
               title="Desarrollo de equipos"
               subtitle="Incorporaciones sólidas y formación que se ve en el trabajo"
-              description="Trabajamos en cómo se incorpora gente nueva y cómo se desarrolla al equipo que ya está. Desde la definición del perfil hasta la rampa de 90 días y los programas de formación aplicada."
+              description="Desde la definición del perfil hasta la rampa de 90 días y los programas de formación aplicada."
               to="/servicios/desarrollo-equipos"
             />
             <ProcessCard
               title="Transformación digital"
               subtitle="Tecnología que mejora cómo se trabaja, no que se suma encima"
-              description="Acompañamos el rediseño de procesos con tecnología y la adopción real por parte del equipo. No somos implementadores: somos los que aseguran que el cambio llegue al trabajo del día a día."
+              description="Rediseñamos procesos con tecnología y acompañamos la adopción real por parte del equipo."
               to="/servicios/transformacion-digital"
             />
           </div>
         </div>
       </section>
 
+      {/* Experiencia — fondo slate-50 */}
       <Experience />
 
+      {/* Cómo trabajamos — fondo oscuro */}
       <Steps
         steps={[
           {
             title: "Entender primero",
-            description:
-              "Antes de proponer nada, nos tomamos el tiempo de entender qué está pasando de verdad: dónde se pierden los esfuerzos, qué frustra al equipo y qué espera la organización.",
+            description: "Antes de proponer nada, entendemos qué está pasando de verdad: dónde se pierden los esfuerzos y qué espera la organización.",
           },
           {
             title: "Hipótesis concreta",
-            description:
-              "Definimos qué cambios probar y por qué creemos que van a mover la aguja. No un plan de 80 páginas: una apuesta clara sobre el trabajo del día a día.",
+            description: "Definimos qué cambios probar y por qué creemos que van a mover la aguja.",
           },
           {
             title: "Probar en pequeño",
-            description:
-              "Testeamos los cambios en un espacio acotado antes de escalar. Lo que funciona en la realidad del equipo vale más que lo que se ve bien en un documento.",
+            description: "Testeamos en un espacio acotado. Lo que funciona en la realidad vale más que lo que se ve bien en papel.",
           },
           {
             title: "Que quede funcionando",
-            description:
-              "El objetivo no es que dependan de nosotros. Lo que construimos juntos tiene que sostenerse cuando nos vayamos.",
+            description: "Lo que construimos juntos tiene que sostenerse cuando nos vayamos.",
           },
         ]}
       />
