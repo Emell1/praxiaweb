@@ -74,10 +74,10 @@ export default function Experience() {
 
           {/* Clientes / casos */}
           <div>
-            <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-4">
+            <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-4 text-center">
               Organizaciones con las que hemos trabajado
             </p>
-            <div className="flex flex-wrap gap-6 items-center">
+            <div className="flex flex-wrap gap-6 items-center justify-center">
               {clients.map((c, i) => (
                 <div
                   key={i}
