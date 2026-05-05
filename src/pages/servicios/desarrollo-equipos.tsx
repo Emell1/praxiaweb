@@ -1,102 +1,134 @@
 import { motion } from "framer-motion";
-import { Users, Check } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Users, Check, ArrowRight } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
+import { Link } from "react-router-dom";
 import NavBar from "@/components/NavBar";
 import SEO from "@/components/SEO";
-import ServiceHeader from "./components/ServiceHeader";
-import ServiceCTA from "./components/ServiceCTA";
 import ServiceHeroImage from "./components/ServiceHeroImage";
 import { heroConfig } from "./heroConfig";
+
+const steps = [
+  "Entendemos dónde está el problema: si en cómo se selecciona, incorpora o forma al equipo.",
+  "Definimos criterios claros por rol: guías de entrevista, hitos de onboarding o módulos de formación.",
+  "Probamos el enfoque con un equipo o rol específico y medimos qué cambia.",
+  "Acompañamos a los líderes para que sostengan lo construido sin depender de nosotros.",
+];
+
+const results = [
+  "Personas nuevas que entienden antes cómo aportar valor en su rol.",
+  "Menos sorpresas post-contratación porque se evaluó bien desde el principio.",
+  "Formación que se ve en cómo trabaja el equipo, no solo en lo que dice saber.",
+  "Líderes con más herramientas para acompañar, no solo para reaccionar.",
+];
 
 const DesarrolloEquipos = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
         title="Desarrollo de Equipos | Praxia"
-        description="Acompañamos la incorporación y el desarrollo de personas en organizaciones educativas: desde cómo se selecciona hasta cómo se forma para que rindan mejor en su trabajo."
+        description="Acompañamos la incorporación y el desarrollo de personas en organizaciones educativas: desde cómo se selecciona hasta cómo se forma para que rindan mejor."
         keywords="desarrollo de equipos educación, onboarding, formación aplicada, incorporación, liderazgo educativo"
       />
       <NavBar />
 
-      <main className="max-w-5xl mx-auto py-12 px-4">
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6 }}>
-          <ServiceHeader
-            Icon={Users}
-            title="Desarrollo de Equipos"
-            description="Incorporaciones más sólidas y formación que se ve en el trabajo, no en las diapositivas."
-          />
+      {/* Hero oscuro */}
+      <section className="bg-slate-900 relative overflow-hidden">
+        <div
+          className="absolute inset-0 opacity-10"
+          style={{
+            backgroundImage: "radial-gradient(circle, #ffffff 1px, transparent 1px)",
+            backgroundSize: "28px 28px",
+          }}
+        />
+        <div className="max-w-5xl mx-auto px-4 py-16 relative z-10">
+          <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 mb-6">
+              <Users className="h-4 w-4 text-white/70" />
+              <span className="text-sm text-white/70">Servicio</span>
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Desarrollo de Equipos</h1>
+            <p className="text-xl text-white/60 max-w-2xl">
+              Incorporaciones sólidas y formación que se ve en el trabajo, no en las diapositivas.
+            </p>
+          </motion.div>
+        </div>
+      </section>
 
-          <ServiceHeroImage
-            baseName="hero-desarrollo-equipos"
-            alt="Desarrollo de Equipos"
-            scale={heroConfig["hero-desarrollo-equipos"].scale}
-            objectPosition={heroConfig["hero-desarrollo-equipos"].objectPosition}
-          />
+      {/* Imagen hero */}
+      <div className="max-w-5xl mx-auto px-4 pt-10 bg-white">
+        <ServiceHeroImage
+          baseName="hero-desarrollo-equipos"
+          alt="Desarrollo de Equipos"
+          scale={heroConfig["hero-desarrollo-equipos"].scale}
+          objectPosition={heroConfig["hero-desarrollo-equipos"].objectPosition}
+        />
+      </div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
-            <div className="md:col-span-2">
-              <div className="prose prose-lg max-w-none">
-                <p className="text-lg leading-relaxed mb-8">
-                  En organizaciones que crecen rápido — como suelen hacerlo las ed techs — el onboarding queda sin estructura y la formación se reduce a cursos que nadie recuerda a las dos semanas. Trabajamos en los dos frentes: cómo se incorpora gente nueva y cómo se desarrolla al equipo que ya está, con foco en lo que se necesita hacer mejor en el día a día.
-                </p>
+      {/* Contenido principal */}
+      <section className="bg-white pb-16">
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="grid md:grid-cols-3 gap-10">
+            <div className="md:col-span-2 space-y-6 text-base leading-relaxed text-foreground/80">
+              <p>
+                En organizaciones que crecen rápido — como suelen hacerlo las ed techs — el onboarding queda sin estructura y la formación se reduce a cursos que nadie recuerda a las dos semanas. Trabajamos en los dos frentes: cómo se incorpora gente nueva y cómo se desarrolla al equipo que ya está.
+              </p>
 
-                <h2 className="text-2xl font-semibold mt-10 mb-6 text-primary">Qué hacemos</h2>
-
-                <h3 className="text-lg font-semibold mt-6 mb-3">Incorporación</h3>
-                <p className="text-lg leading-relaxed mb-4">
-                  Definimos qué se espera de cada rol, cómo se evalúa bien a los candidatos y cómo se acompaña a las personas nuevas en sus primeros 90 días. El resultado es una rampa de incorporación que no depende de que la persona "se las arregle sola" ni del tiempo que tenga su líder ese mes.
-                </p>
-
-                <h3 className="text-lg font-semibold mt-6 mb-3">Formación</h3>
-                <p className="text-lg leading-relaxed mb-6">
-                  Diseñamos programas cortos para equipos operativos y mandos medios, centrados en mejorar cómo se hace el trabajo concreto. Casos reales, práctica guiada y seguimiento de líderes para que lo aprendido no se diluya a los pocos días.
-                </p>
-
-                <h3 className="text-xl font-medium mt-10 mb-4 text-secondary-DEFAULT">Cómo trabajamos</h3>
-                <ul className="space-y-4 mb-8 pl-6">
-                  <li className="text-base leading-relaxed">Entendemos dónde está el problema hoy: si en cómo se selecciona, en cómo se incorpora o en cómo se forma al equipo que ya está.</li>
-                  <li className="text-base leading-relaxed">Definimos criterios claros por rol y los convertimos en guías de entrevista, hitos de onboarding o módulos de formación concretos.</li>
-                  <li className="text-base leading-relaxed">Probamos el enfoque con un equipo o rol específico, medimos qué cambia y decidimos juntos si vale escalar.</li>
-                  <li className="text-base leading-relaxed">Acompañamos a los líderes para que puedan sostener lo construido sin depender de nosotros.</li>
-                </ul>
+              <div className="grid md:grid-cols-2 gap-6 pt-2">
+                <div className="rounded-xl bg-slate-50 border p-5">
+                  <h3 className="font-semibold text-foreground mb-2">Incorporación</h3>
+                  <p className="text-sm">Definimos perfiles, guías de entrevista y una rampa de 90 días que no depende de que la persona "se las arregle sola".</p>
+                </div>
+                <div className="rounded-xl bg-slate-50 border p-5">
+                  <h3 className="font-semibold text-foreground mb-2">Formación</h3>
+                  <p className="text-sm">Programas cortos con casos reales, práctica guiada y seguimiento para que lo aprendido no se diluya a los pocos días.</p>
+                </div>
               </div>
+
+              <h2 className="text-xl font-semibold text-foreground mt-8 mb-4">Cómo trabajamos</h2>
+              <ol className="space-y-3">
+                {steps.map((s, i) => (
+                  <li key={i} className="flex gap-3">
+                    <span className="flex-shrink-0 h-6 w-6 rounded-md bg-primary/10 text-primary text-xs font-semibold flex items-center justify-center mt-0.5">{i + 1}</span>
+                    <span>{s}</span>
+                  </li>
+                ))}
+              </ol>
             </div>
 
             <div>
-              <Card className="bg-primary/5">
-                <CardContent className="pt-6">
-                  <h3 className="text-xl font-semibold mb-4">Qué cambia</h3>
-                  <ul className="space-y-3">
-                    {[
-                      "Personas nuevas que entienden antes cómo aportar valor en su rol.",
-                      "Menos sorpresas post-contratación porque se evaluó bien desde el principio.",
-                      "Formación que se ve en cómo trabaja el equipo, no solo en lo que dice saber.",
-                      "Líderes con más herramientas para acompañar, no solo para reaccionar.",
-                    ].map((r, i) => (
-                      <li key={i} className="flex items-start">
-                        <Check className="h-5 w-5 text-primary mr-2 mt-1 flex-shrink-0" />
-                        <span>{r}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
+              <div className="rounded-xl bg-slate-50 border p-6 sticky top-24">
+                <h3 className="font-semibold text-base mb-4">Qué cambia</h3>
+                <ul className="space-y-3">
+                  {results.map((r, i) => (
+                    <li key={i} className="flex items-start gap-2 text-sm text-foreground/80">
+                      <Check className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                      <span>{r}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          <ServiceCTA
-            title="¿Arrancamos por un rol o un equipo concreto?"
-            description="Podemos empezar por donde más duele hoy: la incorporación de un perfil clave o la formación de un equipo específico. Eso ya genera un cambio visible."
-            buttonText="Hablemos"
-          />
-        </motion.div>
-      </main>
+      {/* CTA oscuro */}
+      <section className="bg-slate-900 py-16">
+        <div className="max-w-5xl mx-auto px-4 text-center">
+          <h2 className="text-2xl font-bold text-white mb-3">¿Arrancamos por un rol o un equipo concreto?</h2>
+          <p className="text-white/60 mb-8 max-w-xl mx-auto">Podemos empezar por donde más duele hoy: la incorporación de un perfil clave o la formación de un equipo específico.</p>
+          <Link to="/contacto">
+            <button className="inline-flex items-center gap-2 bg-white text-slate-900 font-semibold px-6 py-3 rounded-md hover:bg-white/90 transition text-sm">
+              Hablemos <ArrowRight className="h-4 w-4" />
+            </button>
+          </Link>
+        </div>
+      </section>
 
-      <footer className="bg-gray-100 mt-16">
-        <div className="max-w-5xl mx-auto py-8 px-4 text-center">
-          <Separator className="mb-8" />
-          <p className="text-sm text-gray-600">© {new Date().getFullYear()} Praxia. Todos los derechos reservados.</p>
+      <footer className="bg-slate-950 py-6">
+        <div className="max-w-5xl mx-auto px-4 text-center">
+          <Separator className="mb-6 bg-white/10" />
+          <p className="text-sm text-white/30">© {new Date().getFullYear()} Praxia. Todos los derechos reservados.</p>
         </div>
       </footer>
     </div>
