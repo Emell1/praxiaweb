@@ -29,8 +29,8 @@ const highlights = [
 ];
 
 const clients = [
-  { name: "Utel Universidad", type: "Universidad online · 3 años" },
-  { name: "Griky", type: "Ed tech · Actual" },
+  { name: "Utel Universidad", logo: "/logo-utel.png" },
+  { name: "Griky", logo: "/logo-griky.png" },
 ];
 
 export default function Experience() {
@@ -77,16 +77,18 @@ export default function Experience() {
             <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-4">
               Organizaciones con las que hemos trabajado
             </p>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-6 items-center">
               {clients.map((c, i) => (
                 <div
                   key={i}
-                  className="inline-flex items-center gap-3 rounded-lg border bg-white px-4 py-3 shadow-sm"
+                  className="rounded-lg border bg-white px-6 py-4 shadow-sm flex items-center justify-center"
+                  style={{ height: "64px" }}
                 >
-                  <div>
-                    <p className="text-sm font-semibold leading-none">{c.name}</p>
-                    <p className="text-xs text-muted-foreground mt-1">{c.type}</p>
-                  </div>
+                  <img
+                    src={c.logo}
+                    alt={c.name}
+                    className="h-8 w-auto object-contain grayscale opacity-70"
+                  />
                 </div>
               ))}
             </div>

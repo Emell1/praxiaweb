@@ -19,7 +19,7 @@ const Comercial = () => {
       />
       <NavBar />
 
-      <main className="container mx-auto py-12 px-4">
+      <main className="max-w-5xl mx-auto py-12 px-4">
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6 }}>
           <ServiceHeader
             Icon={Briefcase}
@@ -90,7 +90,7 @@ const Comercial = () => {
       </main>
 
       <footer className="bg-gray-100 mt-16">
-        <div className="container mx-auto py-8 px-4 text-center">
+        <div className="max-w-5xl mx-auto py-8 px-4 text-center">
           <Separator className="mb-8" />
           <p className="text-sm text-gray-600">© {new Date().getFullYear()} Praxia. Todos los derechos reservados.</p>
         </div>
